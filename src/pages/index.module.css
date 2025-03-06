@@ -1,0 +1,419 @@
+/* Variables */
+:root {
+  --background-dark: var(--ctp-mocha-base);
+  --text-muted: var(--ctp-mocha-overlay0);
+  --text-highlight: var(--ctp-mocha-peach);
+  --text-secondary: var(--ctp-mocha-subtext0);
+  --accent-primary: var(--ctp-mocha-sapphire);
+  --accent-hover: var(--ctp-mocha-blue);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Base layout */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  background-color: var(--background-dark);
+  font-family: 'Alata', sans-serif;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 2rem; 
+}
+
+/* Left section elements */
+.leftSection {
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
+  padding-left: 1rem; 
+  animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.intro {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: 'Alata', sans-serif;
+  margin-bottom: 0rem;
+  animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+.name {
+  font-size: 4.5rem;
+  font-weight: 500;
+  margin: 0.2rem 0;
+  color: var(--text-highlight);
+  font-family: 'Alata', sans-serif;
+  animation: slideUp 0.6s ease-out 0.6s both;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.name:hover {
+  text-shadow: 0 0 5px var(--ctp-mocha-maroon);
+}
+
+/* Subtitle section */
+.subtitleWrapper {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  animation: slideUp 0.6s ease-out 0.8s both;
+}
+
+.subtitlePrefix {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-family: 'Alata', sans-serif;
+  margin-right: 0.5rem;
+}
+
+.subtitle {
+  font-size: 3rem;
+  font-weight: 550;
+  color: var(--text-secondary);
+  font-family: 'Alata', sans-serif;
+  margin: 0;
+}
+
+.description {
+  margin-top: 1.3rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 600px;
+  font-family: 'Alata', sans-serif;
+  text-align: left;
+  animation: slideUp 0.6s ease-out 1s both;
+}
+
+/* Call to action and social media section */
+.actionRow {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  animation: slideUp 0.6s ease-out 1.2s both;
+}
+
+.cta {
+  margin-top: 0;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ctp-mocha-crust);
+  background-color: var(--text-highlight);
+  border-radius: 4px;
+  transition: all 0.3s ease, transform 0.2s ease;
+  border: 2px solid var(--text-highlight);
+}
+
+.ctaButton:hover {
+  background-color: transparent;
+  color: var(--text-highlight);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
+/* Social Icons */
+.socialIcons {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  height: 38px;
+}
+
+.socialIcons a {
+  margin-right: 1.5rem;
+  color: var(--text-highlight);
+  transition: color 0.3s, transform 0.2s;
+  animation: fadeIn 0.5s ease-out 1.4s both;
+}
+
+.socialIcons a:hover {
+  color: var(--text-highlight);
+  opacity: 0.8; 
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Staggered animation delays */
+.socialIcons a:nth-child(1) { animation-delay: 1.4s; }
+.socialIcons a:nth-child(2) { animation-delay: 1.5s; }
+.socialIcons a:nth-child(3) { animation-delay: 1.6s; }
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.socialLink svg {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/* Right section - Profile image */
+.rightSection {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem; 
+  animation: slideInRight 0.8s ease-out 0.3s both;
+}
+
+.profilePic {
+  height: 305px;
+  border-radius: 20%;
+  object-fit: cover;
+  box-shadow: 0 0 15px var(--shadow-color);
+  margin-top: -10px;
+  margin-right: 2rem; 
+  transition: all 0.5s ease;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.profilePic:hover {
+  transform: scale(1.03) rotate(2deg);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* Responsive Styles - Tablets */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding: 1rem 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    height: 100%;
+    padding: 0;
+  }
+
+  /* Reset animations for mobile */
+  .leftSection, .rightSection, .name, .subtitleWrapper, 
+  .description, .profilePic, .actionRow {
+    animation: fadeIn 1s ease-out;
+  }
+
+  .leftSection {
+    padding-right: 0;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rightSection {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 3rem;
+    margin: 0.2rem 0;
+  }
+
+  .subtitleWrapper {
+    justify-content: center;
+    margin: 0.2rem 0;
+  }
+
+  .subtitlePrefix {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .description {
+    margin: 1rem auto 0;
+    max-width: 95%;
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .profilePic {
+    height: 180px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 0; /* Reset margin for mobile */
+  }
+
+  /* Action row becomes column */
+  .actionRow {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  .cta {
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Social icons in center */
+  .socialIcons {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .socialIcons a {
+    margin: 0 1rem;
+  }
+  
+  .socialIcons a:first-child { margin-left: 0; }
+  .socialIcons a:last-child { margin-right: 0; }
+
+  .socialLink svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Responsive Styles - Mobile Phones */
+@media (max-width: 480px) {
+  .hero {
+    min-height: calc(100vh);
+    padding: 0.5rem 0 2rem;
+  }
+  
+  /* Smaller font sizes for mobile */
+  .name { font-size: 2.3rem; }
+  .subtitlePrefix { 
+    font-size: 1rem; 
+    margin-right: 0.3rem; 
+  }
+  .subtitle { font-size: 1.5rem; }
+  .description {
+    margin-top: 0.5rem;
+    max-width: 92%;
+    margin: 0.7rem auto 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+  }
+
+  /* Smaller CTA and elements */
+  .ctaButton {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .socialLink svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .profilePic {
+    height: 160px;
+  }
+}
+
+/* Accessibility - Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero, .leftSection, .rightSection, .profilePic, 
+  .intro, .name, .subtitleWrapper, .description, 
+  .actionRow, .socialIcons a {
+    animation: none !important;
+    transition: none !important;
+  }
+}
