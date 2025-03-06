@@ -12,8 +12,8 @@ const config = {
 
   // Set the production url of site
   // <baseUrl> is pathname, site should be in url/baseUrl/
-  url: 'https://soymadip.github.io',
-  baseUrl: '/portfolio',
+  url: 'https://new.soymadip.me',
+  baseUrl: '/',
 
   // GitHub pages deployment config. Delete if not GH pages.
   organizationName: 'soymadip',
