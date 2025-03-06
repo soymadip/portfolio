@@ -64,6 +64,14 @@ const config = {
     ({
       // Project's social card
       image: 'img/social-card.jpeg',
+
+      // Set dark mode as default
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
+
       navbar: {
         title: 'Soymadip',
         logo: {
