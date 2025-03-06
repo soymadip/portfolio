@@ -12,7 +12,7 @@ export default function Home() {
 
   const siteUrl = `${url}${baseUrl}`;
 
-  const tUrl = "https://soymadip.me";
+  const tUrl = "https://soymadip.me/l";
 
   return (
     <Layout title="Me" description="My portfolio website">
@@ -41,7 +41,7 @@ export default function Home() {
               </div>
               <div className={styles.socialIcons}>
                 <a
-                  href={`${tUrl}/l/linkedin`}
+                  href={`${tUrl}/linkedin`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -49,7 +49,7 @@ export default function Home() {
                   <FaLinkedin size={24} />
                 </a>
                 <a
-                  href="https://github.com/soymadip"
+                  href={`${tUrl}/linkedin`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -57,7 +57,7 @@ export default function Home() {
                   <FaGithub size={24} />
                 </a>
                 <a
-                  href={`${tUrl}/l/telegram`}
+                  href={`${tUrl}/telegram`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
