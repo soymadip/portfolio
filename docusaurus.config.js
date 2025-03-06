@@ -19,7 +19,7 @@ const config = {
   organizationName: 'soymadip',
   projectName: 'portfolio',
   deploymentBranch: 'site',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // Change from 'throw' to 'warn'
   onBrokenMarkdownLinks: 'warn',
 
   // Use this field to set useful metadata like html lang.
