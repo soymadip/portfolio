@@ -7,4 +7,3 @@ description: Learn about me and my background
 
 Welcome to my portfolio! This page contains information about my background, skills, and interests.
 
-<!-- Add your personal information here -->

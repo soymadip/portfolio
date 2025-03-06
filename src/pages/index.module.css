@@ -1,13 +1,3 @@
-/* Variables */
-:root {
-  --background-dark: var(--ctp-mocha-base);
-  --text-muted: var(--ctp-mocha-overlay0);
-  --text-highlight: var(--ctp-mocha-peach);
-  --text-secondary: var(--ctp-mocha-subtext0);
-  --accent-primary: var(--ctp-mocha-sapphire);
-  --accent-hover: var(--ctp-mocha-blue);
-  --shadow-color: rgba(0, 0, 0, 0.3);
-}
 
 /* Animations */
 @keyframes fadeIn {
@@ -66,8 +56,8 @@
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 60px);
-  background-color: var(--background-dark);
-  font-family: 'Alata', sans-serif;
+  background-color: var(--ifm-background-color);
+  font-family: var(--ifm-font-family-base);
   animation: fadeIn 0.8s ease-in-out;
 }
 
@@ -93,8 +83,8 @@
 .intro {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-muted);
-  font-family: 'Alata', sans-serif;
+  color: var(--ctp-overlay0);
+  font-family: var(--ifm-font-family-base);
   margin-bottom: 0rem;
   animation: slideUp 0.6s ease-out 0.4s both;
 }
@@ -103,8 +93,8 @@
   font-size: 4.5rem;
   font-weight: 500;
   margin: 0.2rem 0;
-  color: var(--text-highlight);
-  font-family: 'Alata', sans-serif;
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-base);
   animation: slideUp 0.6s ease-out 0.6s both;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -124,16 +114,16 @@
 .subtitlePrefix {
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--text-muted);
-  font-family: 'Alata', sans-serif;
+  color: var(--ifm-navbar-link-color);
+  font-family: var(--ifm-font-family-base);
   margin-right: 0.5rem;
 }
 
 .subtitle {
   font-size: 3rem;
   font-weight: 550;
-  color: var(--text-secondary);
-  font-family: 'Alata', sans-serif;
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-base);
   margin: 0;
 }
 
@@ -141,9 +131,9 @@
   margin-top: 1.3rem;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--ifm-font-color-base);
   max-width: 600px;
-  font-family: 'Alata', sans-serif;
+  font-family: var(--ifm-font-family-base);
   text-align: left;
   animation: slideUp 0.6s ease-out 1s both;
 }
@@ -169,16 +159,16 @@
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  color: var(--ctp-mocha-crust);
-  background-color: var(--text-highlight);
+  color: var(--ifm-background-color);
+  background-color: var(--ifm-color-primary);
   border-radius: 4px;
   transition: all 0.3s ease, transform 0.2s ease;
-  border: 2px solid var(--text-highlight);
+  border: 2px solid var(--ifm-color-primary);
 }
 
 .ctaButton:hover {
   background-color: transparent;
-  color: var(--text-highlight);
+  color: var(--ifm-color-primary);
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
@@ -197,13 +187,12 @@
 
 .socialIcons a {
   margin-right: 1.5rem;
-  color: var(--text-highlight);
+  color: var(--ifm-color-primary);
   transition: color 0.3s, transform 0.2s;
   animation: fadeIn 0.5s ease-out 1.4s both;
 }
 
 .socialIcons a:hover {
-  color: var(--text-highlight);
   opacity: 0.8; 
   transform: translateY(-3px) scale(1.1);
 }
@@ -240,7 +229,7 @@
   height: 305px;
   border-radius: 20%;
   object-fit: cover;
-  box-shadow: 0 0 15px var(--shadow-color);
+  box-shadow: 0 0 15px var(--ifm-shadow-color);
   margin-top: -10px;
   margin-right: 2rem; 
   transition: all 0.5s ease;
@@ -249,11 +238,16 @@
 
 .profilePic:hover {
   transform: scale(1.03) rotate(2deg);
-  box-shadow: 0 8px 20px var(--shadow-color);
+  box-shadow: 0 8px 20px var(--ifm-shadow-color);
 }
 
 /* Responsive Styles - Tablets */
 @media (max-width: 768px) {
+  
+  .intro {
+    animation: slideUp 0.6s ease-out 0.4s both;
+  }
+
   .hero {
     min-height: 100vh;
     padding: 1rem 0 3rem;
@@ -273,13 +267,25 @@
     padding: 0;
   }
 
-  /* Reset animations for mobile */
-  .leftSection, .rightSection, .name, .subtitleWrapper, 
-  .description, .profilePic, .actionRow {
-    animation: fadeIn 1s ease-out;
+  .rightSection {
+    animation: fadeIn 0.8s ease-out both;
+    padding-right: 0;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .profilePic {
+    animation: fadeIn 0.8s ease-out 0.2s both, pulse 2s ease-in-out 1.5s;
+    height: 180px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 0;
   }
 
   .leftSection {
+    animation: fadeIn 0.8s ease-out 0.3s both;
     padding-right: 0;
     padding-left: 0;
     width: 100%;
@@ -290,34 +296,20 @@
     align-items: center;
   }
 
-  .rightSection {
-    margin-bottom: 0.5rem;
-    margin-top: 1rem;
-    width: 100%;
-    padding-right: 0;
-    justify-content: center;
-  }
-
   .name {
+    animation: slideUp 0.6s ease-out 0.5s both;
     font-size: 3rem;
     margin: 0.2rem 0;
   }
 
   .subtitleWrapper {
+    animation: slideUp 0.6s ease-out 0.6s both;
     justify-content: center;
     margin: 0.2rem 0;
   }
 
-  .subtitlePrefix {
-    font-size: 1.2rem;
-    margin-right: 0.4rem;
-  }
-
-  .subtitle {
-    font-size: 2rem;
-  }
-
   .description {
+    animation: slideUp 0.6s ease-out 0.7s both;
     margin: 1rem auto 0;
     max-width: 95%;
     font-size: 1rem;
@@ -326,19 +318,26 @@
     line-height: 1.5;
   }
 
-  .profilePic {
-    height: 180px;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    margin-right: 0; /* Reset margin for mobile */
-  }
-
-  /* Action row becomes column */
   .actionRow {
+    animation: slideUp 0.6s ease-out 0.8s both;
     flex-direction: column;
     align-items: center;
     margin-top: 1.5rem;
     width: 100%;
+  }
+
+  /* Re-apply staggered animations for social icons in mobile */
+  .socialIcons a:nth-child(1) { animation-delay: 0.9s; }
+  .socialIcons a:nth-child(2) { animation-delay: 1.0s; }
+  .socialIcons a:nth-child(3) { animation-delay: 1.1s; }
+
+  .subtitlePrefix {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
   }
 
   .cta {
@@ -377,20 +376,43 @@
     padding: 0.5rem 0 2rem;
   }
   
-  /* Smaller font sizes for mobile */
-  .name { font-size: 2.3rem; }
+  /* Maintain animations but with faster timing */
+  .profilePic {
+    animation: fadeIn 0.7s ease-out 0.1s both, pulse 1.5s ease-in-out 1s;
+    height: 160px;
+  }
+  
+  .name { 
+    font-size: 2.3rem; 
+    animation: slideUp 0.5s ease-out 0.3s both;
+  }
+  
   .subtitlePrefix { 
     font-size: 1rem; 
     margin-right: 0.3rem; 
   }
-  .subtitle { font-size: 1.5rem; }
+  
+  .subtitle { 
+    font-size: 1.5rem; 
+  }
+  
   .description {
+    animation: slideUp 0.5s ease-out 0.5s both;
     margin-top: 0.5rem;
     max-width: 92%;
     margin: 0.7rem auto 0;
     line-height: 1.4;
     font-size: 0.9rem;
   }
+
+  .actionRow {
+    animation: slideUp 0.5s ease-out 0.6s both;
+  }
+
+  /* Even faster staggered animations for social icons */
+  .socialIcons a:nth-child(1) { animation-delay: 0.7s; }
+  .socialIcons a:nth-child(2) { animation-delay: 0.8s; }
+  .socialIcons a:nth-child(3) { animation-delay: 0.9s; }
 
   /* Smaller CTA and elements */
   .ctaButton {
@@ -401,10 +423,6 @@
   .socialLink svg {
     width: 22px;
     height: 22px;
-  }
-
-  .profilePic {
-    height: 160px;
   }
 }
 

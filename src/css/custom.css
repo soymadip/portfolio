@@ -3,57 +3,66 @@
  * You can override the default Infima variables here. 
 **/
 
-:root {
-  /* Catppuccin Mocha colors */
-  --ctp-mocha-base: #1e1e2e;
-  --ctp-mocha-mantle: #181825;
-  --ctp-mocha-crust: #11111b;
-  --ctp-mocha-text: #cdd6f4;
-  --ctp-mocha-subtext1: #bac2de;
-  --ctp-mocha-subtext0: #a6adc8;
-  --ctp-mocha-overlay2: #9399b2;
-  --ctp-mocha-overlay1: #7f849c;
-  --ctp-mocha-overlay0: #6c7086;
-  --ctp-mocha-surface2: #585b70;
-  --ctp-mocha-surface1: #45475a;
-  --ctp-mocha-surface0: #313244;
-  --ctp-mocha-rosewater: #f5e0dc;
-  --ctp-mocha-flamingo: #f2cdcd;
-  --ctp-mocha-pink: #f5c2e7;
-  --ctp-mocha-mauve: #cba6f7;
-  --ctp-mocha-red: #f38ba8;
-  --ctp-mocha-maroon: #eba0ac;
-  --ctp-mocha-peach: #fab387;
-  --ctp-mocha-yellow: #f9e2af;
-  --ctp-mocha-green: #a6e3a1;
-  --ctp-mocha-teal: #94e2d5;
-  --ctp-mocha-sky: #89dceb;
-  --ctp-mocha-sapphire: #74c7ec;
-  --ctp-mocha-blue: #89b4fa;
-  --ctp-mocha-lavender: #b4befe;
+/* Import Alata font */
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+/* Import Catppuccin colors */
+@import url('./catppuccin.css');
+
+:root {
+  /* Light mode (default) theme using Latte */
+  --ifm-color-primary: var(--ctp-peach);
+  --ifm-color-primary-dark: var(--ctp-maroon);
+  --ifm-color-primary-darker: var(--ctp-red);
+  --ifm-color-primary-darkest: var(--ctp-flamingo);
+  --ifm-color-primary-light: var(--ctp-yellow);
+  --ifm-color-primary-lighter: var(--ctp-green);
+  --ifm-color-primary-lightest: var(--ctp-teal);
+  
+  --ifm-background-color: var(--ctp-base);
+  --ifm-navbar-background-color: var(--ctp-base);
+  --ifm-footer-background-color: var(--ctp-mantle);
+  
+  --ifm-font-color-base: var(--ctp-text);
+  --ifm-heading-color: var(--ctp-text);
+  
+  --ifm-navbar-link-color: var(--ctp-subtext1);
+  --ifm-navbar-link-hover-color: var(--ctp-peach);
+  
+  --ifm-menu-color: var(--ctp-subtext0);
+  --ifm-menu-color-active: var(--ctp-peach);
+  
+  /* Font family */
+  --ifm-font-family-base: 'Alata', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Alata', system-ui, -apple-system, sans-serif;
+  
   --ifm-code-font-size: 95%;
+  --ifm-shadow-color: var(--ctp-overlay0);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode - Catppuccin Mocha theme */
 [data-theme='dark'] {
-  --ifm-color-primary: var(--ctp-mocha-peach);
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+
+  --ifm-color-primary-dark: var(--ctp-teal);
+  --ifm-color-primary-darker: var(--ctp-red);
+  --ifm-color-primary-darkest: var(--ctp-flamingo);
+  --ifm-color-primary-light: var(--ctp-yellow);
+  --ifm-color-primary-lighter: var(--ctp-green);
+  --ifm-color-primary-lightest: var(--ctp-teal);
+  
+  --ifm-background-color: var(--ctp-base) !important;
+  --ifm-navbar-background-color: var(--ctp-base) !important;
+  --ifm-footer-background-color: var(--ctp-mantle);
+  
+  --ifm-font-color-base: var(--ctp-text);
+  --ifm-heading-color: var(--ctp-text);
+  
+  
+  --ifm-menu-color: var(--ctp-subtext0);
+  --ifm-menu-color-active: var(--ctp-peach);
+  
+  --ifm-shadow-color: var(--ctp-surface1);
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
-
-/* Import Alata font */
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');

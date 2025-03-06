@@ -91,15 +91,9 @@ const config = {
             to: '/contact',
             position: 'right',
           },
-
-          {
-            label: '|',
-            to: '#',
-            position: 'right',
-          },
           {
             label: 'Blog', 
-            to: '/blog',
+            to: '/docs',
             position: 'right'
           },
         ],
