@@ -11,6 +11,8 @@ export default function Home() {
   const { url, baseUrl } = siteConfig;
 
   const siteUrl = `${url}${baseUrl}`;
+  
+  const tUrl = "https://soymadip.me";
 
   return (
     <Layout title="Me" description="My portfolio website">
@@ -34,7 +36,7 @@ export default function Home() {
               </div>
               <div className={styles.socialIcons}>
                 <a
-                  href={`${url}/l/linkedin`}
+                  href={`${tUrl}/l/linkedin`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -50,7 +52,7 @@ export default function Home() {
                   <FaGithub size={24} />
                 </a>
                 <a
-                  href={`${url}/l/telegram`}
+                  href={`${tUrl}/l/telegram`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
