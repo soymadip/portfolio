@@ -11,7 +11,7 @@ export default function Home() {
   const { url, baseUrl } = siteConfig;
 
   const siteUrl = `${url}${baseUrl}`;
-  
+
   const tUrl = "https://soymadip.me";
 
   return (
@@ -20,13 +20,18 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.leftSection}>
             <p className={styles.intro}>Hello there, I'm</p>
-            <h1 className={styles.name}>Soumadip Das</h1>
+            <h1 className={styles.name}>
+              Soumadip Das
+              <span className={styles.nameComma}>,</span>
+            </h1>
             <div className={styles.subtitleWrapper}>
               <span className={styles.subtitlePrefix}>I am a</span>
               <h2 className={styles.subtitle}>FOSS Developer</h2>
+              <span className={styles.subtitlePrefix}>.</span>
             </div>
             <p className={styles.description}>
-              I tend to make solutions of real-life problems, that helps to make life less painful.
+              I tend to make solutions of real-life problems, that helps to make
+              life less painful.
             </p>
             <div className={styles.actionRow}>
               <div className={styles.cta}>

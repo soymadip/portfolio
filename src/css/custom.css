@@ -44,7 +44,7 @@
 /* Dark mode - Catppuccin Mocha theme */
 [data-theme='dark'] {
 
-  --ifm-color-primary-dark: var(--ctp-teal);
+  --ifm-color-primary-dark: var(--ctp-maroon);
   --ifm-color-primary-darker: var(--ctp-red);
   --ifm-color-primary-darkest: var(--ctp-flamingo);
   --ifm-color-primary-light: var(--ctp-yellow);
