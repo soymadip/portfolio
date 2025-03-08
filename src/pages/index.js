@@ -11,6 +11,7 @@ export default function Home() {
   const { url, baseUrl, customFields } = siteConfig;
 
   const srtUrl = customFields.srtUrl || url + baseUrl;
+  const profilePic = customFields.profilePic;
 
   return (
     <Layout title="Me" description="My portfolio website">
@@ -67,7 +68,7 @@ export default function Home() {
           </div>
           <div className={styles.rightSection}>
             <img
-              src="https://avatars.githubusercontent.com/u/84225810?v=4"
+              src={`${profilePic}`}
               alt="profile"
               className={styles.profilePic}
             />
