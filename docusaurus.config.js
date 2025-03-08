@@ -14,6 +14,8 @@ const config = {
   // <baseUrl> is pathname, site should be in url/baseUrl/
   url: 'https://new.soymadip.me',
   baseUrl: '/',
+  
+
 
   // GitHub pages deployment config. Delete if not GH pages.
   organizationName: 'soymadip',
@@ -99,8 +101,8 @@ const config = {
             position: 'right',
           },
           {
-            label: 'Blog', 
-            to: '/docs',
+            label: 'Notes', 
+            to: '/notes',
             position: 'right'
           },
         ],
@@ -151,6 +153,12 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+
+    customFields: {
+
+      // Shortlink Url
+      srtUrl: 'https://soymadip.me',
+    }
 };
 
 export default config;

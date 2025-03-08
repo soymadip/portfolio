@@ -1,4 +1,6 @@
+
 /* Animations */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -42,12 +44,24 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   100% {
     transform: scale(1);
   }
 }
+
+@keyframes gentleAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 /* Base layout */
 .hero {
@@ -178,7 +192,7 @@
 .ctaButton:hover {
   background-color: transparent;
   color: var(--ifm-color-primary);
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -202,14 +216,32 @@
 }
 
 .socialIcons a:hover {
-  opacity: 0.8; 
-  transform: translateY(-3px) scale(1.1);
+  opacity: 0.9; 
+  transform: translateY(-4px) scale(1.15);
+}
+
+.socialIcons a:nth-child(1):hover {
+  color: var(--ctp-latte-blue);
+}
+
+.socialIcons a:nth-child(2):hover {
+  color: var(--ctp-overlay1); 
+}
+
+.socialIcons a:nth-child(3):hover {
+  color: var(--ctp-latte-blue);
 }
 
 /* Staggered animation delays */
-.socialIcons a:nth-child(1) { animation-delay: 1.4s; }
-.socialIcons a:nth-child(2) { animation-delay: 1.5s; }
-.socialIcons a:nth-child(3) { animation-delay: 1.6s; }
+.socialIcons a:nth-child(1) { 
+  animation-delay: 1.4s;
+}
+.socialIcons a:nth-child(2) {
+  animation-delay: 1.55s;
+}
+.socialIcons a:nth-child(3) {
+  animation-delay: 1.66s;
+}
 
 .socialLink {
   display: inline-flex;
@@ -235,18 +267,19 @@
 }
 
 .profilePic {
-  height: 305px;
+  height: 260px; 
   border-radius: 20%;
   object-fit: cover;
   box-shadow: 0 0 15px var(--ifm-shadow-color);
-  margin-top: -10px;
+  margin-top: -30px;
   margin-right: 2rem; 
-  transition: all 0.5s ease;
-  animation: fadeIn 1s ease-out 0.5s both;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: gentleAppear 0.8s ease-out both;
+  will-change: transform;
 }
 
 .profilePic:hover {
-  transform: scale(1.03) rotate(2deg);
+  transform: scale(1.03);
   box-shadow: 0 8px 20px var(--ifm-shadow-color);
 }
 
@@ -286,11 +319,16 @@
   }
 
   .profilePic {
-    animation: fadeIn 0.8s ease-out 0.2s both, pulse 2s ease-in-out 1.5s;
-    height: 180px;
-    margin-top: -10px;
-    margin-bottom: 0.5rem;
+    animation: gentleAppear 0.7s ease-out both;
+    height: 175px;
+    margin-top: -18px;
+    margin-bottom: 0.9rem;
     margin-right: 0;
+  }
+
+  .profilePic:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px var(--ifm-shadow-color);
   }
 
   .leftSection {
@@ -397,8 +435,8 @@
   
   /* Maintain animations but with faster timing */
   .profilePic {
-    animation: fadeIn 0.7s ease-out 0.1s both, pulse 1.5s ease-in-out 1s;
-    height: 160px;
+    animation: gentleAppear 0.6s ease-out both;
+    height: 155px;
     margin-top: -32px;
     margin-bottom: 1.3rem;
   }

@@ -8,11 +8,9 @@ import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
-  const { url, baseUrl } = siteConfig;
+  const { url, baseUrl, customFields } = siteConfig;
 
-  const siteUrl = `${url}${baseUrl}`;
-
-  const tUrl = "https://soymadip.me/l";
+  const srtUrl = customFields.srtUrl || url + baseUrl;
 
   return (
     <Layout title="Me" description="My portfolio website">
@@ -41,7 +39,7 @@ export default function Home() {
               </div>
               <div className={styles.socialIcons}>
                 <a
-                  href={`${tUrl}/linkedin`}
+                  href={`${srtUrl}/l/linkedin`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -49,7 +47,7 @@ export default function Home() {
                   <FaLinkedin size={24} />
                 </a>
                 <a
-                  href={`${tUrl}/linkedin`}
+                  href={`${srtUrl}/l/github`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
@@ -57,7 +55,7 @@ export default function Home() {
                   <FaGithub size={24} />
                 </a>
                 <a
-                  href={`${tUrl}/telegram`}
+                  href={`${srtUrl}/l/telegram`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.socialLink}
