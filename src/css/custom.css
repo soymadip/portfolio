@@ -9,6 +9,18 @@
 /* Import Catppuccin colors */
 @import url('./catppuccin.css');
 
+/* Add smooth scrolling behavior for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 :root {
   /* Light mode (default) theme using Latte */
   --ifm-color-primary: var(--ctp-peach);

@@ -1,0 +1,14 @@
+---
+title: Bash
+language: bash
+---
+
+## What is Bash?
+
+Bash (Bourne Again SHell) is a Unix shell and command language written as a free software replacement for the Bourne shell. It is widely used as the default shell on Linux and macOS systems. Bash allows users to execute commands, automate tasks through scripting, and interact with the operating system.
+
+### Key Features of Bash
+- Command-line interface for interacting with the OS.
+- Support for scripting to automate repetitive tasks.
+- Built-in programming constructs like loops and conditionals.
+- Extensive support for command-line utilities and pipelines.

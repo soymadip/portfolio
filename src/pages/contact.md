@@ -1,10 +1,12 @@
 ---
-title: Contact Me
-description: Ways to get in touch with me
+title: Contact
+description: Get in touch with me
 ---
 
 # Contact Me
 
-Here's how you can get in touch with me.
+Feel free to reach out to me through any of the following methods:
 
-<!-- Add your contact information here -->
+- **Email**: [soumadip@zohomail.in](mailto:soumadip@zohomail.in)
+
+I look forward to hearing from you!

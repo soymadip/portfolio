@@ -1,39 +1,107 @@
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
+import {
+  catppuccinMocha, 
+  catppuccinLatte
+} from "./static/prism.js";
 
-import {themes as prismThemes} from 'prism-react-renderer';
-
+const ownerName = 'soymadip';
+const SiteUrl = 'https://soymadip.me';
 
 const config = {
+  
+  projectName: 'portfolio',
 
-  title: 'Soymadip',
-  tagline: 'Software Developer',
+  title: ownerName,
+  tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
 
-  // Set the production url of site
-  // <baseUrl> is pathname, site should be in url/baseUrl/
-  url: 'https://new.soymadip.me',
+  url: SiteUrl,
   baseUrl: '/',
 
-  customFields: {
-    profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
-    // Shortner Url
-    srtUrl: 'https://soymadip.me',
-  },
-
-  // GitHub pages deployment config. Delete if not GH pages.
-  organizationName: 'soymadip',
-  projectName: 'portfolio',
+  // GH Pages config. Delete else.
+  organizationName: ownerName,
   deploymentBranch: 'site',
-  onBrokenLinks: 'warn', // Change from 'throw' to 'warn'
+
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Use this field to set useful metadata like html lang.
-  // Ex, if site is Chinese, replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  customFields: {
+
+    profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+
+    socialLinks: [
+      {
+        icon: 'linkedin',
+        tooltip: 'Connect on LinkedIn',
+        url: SiteUrl + '/l/linkedin',
+        pin: true
+      },
+      {
+        icon: 'github',
+        tooltip: 'Check out my code',
+        url: SiteUrl + '/l/github',
+        pin: true
+      },
+      {
+        icon: 'telegram',
+        tooltip: 'Message me on Telegram',
+        url: SiteUrl + '/l/telegram',
+        pin: true
+      },
+      {
+        icon: 'mail',
+        tooltip: 'Send me an email',
+        url: SiteUrl + '/l/mail',
+      }
+    ],
+
+    projects: [
+      {
+        title: "KireiSakura Kit",
+        description: "A framework written in Bash for making powerful shell scripts.",
+        image: "https://raw.githubusercontent.com/soymadip/KireiSakura-Kit/refs/heads/main/Assets/social-card.png",
+        website: "https://kireisakura.soymadip.me",
+        github: null,
+        liveDemo: null,
+        featured: true,
+        tags: ["Bash", "Shell", "CLI"],
+      },
+      {
+        title: "StaticShort",
+        description: "A simple static URL shortener - no backend required, just static hosting.",
+        image: "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
+        website: "https://github.com/soymadip/StaticShort",
+        github: null,
+        liveDemo: "https://short.soymadip.me/demo",
+        featured: true,
+        tags: ["shortener", "static"],
+      },
+      {
+        title: "Regis",
+        description: "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
+        image: "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
+        website: "https://regis.soymadip.me",
+        github: null,
+        liveDemo: null,
+        featured: true,
+        tags: ["python", "pyrogram", "bot"],
+      },
+      {
+        title: "SDMP",
+        description: "The only solution needed for student data management ",
+        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/cts-logo.png",
+        website: null,
+        github: "https://github.com/soymadip/SDMP",
+        liveDemo: null,
+        featured: false,
+        tags: ["python", "pyrogram", "bot"],
+      },
+    ],
   },
 
   presets: [
@@ -41,24 +109,26 @@ const config = {
       'classic',
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          routeBasePath: "notes",
 
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/soymadip/',
+          sidebarPath: './docs/sidebar.js',
         },
+
         blog: {
-          showReadingTime: true,
+          routeBasePath: 'changelog',
+
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Remove this to remove the "edit this page" links.
-          // editUrl: 'https://github.com/soymadip/',
+
+          showReadingTime: false,
 
           onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
+          onInlineAuthors: 'ignore',
           onUntruncatedBlogPosts: 'warn',
         },
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -69,21 +139,23 @@ const config = {
 
   themeConfig:
     ({
-      // Project's social card
+      // Social card
       image: 'img/social-card.jpeg',
 
-      // Set dark mode as default
+      // Default: Dark mode
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
       },
 
       navbar: {
-        title: 'Soymadip',
+        title: ownerName,
+
         logo: {
           alt: 'Site Logo',
           src: 'favicon/favicon.ico',
         },
+
         items: [
           {
             label: 'About Me',
@@ -91,13 +163,13 @@ const config = {
             position: 'right',
           },
           {
-            label: 'Experience',
-            to: '/experience',
+            label: 'Projects',
+            to: '/projects',
             position: 'right',
           },
           {
-            label: 'Projects',
-            to: '/projects',
+            label: 'Experience',
+            to: '/experience',
             position: 'right',
           },
           {
@@ -112,9 +184,9 @@ const config = {
           },
         ],
       },
-/*       footer: {
+/*      footer: {
         style: 'dark',
-        links: [
+      links: [
           {
             title: 'Docs',
             items: [
@@ -151,11 +223,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} soymadip.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ` + ownerName,
       }, */
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: catppuccinLatte,
+        darkTheme: catppuccinMocha,
       },
     }),
 };

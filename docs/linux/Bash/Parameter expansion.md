@@ -1,0 +1,114 @@
+---
+title: Parameter Expansion
+---
+
+**Parameter expansion** is a powerful feature in bash (and other POSIX-compliant shells) that allows you to manipulate variables and their values. It's commonly used for tasks like providing default values, removing prefixes or suffixes, and performing simple text transformations.
+ 
+### Basic Syntax
+
+The basic syntax of parameter expansion is `${parameter}` or `${parameter:-word}`.
+
+- `${parameter}`: Expands to the value of `parameter`.
+- `${parameter:-word}`: If `parameter` is unset or null, expands to `word`; otherwise, expands to the value of `parameter`.
+
+
+### Common Parameter Expansion Operators
+
+
+1. **Default Values**:
+   You can provide a default value for a variable that hasn't been set. Here's the syntax:
+   ```bash
+   ${variable:-defaultValue}
+   ```
+   If `variable` is not set or is null, this will return `defaultValue`.
+2. **Assign Default Value**: 
+ ```
+ ${parameter:=word}
+ ```
+   - Assigns `word` to `parameter` if `parameter` is unset or null; otherwise, retains the value of `parameter`.
+4. **Error if Null or Unset**:
+   You can display an error message if a variable is null or not set.
+   ```bash
+   ${variable:?errorMessage}
+   ```
+   If `variable` is not set or is null, this will display `errorMessage`.
+4. **Substring Expansion**:
+   You can get a substring of a variable.
+   ```bash
+   ${variable:offset:length}
+   ```
+   This will return a substring of `variable` starting at `offset` and of length `length`.
+5. **Length of a String**:
+   You can get the length of a string stored in a variable.
+   ```bash
+   ${#variable}
+   ```
+   This will return the length of the value stored in `variable`.
+6. **Replace Substring**:
+   You can replace a substring in a variable.
+   ```bash
+   ${variable/pattern/replacement}
+   ```
+   This will replace the first match of `pattern` with `replacement` in `variable`.
+7. **Replace All Substrings**:
+   You can replace all occurrences of a substring in a variable.
+   ```bash
+   ${variable//pattern/replacement}
+   ```
+   This will replace all matches of `pattern` with `replacement` in `variable`.
+9. **Use Alternate Value**: `${parameter:+word}`
+   - Expands to `word` if `parameter` is set and not null; otherwise, expands to null.
+10. **Remove Prefix**: `${parameter#prefix}`
+   - Removes the shortest match of `prefix` from the beginning of `parameter`.
+11. **Remove Suffix**: `${parameter%suffix}`
+   - Removes the shortest match of `suffix` from the end of `parameter`.
+12. **Substring**: `${parameter:start:length}`
+   - Extracts a substring of length `length` from `parameter`, starting at position `start`. If `length` is omitted, extracts to the end of the string.
+
+### Examples
+
+Let's illustrate these operators with examples:
+
+```bash
+# Example variables
+unset var1
+var2="value2"
+var3=""
+
+# Use default value
+echo "${var1:-default}"   # Output: default
+echo "${var2:-default}"   # Output: value2
+
+# Assign default value
+echo "${var1:=default}"   # Output: default (and sets var1 to "default")
+echo "${var2:=default}"   # Output: value2 (var2 already has a value)
+
+# Use alternate value
+echo "${var1:+alt}"      # Output: (var1 is unset or null, so no output)
+echo "${var2:+alt}"      # Output: alt
+
+# Remove prefix
+var="prefix_value"
+echo "${var#prefix_}"    # Output: value
+
+# Remove suffix
+var="value_suffix"
+echo "${var%suffix}"     # Output: value
+
+# Substring
+var="substring"
+echo "${var:3:5}"        # Output: string
+```
+
+### Practical Use Cases
+
+Parameter expansion is commonly used in scripting for tasks such as:
+
+- Providing default values for variables.
+- Checking if variables are set or empty.
+- Manipulating strings by removing prefixes, suffixes, or extracting substrings.
+- Performing simple conditional logic based on variable values.
+
+### Summary
+
+Parameter expansion is a versatile feature in bash that allows for dynamic manipulation of variables and their values. By mastering parameter expansion, you can write more concise and flexible shell scripts for a variety of tasks.

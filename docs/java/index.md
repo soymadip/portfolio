@@ -1,0 +1,27 @@
+---
+title: Java 
+sidebar_position: 8
+---
+Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is widely used for building enterprise-scale applications, mobile applications, and web-based systems. Java's "write once, run anywhere" philosophy allows compiled code to run on all platforms that support Java without the need for recompilation.
+
+Key features of Java include:
+- **Platform Independence**: Java programs are compiled into bytecode, which can run on any device with a Java Virtual Machine (JVM).
+- **Object-Oriented**: Java follows the principles of object-oriented programming, making it modular, flexible, and extensible.
+- **Robust and Secure**: Java provides strong memory management, exception handling, and built-in security features.
+- **Rich API**: Java offers a vast library of classes and methods for various functionalities, including networking, data structures, and GUI development.
+
+### Example: Hello World in Java
+
+Here is a simple example of a Java program:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+This program defines a class `HelloWorld` with a `main` method, which is the entry point of any Java application. When executed, it prints "Hello, World!" to the console.
+
+Java is widely adopted in industries such as finance, healthcare, and e-commerce, making it a versatile and enduring choice for developers.
