@@ -267,7 +267,91 @@
 }
 
 .featuredProjects {
-  scroll-margin-top: 60px;
+  scroll-margin-top: 80px; /* Increased from 60px for better spacing when scrolling */
+  min-height: calc(100vh - 60px); /* Add minimum height to take up more vertical space */
+  margin-bottom: 0; /* Ensure no gap with the next section */
+}
+
+/* Contact section styles */
+.contactSection {
+  scroll-margin-top: 80px; /* Increased from 60px for consistency */
+  padding: 4rem 0 5rem; /* Reduced top padding from 5rem to 4rem */
+  background-color: var(--ifm-background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0; /* Adjust to eliminate any potential gap */
+  position: relative;
+  min-height: calc(100vh - 60px); /* Take up at least full viewport height minus navbar */
+}
+
+.contactSectionHeader {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Reduced from 2.5rem to 1.5rem to decrease space */
+  animation: slideUp 0.6s ease-out both;
+  margin-top: -1.5rem; /* Keeping the negative margin that moves the header higher */
+}
+
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem; /* Reduced from 1rem to 0.75rem for tighter spacing */
+}
+
+.contactSubtitle {
+  font-size: 1rem;
+  color: var(--ctp-subtext0);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive styles for contact section */
+@media (max-width: 768px) {
+  .contactSection {
+    scroll-margin-top: 70px; /* Adjusted for tablet */
+    padding: 1.5rem 1rem 4rem; /* Reduced top padding from 2rem to 1.5rem */
+  }
+  
+  .contactSectionHeader {
+    margin-top: -1rem; /* Less negative margin on smaller screens */
+  }
+  
+  .contactTitle {
+    font-size: 2rem;
+  }
+
+  .featuredProjects {
+    scroll-margin-top: 70px; /* Adjusted for tablet */
+    min-height: calc(100vh); /* Full viewport height on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    scroll-margin-top: 65px; /* Adjusted for mobile */
+    padding: 1rem 1rem 3rem; /* Reduced top padding from 1.5rem to 1rem */
+  }
+  
+  .contactSectionHeader {
+    margin-top: -0.5rem; /* Even less negative margin on mobile */
+    margin-bottom: 1.2rem; /* Reduced from 2rem to 1.2rem for mobile */
+  }
+  
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .featuredProjects {
+    scroll-margin-top: 65px; /* Adjusted for mobile */
+  }
 }
 
 /* Responsive Styles - Tablets */

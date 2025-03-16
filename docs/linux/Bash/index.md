@@ -1,6 +1,5 @@
 ---
 title: Bash
-language: bash
 ---
 
 ## What is Bash?

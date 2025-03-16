@@ -5,6 +5,11 @@
     <p>Holds collection of my projects, notes, and other content that I am passionate about.</p>
 </div>
 
+<br/>
+
+> [!IMPORTANT]
+> This repo will be converted to a separated project in future.  
+> As of now, this is more of my own need.
 
 ## 🛠 Technologies
 

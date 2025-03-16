@@ -1,91 +1,28 @@
+import { TbBrandCSharp } from "react-icons/tb";
+import { GrVirtualMachine } from "react-icons/gr";
+import { DiRasberryPi } from "react-icons/di";
+import { PiGithubLogoFill } from "react-icons/pi";
+
 import { 
-    SiPython, 
-    SiJavascript, 
-    SiCplusplus, 
-    SiLinux,
-    SiReact,
-    SiRust,
-    SiGo,
-    SiTypescript,
-    SiGithub,
-    SiLinkedin,
-    SiMastodon,
-    SiInstagram,
-    SiFacebook,
-    SiYoutube,
-    SiTwitch,
-    SiDiscord,
-    SiReddit,
-    SiStackoverflow,
-    SiLeetcode, 
-    SiHackerrank,
-    SiCodeforces,
-    SiMatrix,
-    SiGmail,
-    SiXing,
-    SiKaggle,
-    SiCodesandbox,
-    SiProtonmail,
-    SiSignal,
-    SiZoom,
-    SiObsidian,
-    SiNotion,
-    SiMarkdown,
-    SiSubstack,
-    SiThreads,
-    SiOpenai,
-    SiMysql,
-    SiGnubash
+  SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiGnubash, 
+  SiLinux, SiLinuxfoundation, SiArchlinux, SiAlmalinux, SiAlpinelinux, SiKalilinux, SiLinuxmint, 
+  SiRockylinux, SiVoidlinux, SiUbuntu, SiKubuntu, SiUbuntumate, SiDebian, SiRedhat, SiGithub, 
+  SiLinkedin, SiMastodon, SiInstagram, SiFacebook, SiYoutube, SiTwitch, SiDiscord, SiReddit, 
+  SiStackoverflow, SiLeetcode, SiHackerrank, SiCodeforces, SiMatrix, SiGmail, SiProtonmail, SiSignal, SiReplit,
+  SiZoom, SiNotion, SiObsidian, SiMarkdown, SiSubstack, SiThreads, SiOpenai, SiDocker, SiPodman, 
+  SiLinuxcontainers, SiVmware, SiXing, SiKaggle, SiCodesandbox,
+  SiGooglechrome, SiFirefox, SiSafari, SiBrave, SiOpera, SiTorbrowser, SiVivaldi, SiZendesk,
+  SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu,SiSimkl
 } from 'react-icons/si';
 
 import { 
-    FaJava,
-    FaEnvelope,
-    FaRss,
-    FaGitAlt,
-    FaTwitter,
-    FaGithub,
-    FaLinkedin,
-    FaTelegramPlane,
-    FaMedium,
-    FaGlobe,
-    FaDev,
-    FaPinterest,
-    FaWhatsapp,
-    FaSlack,
-    FaSkype,
-    FaSnapchatGhost,
-    FaTiktok,
-    FaSteam,
-    FaGitlab,
-    FaBitbucket,
-    FaKeybase,
-    FaCodepen,
-    FaJsSquare,
-    FaHackerNews,
-    FaVimeoV,
-    FaFlickr,
-    FaDribbble,
-    FaBehance,
-    FaPatreon,
-    FaPaypal,
-    FaEthereum,
-    FaBitcoin,
-    FaLaptopCode,
-    FaCode,
-    FaBlogger,
-    FaWordpress,
-    FaHashtag,
-    FaUserCircle,
-    FaUserSecret,
-    FaBug,
-    FaRobot,
-    FaHtml5,
-    FaCss3Alt,
-    FaPhp,
+  FaJava, FaEnvelope, FaRss, FaGitAlt, FaTwitter, FaTelegramPlane, FaMedium, FaPhp, 
+  FaGlobe, FaDev, FaPinterest, FaWhatsapp, FaSlack, FaSkype, FaSnapchatGhost, FaTiktok, FaSteam, 
+  FaGitlab, FaBitbucket, FaKeybase, FaCodepen, FaJsSquare, FaHackerNews, FaVimeoV, FaFlickr, 
+  FaDribbble, FaBehance, FaPatreon, FaPaypal, FaEthereum, FaBitcoin, FaLaptopCode, FaCode, 
+  FaBlogger, FaWordpress, FaHashtag, FaUserCircle, FaUserSecret, FaBug, FaRobot, FaHtml5, FaCss3Alt, 
+  FaFedora, FaInternetExplorer, FaEdge, FaTv, FaFilm, FaVideo, FaPodcast
 } from "react-icons/fa";
-
-import { TbBrandCSharp } from "react-icons/tb";
 
 
 
@@ -94,418 +31,202 @@ import { TbBrandCSharp } from "react-icons/tb";
 export const iconMap = {
 
   // Programming languages
-  python: {
-    icon: SiPython,
-    color: '#3776AB'
-  },
-  javascript: {
-    icon: SiJavascript,
-    color: '#F7DF1E'
-  },
-  cpp: {
-    icon: SiCplusplus,
-    color: '#00599C'
-  },
-  linux: {
-    icon: SiLinux,
-    color: '#FCC624'
-  },
-  shell: {
-    icon: SiGnubash,
-    color: '#4EAA25'
-  },
-  bash: {
-    icon: SiGnubash,
-    color: '#4EAA25'
-  },
-  react: {
-    icon: SiReact,
-    color: '#61DAFB'
-  },
-  java: {
-    icon: FaJava,
-    color: '#007396'
-  },
-  rust: {
-    icon: SiRust,
-    color: '#ffffff'
-  },
-  go: {
-    icon: SiGo,
-    color: '#00ADD8'
-  },
-  typescript: {
-    icon: SiTypescript,
-    color: '#3178C6'
-  },
-  csharp: {
-    icon: TbBrandCSharp,
-    color: '#239120'
-  },
-  html: {
-    icon: FaHtml5,
-    color: '#E34F26'
-  },
-  css: {
-    icon: FaCss3Alt,
-    color: '#1572B6'
-  },
-  sql: {
-    icon: SiMysql,
-    color: '#4479A1'
-  },
-  php: {
-    icon: FaPhp,
-    color: '#777BB4'
-  },
+  python: { icon: SiPython, color: '#3776AB' },
+  javascript: { icon: SiJavascript, color: '#F7DF1E' },
+  jssquare: { icon: FaJsSquare, color: '#F7DF1E' },
+  typescript: { icon: SiTypescript, color: '#3178C6' },
+  cpp: { icon: SiCplusplus, color: '#00599C' },
+  csharp: { icon: TbBrandCSharp, color: '#239120' },
+  rust: { icon: SiRust, color: '#ffffff' },
+  go: { icon: SiGo, color: '#00ADD8' },
+  java: { icon: FaJava, color: '#007396' },
+  php: { icon: FaPhp, color: '#777BB4' },
+  html: { icon: FaHtml5, color: '#E34F26' },
+  css: { icon: FaCss3Alt, color: '#1572B6' },
+  sql: { icon: SiMysql, color: '#4479A1' },
+
+
+  // Competitive programming platforms
+  leetcode: { icon: SiLeetcode, color: '#FFA116' },
+  hackerrank: { icon: SiHackerrank, color: '#2EC866' },
+  codeforces: { icon: SiCodeforces, color: '#1F8ACB' },
+  replit: { icon: SiReplit, color: '#FA5302' },
   
+
+
+  // Operating systems and containers
+  linux: { icon: SiLinux, color: '#FCC624' },
+  linuxfoundation: { icon: SiLinuxfoundation, color: '#000000' },
+  arch: { icon: SiArchlinux, color: '#1793D1' },
+  archlinux: { icon: SiArchlinux, color: '#1793D1' },
+  ubuntu: { icon: SiUbuntu, color: '#E95420' },
+  kubuntu: { icon: SiKubuntu, color: '#0078D6' },
+  ubuntumate: { icon: SiUbuntumate, color: '#2C001E' },
+  debian: { icon: SiDebian, color: '#A80030' },
+  redhat: { icon: SiRedhat, color: '#EE0000' },
+  fedora: { icon: FaFedora, color: '#294172' },
+  kalilinux: { icon: SiKalilinux, color: '#557C94' },
+  linuxmint: { icon: SiLinuxmint, color: '#87CF3E' },
+  voidlinux: { icon: SiVoidlinux, color: '#8BC1A2' },
+  alpinelinux: { icon: SiAlpinelinux, color: '#0D597F' },
+  alpine: { icon: SiAlpinelinux, color: '#0D597F' },
+  almalinux: { icon: SiAlmalinux, color: '#1793D1' },
+  rockylinux: { icon: SiRockylinux, color: '#000000' },
+  raspberry: { icon: DiRasberryPi, color: '#C51A4A' },
+  raspberryPi: { icon: DiRasberryPi, color: '#C51A4A' },
+  raspberrypi: { icon: DiRasberryPi, color: '#C51A4A' },
+  raspberryPiZero: { icon: DiRasberryPi, color: '#C51A4A' },
+  raspian: { icon: DiRasberryPi, color: '#C51A4A' },
+  docker: { icon: SiDocker, color: '#2496ED' },
+  podman: { icon: SiPodman, color: '#2496ED' },
+  container: { icon: SiLinuxcontainers, color: '#2496ED' },
+  containers: { icon: SiLinuxcontainers, color: '#2496ED' },
+  linuxcontainers: { icon: SiLinuxcontainers, color: '#2496ED' },
+  vm: { icon: GrVirtualMachine, color: '#000000' },
+  vmware: { icon: SiVmware, color: '#F3801D' },
+
+
+  // Shells and tools
+  shell: { icon: SiGnubash, color: '#4EAA25' },
+  bash: { icon: SiGnubash, color: '#4EAA25' },
+  react: { icon: SiReact, color: '#61DAFB' },
+
+
   // Social platforms
-  github: {
-    icon: SiGithub,
-    color: '#181717'
-  },
-  git: {
-    icon: FaGitAlt,
-    color: '#F05032'
-  },
-  linkedin: {
-    icon: SiLinkedin,
-    color: '#0A66C2'
-  },
-  twitter: {
-    icon: FaTwitter,
-    color: '#1DA1F2'
-  },
-  x: {
-    icon: FaTwitter,
-    color: '#1DA1F2'
-  },
-  mastodon: {
-    icon: SiMastodon,
-    color: '#6364FF'
-  },
-  instagram: {
-    icon: SiInstagram,
-    color: '#E4405F'
-  },
-  insta: {
-    icon: SiInstagram,
-    color: '#E4405F'
-  },
-  facebook: {
-    icon: SiFacebook,
-    color: '#1877F2'
-  },
-  fb: {
-    icon: SiFacebook,
-    color: '#1877F2'
-  },
-  youtube: {
-    icon: SiYoutube,
-    color: '#FF0000'
-  },
-  yt: {
-    icon: SiYoutube,
-    color: '#FF0000'
-  },
-  twitch: {
-    icon: SiTwitch,
-    color: '#9146FF'
-  },
-  discord: {
-    icon: SiDiscord,
-    color: '#5865F2'
-  },
-  discordapp: {
-    icon: SiDiscord,
-    color: '#5865F2'
-  },
-  reddit: {
-    icon: SiReddit,
-    color: '#FF4500'
-  },
-  stackoverflow: {
-    icon: SiStackoverflow,
-    color: '#F58025'
-  },
-  email: {
-    icon: FaEnvelope,
-    color: '#EA4335'
-  },
-  mail: {
-    icon: FaEnvelope,
-    color: '#EA4335'
-  },
-  contact: {
-    icon: FaEnvelope,
-    color: '#EA4335'
-  },
-  rss: {
-    icon: FaRss,
-    color: '#FFA500'
-  },
-  
-  website: {
-    icon: FaGlobe,
-    color: '#4285F4'
-  },
-  web: {
-    icon: FaGlobe,
-    color: '#4285F4'
-  },
-  homepage: {
-    icon: FaGlobe,
-    color: '#4285F4'
-  },
-  globe: {
-    icon: FaGlobe,
-    color: '#4285F4'
-  },
-  
-  // Developer platforms
-  gitlab: {
-    icon: FaGitlab,
-    color: '#FC6D26'
-  },
-  bitbucket: {
-    icon: FaBitbucket,
-    color: '#0052CC'
-  },
-  dev: {
-    icon: FaDev,
-    color: '#0A0A0A'
-  },
-  devto: {
-    icon: FaDev,
-    color: '#0A0A0A'
-  },
-  codepen: {
-    icon: FaCodepen,
-    color: '#000000'
-  },
-  leetcode: {
-    icon: SiLeetcode,
-    color: '#FFA116'
-  },
-  hackerrank: {
-    icon: SiHackerrank,
-    color: '#00EA64'
-  },
-  codeforces: {
-    icon: SiCodeforces,
-    color: '#1F8ACB'
-  },
-  codesandbox: {
-    icon: SiCodesandbox,
-    color: '#151515'
-  },
-  
+  github: { icon: SiGithub, color: '#585b70' },
+  githubalt: { icon: PiGithubLogoFill, color: '#585b70' },
+  git: { icon: FaGitAlt, color: '#F05032' },
+  gitlab: { icon: FaGitlab, color: '#FC6D26' },
+  bitbucket: { icon: FaBitbucket, color: '#0052CC' },
+  linkedin: { icon: SiLinkedin, color: '#0A66C2' },
+  twitter: { icon: FaTwitter, color: '#1DA1F2' },
+  x: { icon: FaTwitter, color: '#1DA1F2' },
+  mastodon: { icon: SiMastodon, color: '#6364FF' },
+  instagram: { icon: SiInstagram, color: '#E4405F' },
+  insta: { icon: SiInstagram, color: '#E4405F' },
+  facebook: { icon: SiFacebook, color: '#1877F2' },
+  fb: { icon: SiFacebook, color: '#1877F2' },
+  youtube: { icon: SiYoutube, color: '#FF0000' },
+  yt: { icon: SiYoutube, color: '#FF0000' },
+  twitch: { icon: SiTwitch, color: '#9146FF' },
+  discord: { icon: SiDiscord, color: '#5865F2' },
+  discordapp: { icon: SiDiscord, color: '#5865F2' },
+  reddit: { icon: SiReddit, color: '#FF4500' },
+  stackoverflow: { icon: SiStackoverflow, color: '#F58025' },
+  pinterest: { icon: FaPinterest, color: '#E60023' },
+  snapchat: { icon: FaSnapchatGhost, color: '#FFFC00' },
+  tiktok: { icon: FaTiktok, color: '#000000' },
+  threads: { icon: SiThreads, color: '#000000' },
+
+
   // Messaging platforms
-  telegram: {
-    icon: FaTelegramPlane,
-    color: '#26A5E4'
-  },
-  tg: {
-    icon: FaTelegramPlane,
-    color: '#26A5E4'
-  },
-  whatsapp: {
-    icon: FaWhatsapp,
-    color: '#25D366'
-  },
-  wa: {
-    icon: FaWhatsapp,
-    color: '#25D366'
-  },
-  slack: {
-    icon: FaSlack,
-    color: '#4A154B'
-  },
-  skype: {
-    icon: FaSkype,
-    color: '#00AFF0'
-  },
-  matrix: {
-    icon: SiMatrix,
-    color: '#000000'
-  },
-  signal: {
-    icon: SiSignal,
-    color: '#3A76F0'
-  },
-  zoom: {
-    icon: SiZoom,
-    color: '#2D8CFF'
-  },
-  
+  telegram: { icon: FaTelegramPlane, color: '#26A5E4' },
+  tg: { icon: FaTelegramPlane, color: '#26A5E4' },
+  whatsapp: { icon: FaWhatsapp, color: '#25D366' },
+  wp: { icon: FaWhatsapp, color: '#25D366' },
+  slack: { icon: FaSlack, color: '#4A154B' },
+  skype: { icon: FaSkype, color: '#00AFF0' },
+  matrix: { icon: SiMatrix, color: '#000000' },
+  signal: { icon: SiSignal, color: '#3A76F0' },
+  zoom: { icon: SiZoom, color: '#2D8CFF' },
+
+
   // Email platforms
-  gmail: {
-    icon: SiGmail,
-    color: '#EA4335'
-  },
-  protonmail: {
-    icon: SiProtonmail,
-    color: '#8B89CC'
-  },
+  email: { icon: FaEnvelope, color: '#EA4335' },
+  mail: { icon: FaEnvelope, color: '#EA4335' },
+  contact: { icon: FaEnvelope, color: '#EA4335' },
+  gmail: { icon: SiGmail, color: '#EA4335' },
+  protonmail: { icon: SiProtonmail, color: '#8B89CC' },
+
   
   // Blog/writing platforms
-  medium: {
-    icon: FaMedium,
-    color: '#000000'
-  },
-  blog: {
-    icon: FaBlogger,
-    color: '#FF5722'
-  },
-  wordpress: {
-    icon: FaWordpress,
-    color: '#21759B'
-  },
-  substack: {
-    icon: SiSubstack,
-    color: '#FF6719'
-  },
-  
-  // Creative platforms
-  dribbble: {
-    icon: FaDribbble,
-    color: '#EA4C89'
-  },
-  behance: {
-    icon: FaBehance,
-    color: '#1769FF'
-  },
-  flickr: {
-    icon: FaFlickr,
-    color: '#0063DC'
-  },
-  vimeo: {
-    icon: FaVimeoV,
-    color: '#1AB7EA'
-  },
-  
-  // Payment/donation
-  patreon: {
-    icon: FaPatreon,
-    color: '#F96854'
-  },
-  paypal: {
-    icon: FaPaypal,
-    color: '#00457C'
-  },
-  ethereum: {
-    icon: FaEthereum,
-    color: '#3C3C3D'
-  },
-  bitcoin: {
-    icon: FaBitcoin,
-    color: '#F7931A'
-  },
-  
-  // Professional
-  xing: {
-    icon: SiXing,
-    color: '#006567'
-  },
-  kaggle: {
-    icon: SiKaggle,
-    color: '#20BEFF'
-  },
-  
-  // Knowledge/note-taking
-  notion: {
-    icon: SiNotion,
-    color: '#000000'
-  },
-  obsidian: {
-    icon: SiObsidian,
-    color: '#7C3AED'
-  },
-  markdown: {
-    icon: SiMarkdown,
-    color: '#000000'
-  },
-  
-  // Misc
-  hackernews: {
-    icon: FaHackerNews,
-    color: '#FF6600'
-  },
-  hn: {
-    icon: FaHackerNews,
-    color: '#FF6600'
-  },
-  keybase: {
-    icon: FaKeybase,
-    color: '#33A0FF'
-  },
-  openai: {
-    icon: SiOpenai,
-    color: '#412991'
-  },
-  code: {
-    icon: FaCode,
-    color: '#007ACC'
-  },
-  programming: {
-    icon: FaLaptopCode,
-    color: '#333333'
-  },
-  user: {
-    icon: FaUserCircle,
-    color: '#4285F4'
-  },
-  anonymous: {
-    icon: FaUserSecret,
-    color: '#666666'
-  },
-  debug: {
-    icon: FaBug,
-    color: '#E91E63'
-  },
-  bot: {
-    icon: FaRobot,
-    color: '#00BCD4'
-  },
-  steam: {
-    icon: FaSteam,
-    color: '#000000'
-  },
-  jssquare: {
-    icon: FaJsSquare,
-    color: '#F7DF1E'
-  },
-  pinterest: {
-    icon: FaPinterest,
-    color: '#E60023'
-  },
-  snapchat: {
-    icon: FaSnapchatGhost,
-    color: '#FFFC00'
-  },
-  tiktok: {
-    icon: FaTiktok,
-    color: '#000000'
-  },
-  threads: {
-    icon: SiThreads,
-    color: '#000000'
-  },
-  falinkedin: {
-    icon: FaLinkedin,
-    color: '#0A66C2'
-  },
-  fagithub: {
-    icon: FaGithub,
-    color: '#181717'
-  },
-  fatelegramplane: {
-    icon: FaTelegramPlane,
-    color: '#26A5E4'
-  },
-  hashtag: {
-    icon: FaHashtag,
-    color: '#ffffff'
-  }
-};
+  medium: { icon: FaMedium, color: '#000000' },
+  blog: { icon: FaBlogger, color: '#FF5722' },
+  wordpress: { icon: FaWordpress, color: '#21759B' },
+  substack: { icon: SiSubstack, color: '#FF6719' },
+  dev: { icon: FaDev, color: '#0A0A0A' },
+  rss: { icon: FaRss, color: '#FFA500' },
 
+
+  // Creative platforms
+  dribbble: { icon: FaDribbble, color: '#EA4C89' },
+  behance: { icon: FaBehance, color: '#1769FF' },
+  flickr: { icon: FaFlickr, color: '#0063DC' },
+  vimeo: { icon: FaVimeoV, color: '#1AB7EA' },
+
+
+  // Payment/donation
+  patreon: { icon: FaPatreon, color: '#F96854' },
+  paypal: { icon: FaPaypal, color: '#00457C' },
+  ethereum: { icon: FaEthereum, color: '#3C3C3D' },
+  bitcoin: { icon: FaBitcoin, color: '#F7931A' },
+
+
+  // Professional
+  xing: { icon: SiXing, color: '#006567' },
+  kaggle: { icon: SiKaggle, color: '#20BEFF' },
+
+
+  // Knowledge/note-taking
+  notion: { icon: SiNotion, color: '#000000' },
+  obsidian: { icon: SiObsidian, color: '#7C3AED' },
+  markdown: { icon: SiMarkdown, color: '#000000' },
+
+
+  // Misc
+  hackernews: { icon: FaHackerNews, color: '#FF6600' },
+  hn: { icon: FaHackerNews, color: '#FF6600' },
+  keybase: { icon: FaKeybase, color: '#33A0FF' },
+  openai: { icon: SiOpenai, color: '#412991' },
+  code: { icon: FaCode, color: '#007ACC' },
+  programming: { icon: FaLaptopCode, color: '#333333' },
+  user: { icon: FaUserCircle, color: '#4285F4' },
+  anonymous: { icon: FaUserSecret, color: '#666666' },
+  debug: { icon: FaBug, color: '#E91E63' },
+  bot: { icon: FaRobot, color: '#00BCD4' },
+  steam: { icon: FaSteam, color: '#000000' },
+  hashtag: { icon: FaHashtag, color: '#ffffff' },
+  codesandbox: { icon: SiCodesandbox, color: '#151515' },
+  codeforces: { icon: SiCodeforces, color: '#1F8ACB' },
+  codepen: { icon: FaCodepen, color: '#000000' },
+  gitlab: { icon: FaGitlab, color: '#FC6D26' },
+  bitbucket: { icon: FaBitbucket, color: '#0052CC' },
+  dev: { icon: FaDev, color: '#0A0A0A' },
+  website: { icon: FaGlobe, color: '#4285F4' },
+  web: { icon: FaGlobe, color: '#4285F4' },
+  rss: { icon: FaRss, color: '#FFA500' },
+  
+  // Content and anime tracking
+  imdb: { icon: SiImdb, color: '#F5C518' },
+  tvdb: { icon: FaTv, color: '#4BB7AA' },
+  themoviedb: { icon: FaFilm, color: '#01B4E4' },
+  tmdb: { icon: FaFilm, color: '#01B4E4' },
+  myanimelist: { icon: SiMyanimelist, color: '#2E51A2' },
+  mal: { icon: SiMyanimelist, color: '#2E51A2' },
+  anilist: { icon: SiAnilist, color: '#02A9FF' },
+  simkl: { icon: SiSimkl, color: '#ffffff' },
+  letterboxd: { icon: SiLetterboxd, color: '#00A13D' },
+  trakt: { icon: FaVideo, color: '#ED1C24' },
+  crunchyroll: { icon: SiCrunchyroll, color: '#F78B24' },
+  kitsu: { icon: SiKitsu, color: '#F75239' },
+  animenewsnetwork: { icon: FaPodcast, color: '#AA0000' },
+  ann: { icon: FaPodcast, color: '#AA0000' },
+
+  // Browsers
+  chrome: { icon: SiGooglechrome, color: '#4285F4' },
+  googlechrome: { icon: SiGooglechrome, color: '#4285F4' },
+  firefox: { icon: SiFirefox, color: '#FF7139' },
+  safari: { icon: SiSafari, color: '#000000' },
+  edge: { icon: FaEdge, color: '#0078D7' },
+  microsoftedge: { icon: FaEdge, color: '#0078D7' },
+  brave: { icon: SiBrave, color: '#FB542B' },
+  opera: { icon: SiOpera, color: '#FF1B2D' },
+  tor: { icon: SiTorbrowser, color: '#7D4698' },
+  torbrowser: { icon: SiTorbrowser, color: '#7D4698' },
+  vivaldi: { icon: SiVivaldi, color: '#EF3939' },
+  ie: { icon: FaInternetExplorer, color: '#0076D6' },
+  internetexplorer: { icon: FaInternetExplorer, color: '#0076D6' },
+  "zen-browser": { icon: SiZendesk, color: '#00363D' },
+  zenbrowser: { icon: SiZendesk, color: '#00363D' },
+  zen: { icon: SiZendesk, color: '#00363D' },
+};

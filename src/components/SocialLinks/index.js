@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import { FaQuestionCircle } from 'react-icons/fa';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
-import Tooltip from '../Tooltip';
-import { iconMap } from '../../utils/iconMappings';
-import { FaQuestionCircle } from 'react-icons/fa';
+import Tooltip from '@site/src/components/Tooltip';
+import { iconMap } from '@site/src/utils/iconMappings';
 
 
 // Default icon & icon
@@ -60,18 +60,18 @@ export default function SocialIcons({ showAll = false }) {
         const newDelays = {};
 
         socialLinks.forEach((_, index) => {
-          let baseDelay;
+          let startDelay;
           let incrementDelay = 0.1;
           
           if (isMobile) {
-            baseDelay = 0.7;
+            startDelay = 0.7;
           } else if (isTablet) {
-            baseDelay = 0.9;
+            startDelay = 0.9;
           } else {
-            baseDelay = 1.3;
+            startDelay = 1.3;
           }
           
-          newDelays[index] = `${baseDelay + (index * incrementDelay)}s`;
+          newDelays[index] = `${startDelay + (index * incrementDelay)}s`;
         });
 
         setAnimationDelays(newDelays);
@@ -125,7 +125,7 @@ export default function SocialIcons({ showAll = false }) {
           return (
             <Tooltip
               key={index}
-              content={social.tooltip || social.icon || 'Link'}
+              content={social.desc || social.icon || 'Link'}
               position="top"
               color={displayColor}
             >

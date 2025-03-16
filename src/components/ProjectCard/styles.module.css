@@ -18,6 +18,10 @@
 .projectsSection {
   padding: 40px 20px 80px;
   background-color: var(--ifm-background-color);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 

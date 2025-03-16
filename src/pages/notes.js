@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './css/notes.module.css';
 
-import IndexNote from '@site/src/components/IndexNote';
+import NoteCards from '@site/src/components/NoteCard';
 import { usePluginData } from '@docusaurus/useGlobalData';
 
 
@@ -26,7 +26,7 @@ export default function Notes() {
               A collection of my self written notes & reference guides
             </p>
           </header>
-          <IndexNote />
+          <NoteCards/>
         </div>
       </main>
     </Layout>

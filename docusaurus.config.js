@@ -5,6 +5,7 @@ import {
 
 const ownerName = 'soymadip';
 const SiteUrl = 'https://soymadip.me';
+const SrtUrl = `${SiteUrl}/l`;
 
 const config = {
   
@@ -14,7 +15,7 @@ const config = {
   tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
 
-  url: SiteUrl,
+  url: 'https://portfolio.soymadip.me',
   baseUrl: '/',
 
 
@@ -36,27 +37,67 @@ const config = {
 
     socialLinks: [
       {
-        icon: 'linkedin',
-        tooltip: 'Connect on LinkedIn',
-        url: SiteUrl + '/l/linkedin',
-        pin: true
-      },
-      {
-        icon: 'github',
-        tooltip: 'Check out my code',
-        url: SiteUrl + '/l/github',
-        pin: true
-      },
-      {
-        icon: 'telegram',
-        tooltip: 'Message me on Telegram',
-        url: SiteUrl + '/l/telegram',
-        pin: true
-      },
-      {
+        name: 'Email',
         icon: 'mail',
-        tooltip: 'Send me an email',
-        url: SiteUrl + '/l/mail',
+        desc: 'Send me an email',
+        url: `${SrtUrl}/mail`,
+      },     
+      {
+        name: 'LinkedIn',
+        icon: 'linkedin',
+        desc: 'Connect on LinkedIn',
+        url: `${SrtUrl}/linkedin`,
+        pin: true
+      },
+      {
+        name: 'Telegram',
+        icon: 'telegram',
+        desc: 'Reach me on Telegram',
+        url: `${SrtUrl}/telegram`,
+        pin: true
+      },
+      {
+        name: 'Discord',
+        icon: 'discord',
+        desc: 'Become my friend',
+        url: `${SrtUrl}/discord`,
+      },
+      {
+        name: 'GitHub',
+        icon: 'githubalt',
+        desc: 'Check out my git repos',
+        url: `${SrtUrl}/github`,
+        pin: true
+      },
+      {
+        name: 'GitLab',
+        icon: 'gitlab',
+        desc: 'View my GitLab profile',
+        url: `${SrtUrl}/github`,
+      },
+/*       {
+        name: 'Instagram',
+        icon: 'instagram',
+        desc: 'Follow me on Instagram',
+        url: `${SrtUrl}/instagram`,
+      }, */
+      {
+        name: 'Twitter',
+        icon: 'x',
+        desc: 'Find me on Twitter',
+        url:  `${SrtUrl}/twitter`
+      },
+      {
+        name: 'Anilist',
+        icon: 'anilist',
+        desc: 'If you are otaku, check out!',
+        url: `${SrtUrl}/anilist`,
+      },
+      {
+        name: 'Simkl',
+        icon: 'simkl',
+        desc: 'I watch Movies & Series too!',
+        url: `${SrtUrl}/simkl`,
       }
     ],
 
@@ -139,6 +180,14 @@ const config = {
 
   themeConfig:
     ({
+    
+      metadata: [
+        {
+          name: 'theme-color',
+          content: '#202030'
+        },
+      ],
+
       // Social card
       image: 'img/social-card.jpeg',
 
@@ -157,24 +206,24 @@ const config = {
         },
 
         items: [
-          {
+/*           {
             label: 'About Me',
-            to: '/about',
+            to: '#about',
             position: 'right',
-          },
+          }, */
           {
             label: 'Projects',
-            to: '/projects',
+            to: '#featured-projects',
             position: 'right',
           },
-          {
+/*           {
             label: 'Experience',
-            to: '/experience',
+            to: '#experience',
             position: 'right',
-          },
+          }, */
           {
             label: 'Contact',
-            to: '/contact',
+            to: '#contact',
             position: 'right',
           },
           {

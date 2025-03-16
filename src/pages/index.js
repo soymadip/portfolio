@@ -4,13 +4,18 @@ import styles from "./css/index.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 // Import components
-import ProjectCard from "../components/ProjectCard";
-import SocialLinks from "../components/SocialLinks";
+import ProjectCard from "@site/src/components/ProjectCard";
+import SocialLinks from "@site/src/components/SocialLinks";
+import SocialCard from "@site/src/components/SocialCard";
+
+// Import icon
+import { FaAddressCard } from "react-icons/fa";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const { customFields } = siteConfig;
   const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   const profilePic = customFields.profilePic;
   
@@ -67,6 +72,19 @@ export default function Home() {
           ref={projectsRef}
         >
           <ProjectCard homePage={true} />
+        </div>
+        <div 
+          id="contact"
+          className={styles.contactSection}
+          ref={contactRef}
+        >
+          <div className={styles.contactSectionHeader}>
+            <h2 className={styles.contactTitle}>Get In Touch</h2>
+            <p className={styles.contactSubtitle}>
+              Feel free to reach out for collaborations, questions, or just to say hello!
+            </p>
+          </div>
+          <SocialCard />
         </div>
       </main>
     </Layout>
