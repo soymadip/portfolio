@@ -101,7 +101,7 @@
   animation: slideUp 0.6s ease-out 0.4s both;
 }
 
-.name {
+.title {
   font-size: 4.5rem;
   font-weight: 500;
   margin: 0.2rem 0;
@@ -113,12 +113,12 @@
   display: inline-block;
 }
 
-.name:hover {
+.title:hover {
   color: var(--ifm-color-primary);
   transform: translateY(-2px);
 }
 
-.name::after {
+.title::after {
   content: '';
   position: absolute;
   width: 0;
@@ -129,11 +129,11 @@
   transition: width 0.3s ease;
 }
 
-.name:hover::after {
+.title:hover::after {
   width: 100%;
 }
 
-.nameComma {
+.titleComma {
   font-size: 1rem;
   font-weight: 500;
   color: var(--ctp-overlay2);
@@ -414,13 +414,13 @@
     align-items: center;
   }
 
-  .name {
+  .title {
     animation: slideUp 0.6s ease-out 0.5s both;
     font-size: 3rem;
     margin: 0.2rem 0;
   }
 
-  .nameComma {
+  .titleComma {
     font-size: 0.9rem;
     animation: slideUp 0.6s ease-out 0.5s both;
   }
@@ -505,12 +505,12 @@
     margin-bottom: 1.3rem;
   }
   
-  .name { 
+  .title { 
     font-size: 2.3rem; 
     animation: slideUp 0.5s ease-out 0.3s both;
   }
   
-  .nameComma {
+  .titleComma {
     font-size: 0.8rem;
     animation: slideUp 0.5s ease-out 0.3s both;
   }
@@ -551,7 +551,7 @@
 /* Consolidated Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .hero, .leftSection, .rightSection, .profilePic, 
-  .intro, .name, .nameComma, .subtitleWrapper, .description, 
+  .intro, .title, .titleComma, .subtitleWrapper, .description, 
   .actionRow, .socialIcons a {
     animation: none !important;
     transition: none !important;

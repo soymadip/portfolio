@@ -206,25 +206,29 @@ const config = {
         },
 
         items: [
-/*           {
-            label: 'About Me',
-            to: '#about',
+          {
+            label: 'About Me*',
+            to: '/#about',
             position: 'right',
-          }, */
+            activeBaseRegex: '^/#about',
+          },
           {
             label: 'Projects',
-            to: '#featured-projects',
+            to: '/#featured-projects',
             position: 'right',
+            activeBaseRegex: '^/#featured-projects',
           },
-/*           {
-            label: 'Experience',
-            to: '#experience',
-            position: 'right',
-          }, */
+          {
+            label: 'Experience*',
+            to: '/#experience',
+            position: 'right', 
+            activeBaseRegex: '^/#experience',
+          },
           {
             label: 'Contact',
-            to: '#contact',
+            to: '/#contact',
             position: 'right',
+            activeBaseRegex: '^/$contact',
           },
           {
             label: 'Notes', 

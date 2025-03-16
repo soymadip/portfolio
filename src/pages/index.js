@@ -4,12 +4,11 @@ import styles from "./css/index.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 // Import components
+import UpdateTitle from '@site/src/components/UpdateTitle';
 import ProjectCard from "@site/src/components/ProjectCard";
 import SocialLinks from "@site/src/components/SocialLinks";
 import SocialCard from "@site/src/components/SocialCard";
 
-// Import icon
-import { FaAddressCard } from "react-icons/fa";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -19,20 +18,30 @@ export default function Home() {
 
   const profilePic = customFields.profilePic;
   
-  const updateTitle = () => {
-    document.title = `Projects | ${siteConfig.title}`;
+  const sectionTitles = {
+    'me':                `Home | ${siteConfig.title}`,
+    'about':             `About Me | ${siteConfig.title}`,
+    'featured-projects': `Projects | ${siteConfig.title}`,
+    'experience':        `Experience | ${siteConfig.title}`,
+    'contact':           `Contact | ${siteConfig.title}`
   };
 
   return (
     <Layout title="Me" description="My portfolio website">
+
+      <UpdateTitle
+        sections={sectionTitles}
+        defaultTitle={siteConfig.title}
+      />
+
       <main>
-        <div className={styles.hero}>
+        <div className={styles.hero} id="me">
           <div className={styles.container}>
             <div className={styles.leftSection}>
               <p className={styles.intro}>Hello there, I'm</p>
-              <h1 className={styles.name}>
+              <h1 className={styles.title}>
                 Soumadip Das
-                <span className={styles.nameComma}>,</span>
+                <span className={styles.titleComma}>,</span>
               </h1>
               <div className={styles.subtitleWrapper}>
                 <span className={styles.subtitlePrefix}>I am a</span>
@@ -40,15 +49,13 @@ export default function Home() {
                 <span className={styles.subtitlePrefix}>.</span>
               </div>
               <p className={styles.description}>
-                I tend to make solutions of real-life problems, that helps to make
-                life less painful.
+                I tend to make solutions of real-life problems, that helps to make life less painful.
               </p>
               <div className={styles.actionRow}>
                 <div className={styles.cta}>
                   <a 
                     href="#featured-projects" 
                     className={styles.ctaButton}
-                    onClick={updateTitle}
                   >
                     View My Work
                   </a>
