@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import styles from './styles.module.css';
 import { FaQuestionCircle } from 'react-icons/fa';
 
@@ -22,66 +22,45 @@ export default function SocialIcons({ showAll = false }) {
   const [animationDelays, setAnimationDelays] = useState({});
 
   const allSocialLinks = customFields.socialLinks || [];
-  const socialLinks = showAll 
-    ? allSocialLinks 
-    : allSocialLinks.filter(link => link.pin);
+  
+  // FIX: `to prevent unnecessary recalculations`
+  const socialLinks = useMemo(() => {
+    return showAll 
+      ? allSocialLinks 
+      : allSocialLinks.filter(link => link.pin);
+  }, [allSocialLinks, showAll]);
+  
+  // Calculate delays based on screen size
+  const calculateDelays = useCallback(() => {
+    if (!isBrowser) return {};
+    
+    const isTablet = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 480;
+    const delays = {};
+    
+    const baseDelay = isMobile ? 0.7 : (isTablet ? 0.9 : 1.3);
+    const incrementDelay = 0.1;
+    
+    socialLinks.forEach((_, index) => {
+      delays[index] = `${baseDelay + (index * incrementDelay)}s`;
+    });
+    
+    return delays;
+  }, [isBrowser, socialLinks]);
 
   useEffect(() => {
-    if (isBrowser) {
-      const isTablet = window.innerWidth <= 768;
-      const isMobile = window.innerWidth <= 480;
-      const delays = {};
-
-      socialLinks.forEach((_, index) => {
-        let baseDelay;
-        let incrementDelay;
-        
-        if (isMobile) {
-          baseDelay = 0.7;
-          incrementDelay = 0.1;
-
-        } else if (isTablet) {
-          baseDelay = 0.9;
-          incrementDelay = 0.1;
-
-        } else {
-          baseDelay = 1.3;
-          incrementDelay = 0.1;
-        }
-        
-        delays[index] = `${baseDelay + (index * incrementDelay)}s`;
-      });
-
-      setAnimationDelays(delays);
-
-      const handleResize = () => {
-        const isTablet = window.innerWidth <= 768;
-        const isMobile = window.innerWidth <= 480;
-        const newDelays = {};
-
-        socialLinks.forEach((_, index) => {
-          let startDelay;
-          let incrementDelay = 0.1;
-          
-          if (isMobile) {
-            startDelay = 0.7;
-          } else if (isTablet) {
-            startDelay = 0.9;
-          } else {
-            startDelay = 1.3;
-          }
-          
-          newDelays[index] = `${startDelay + (index * incrementDelay)}s`;
-        });
-
-        setAnimationDelays(newDelays);
-      };
-
-      window.addEventListener('resize', handleResize);
-
-      return () => window.removeEventListener('resize', handleResize);
-    }
-  }, [isBrowser, socialLinks]);
+    if (!isBrowser) return;
+    
+    // Set initial delays
+    setAnimationDelays(calculateDelays());
+    
+    const handleResize = () => {
+      setAnimationDelays(calculateDelays());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isBrowser, calculateDelays]);
 
 
   // Get icon component and color
