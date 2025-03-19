@@ -54,7 +54,6 @@ export default function SocialCard() {
                 "--icon-hover-color": iconColor,
               }}
               aria-label={name}
-              title={description || name}
             >
               {Icon && (
                 <div className={styles.socialIcon}>

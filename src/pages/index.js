@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import styles from "./css/index.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
@@ -6,6 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 // Import components
 import UpdateTitle from '@site/src/components/UpdateTitle';
 import ProjectCard from "@site/src/components/ProjectCard";
+import ProjectDrawer from "@site/src/components/ProjectDrawer";
 import SocialLinks from "@site/src/components/SocialLinks";
 import SocialCard from "@site/src/components/SocialCard";
 
@@ -13,11 +14,12 @@ import SocialCard from "@site/src/components/SocialCard";
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   const { customFields } = siteConfig;
+  const profilePic = customFields.profilePic;
+
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const drawerRef = useRef(null);
 
-  const profilePic = customFields.profilePic;
-  
   const sectionTitles = {
     'me':                `Home | ${siteConfig.title}`,
     'about':             `About Me | ${siteConfig.title}`,
@@ -26,9 +28,9 @@ export default function Home() {
     'contact':           `Contact | ${siteConfig.title}`
   };
 
+
   return (
     <Layout title="Me" description="My portfolio website">
-
       <UpdateTitle
         sections={sectionTitles}
         defaultTitle={siteConfig.title}
@@ -78,7 +80,24 @@ export default function Home() {
           className={styles.featuredProjects}
           ref={projectsRef}
         >
-          <ProjectCard homePage={true} />
+          <div className={styles.projectsContainer}>
+            <div className={styles.projectsHeader}>
+              <h2 className={styles.projectsTitle}>Featured Projects</h2>
+              <p className={styles.projectsSubtitle}>
+                Here are some of my notable works
+              </p>
+            </div>
+            <ProjectCard showFeaturedOnly={true} />
+            <div className={styles.viewAllProjects}>
+              <button 
+                onClick={() => drawerRef.current?.open()}
+                className={styles.viewOtherWorkButton}
+              >
+                View Other Work
+              </button>
+            </div>
+          </div>
+          <ProjectDrawer ref={drawerRef} />
         </div>
         <div 
           id="contact"

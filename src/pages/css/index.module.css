@@ -38,24 +38,12 @@
   }
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.03);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 @keyframes gentleAppear {
-  0% {
+  from {
     opacity: 0;
     transform: scale(0.96);
   }
-  100% {
+  to {
     opacity: 1;
     transform: scale(1);
   }
@@ -267,37 +255,97 @@
 }
 
 .featuredProjects {
-  scroll-margin-top: 80px; /* Increased from 60px for better spacing when scrolling */
-  min-height: calc(100vh - 60px); /* Add minimum height to take up more vertical space */
-  margin-bottom: 0; /* Ensure no gap with the next section */
+  scroll-margin-top: 80px;
+  min-height: calc(100vh - 60px);
+  margin-bottom: 0;
+  width: 100%;
+  padding: .9rem 0 5rem;
+  background-color: var(--ifm-background-color);
+}
+
+.projectsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.projectsHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projectsTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.75rem;
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.projectsSubtitle {
+  font-size: 1rem;
+  color: var(--ctp-subtext0);
+  max-width: 600px;
+  margin: 0 auto;
+  animation: slideUp 0.5s ease-out 0.2s forwards;
+}
+
+.viewAllProjects {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem; 
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.viewOtherWorkButton {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid var(--ifm-color-primary);
+  cursor: pointer;
+  font-family: var(--ifm-font-family-base);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.viewOtherWorkButton:hover {
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  transform: translateY(-2px);
 }
 
 /* Contact section styles */
 .contactSection {
-  scroll-margin-top: 80px; /* Increased from 60px for consistency */
-  padding: 4rem 0 5rem; /* Reduced top padding from 5rem to 4rem */
+  scroll-margin-top: 80px;
+  padding: 4rem 0 5rem;
   background-color: var(--ifm-background-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 0; /* Adjust to eliminate any potential gap */
+  margin-top: 0;
   position: relative;
-  min-height: calc(100vh - 60px); /* Take up at least full viewport height minus navbar */
+  min-height: calc(100vh - 60px);
 }
 
 .contactSectionHeader {
   text-align: center;
-  margin-bottom: 1.5rem; /* Reduced from 2.5rem to 1.5rem to decrease space */
+  margin-bottom: 1.5rem;
   animation: slideUp 0.6s ease-out both;
-  margin-top: -1.5rem; /* Keeping the negative margin that moves the header higher */
+  margin-top: -1.5rem;
 }
 
 .contactTitle {
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--ifm-color-primary);
-  margin-bottom: 0.75rem; /* Reduced from 1rem to 0.75rem for tighter spacing */
+  margin-bottom: 0.75rem;
 }
 
 .contactSubtitle {
@@ -308,55 +356,48 @@
   padding: 0 1rem;
 }
 
-/* Responsive styles for contact section */
+/* Responsive styles for sections */
 @media (max-width: 768px) {
+
+  /* Contact section tablet adjustments */
   .contactSection {
-    scroll-margin-top: 70px; /* Adjusted for tablet */
-    padding: 1.5rem 1rem 4rem; /* Reduced top padding from 2rem to 1.5rem */
+    scroll-margin-top: 70px;
+    padding: 1.5rem 1rem 4rem;
   }
   
   .contactSectionHeader {
-    margin-top: -1rem; /* Less negative margin on smaller screens */
+    margin-top: -1rem;
   }
   
   .contactTitle {
     font-size: 2rem;
   }
 
+  /* Featured projects tablet adjustments */
   .featuredProjects {
-    scroll-margin-top: 70px; /* Adjusted for tablet */
-    min-height: calc(100vh); /* Full viewport height on smaller screens */
+    scroll-margin-top: 70px;
+    min-height: calc(100vh);
+    padding: 1.5rem 0 4rem;
   }
-}
 
-@media (max-width: 480px) {
-  .contactSection {
-    scroll-margin-top: 65px; /* Adjusted for mobile */
-    padding: 1rem 1rem 3rem; /* Reduced top padding from 1.5rem to 1rem */
+  .projectsTitle {
+    font-size: 2rem;
   }
   
-  .contactSectionHeader {
-    margin-top: -0.5rem; /* Even less negative margin on mobile */
-    margin-bottom: 1.2rem; /* Reduced from 2rem to 1.2rem for mobile */
+  .projectsSubtitle {
+    font-size: 1rem;
+  }
+
+  .projectsHeader {
+    margin-bottom: 2rem;
   }
   
-  .contactTitle {
-    font-size: 1.8rem;
-  }
-  
-  .contactSubtitle {
-    font-size: 0.9rem;
-    max-width: 90%;
+  .viewAllProjects {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
   }
 
-  .featuredProjects {
-    scroll-margin-top: 65px; /* Adjusted for mobile */
-  }
-}
-
-/* Responsive Styles - Tablets */
-@media (max-width: 768px) {
-
+  /* Hero section tablet adjustments */
   .intro {
     animation: slideUp 0.6s ease-out 0.4s both;
   }
@@ -465,7 +506,6 @@
     justify-content: center;
   }
 
-
   /* Social icons in center */
   .socialIcons {
     margin: 0;
@@ -485,45 +525,94 @@
   }
 }
 
-/* Consolidated Responsive Styles - Mobile */
+/* Responsive styles for mobile devices */
 @media (max-width: 480px) {
+  /* Contact section mobile adjustments */
+  .contactSection {
+    scroll-margin-top: 65px;
+    padding: 1rem 1rem 3rem;
+  }
+  
+  .contactSectionHeader {
+    margin-top: -0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .contactTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
 
+  /* Featured projects mobile adjustments */
+  .featuredProjects {
+    scroll-margin-top: 65px;
+    padding: 1rem 0 3rem;
+  }
+
+  .projectsTitle {
+    font-size: 1.8rem;
+  }
+  
+  .projectsSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .projectsHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .viewAllProjects {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .viewOtherWorkButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Hero section mobile adjustments */
   .hero {
     min-height: calc(100vh);
     padding: 0.5rem 0 2rem;
   }
-  
+
   .rightSection {
     margin-top: -2.0rem; 
     margin-bottom: 0;
   }
-  
+
   .profilePic {
     animation: gentleAppear 0.6s ease-out both;
     height: 155px;
     margin-top: -32px;
     margin-bottom: 1.3rem;
   }
-  
+
   .title { 
     font-size: 2.3rem; 
     animation: slideUp 0.5s ease-out 0.3s both;
   }
-  
+
   .titleComma {
     font-size: 0.8rem;
     animation: slideUp 0.5s ease-out 0.3s both;
   }
-  
+
   .subtitlePrefix { 
     font-size: 1rem; 
     margin-right: 0.3rem; 
   }
-  
+
   .subtitle { 
     font-size: 1.5rem; 
   }
-  
+
   .description {
     animation: slideUp 0.5s ease-out 0.5s both;
     margin: 0.7rem auto 0;

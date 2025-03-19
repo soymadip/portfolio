@@ -18,8 +18,7 @@ const config = {
   url: 'https://portfolio.soymadip.me',
   baseUrl: '/',
 
-
-  // GH Pages config. Delete else.
+  // GH Pages config
   organizationName: ownerName,
   deploymentBranch: 'site',
 
@@ -63,6 +62,12 @@ const config = {
         url: `${SrtUrl}/discord`,
       },
       {
+        name: 'Twitter',
+        icon: 'x',
+        desc: 'Find me on Twitter',
+        url:  `${SrtUrl}/twitter`
+      },
+      {
         name: 'GitHub',
         icon: 'githubalt',
         desc: 'Check out my git repos',
@@ -75,18 +80,12 @@ const config = {
         desc: 'View my GitLab profile',
         url: `${SrtUrl}/github`,
       },
-/*       {
+/*      {
         name: 'Instagram',
         icon: 'instagram',
         desc: 'Follow me on Instagram',
         url: `${SrtUrl}/instagram`,
       }, */
-      {
-        name: 'Twitter',
-        icon: 'x',
-        desc: 'Find me on Twitter',
-        url:  `${SrtUrl}/twitter`
-      },
       {
         name: 'Anilist',
         icon: 'anilist',
@@ -142,6 +141,24 @@ const config = {
         featured: false,
         tags: ["python", "pyrogram", "bot"],
       },
+      {
+        title: "Project astro",
+        description: "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
+        image: "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
+        website: "https://regis.soymadip.me",
+        github: null,
+        liveDemo: null,
+        tags: ["python", "pyrogram", "bot"],
+      },
+      {
+        title: "Google",
+        description: "The only solution needed for student data management ",
+        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/cts-logo.png",
+        website: null,
+        github: "https://github.com/soymadip/SDMP",
+        liveDemo: null,
+        tags: ["python", "pyrogram", "bot"],
+      },
     ],
   },
 
@@ -156,7 +173,7 @@ const config = {
         },
 
         blog: {
-          routeBasePath: 'changelog',
+          // routeBasePath: 'changelog',
 
           feedOptions: {
             type: ['rss', 'atom'],
@@ -235,40 +252,16 @@ const config = {
             to: '/notes',
             position: 'right'
           },
+          {
+            label: 'Blog',
+            to: '/blog',
+            position: 'right'
+          }
         ],
       },
 /*      footer: {
         style: 'dark',
       links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/',
