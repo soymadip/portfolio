@@ -1,0 +1,445 @@
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* Carousel Styles */
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 2rem 0;
+}
+
+.carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+
+.projectsCarousel {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carouselSlide {
+  padding: 4px 8px;
+  height: 100%;
+}
+
+.carouselCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ctp-surface0);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid var(--ctp-surface1);
+  width: 100%;
+}
+
+.featuredCard {
+  border: 1.5px solid rgba(var(--ifm-color-primary-rgb), 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.featuredBadge svg {
+  font-size: 12px;
+}
+
+.carouselCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--ifm-color-primary);
+}
+
+.featuredCard:hover {
+  border-width: 1.5px;
+}
+
+/* Image container styling */
+.projectImageContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 62%;
+  overflow: hidden;
+  background-color: var(--ctp-surface1);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.projectImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.carouselCard:hover .projectImage {
+  transform: scale(1.12);
+}
+
+/* Card content styling */
+.projectContent {
+  padding: 0.8rem 1.5rem .55rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.projectTitle {
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.projectDescription {
+  color: var(--ctp-subtext0);
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Tags styling */
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.5rem 0 0.8rem;
+  opacity: 0.85;
+  justify-content: center;
+}
+
+.projectTag {
+  background-color: var(--ctp-surface1);
+  color: var(--ctp-subtext1);
+  padding: 0.02rem 0.3rem;
+  border-radius: 40px;
+  font-size: 0.6rem;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+  border: 1px solid var(--ctp-surface2);
+  margin: 0.05rem;
+}
+
+/* Links styling */
+.projectLinks {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem 1.3rem;
+  gap: 0.8rem;
+}
+
+.projectLink {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--ctp-subtext0);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--ctp-surface2);
+  background-color: var(--ctp-surface1);
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.projectLink:hover {
+  color: var(--ifm-color-primary);
+  background-color: var(--ctp-surface0);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.projectLink:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+
+.projectLink svg {
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+  color: var(--ctp-subtext1);
+}
+
+.projectLink:hover svg {
+  transform: scale(1.08);
+  color: var(--ifm-color-primary);
+}
+
+/* Carousel control buttons */
+.carouselControl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carouselControl svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.carouselControl:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Disabled button style */
+.disabledButton {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.prevButton {
+  left: -25px;
+}
+
+.nextButton {
+  right: -25px;
+}
+
+.noProjects {
+  text-align: center;
+  padding: 2rem;
+  color: var(--ctp-subtext0);
+  background-color: var(--ctp-surface1);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+:global(.slick-track) {
+  display: flex !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+:global(.slick-slide) {
+  height: inherit !important;
+  float: none !important;
+}
+
+:global(.slick-slide > div) {
+  height: 100%;
+  margin: 0 0.4rem;
+}
+
+/* Hide default slick dots */
+:global(.slick-dots) {
+  display: none !important;
+}
+
+/* Custom navigation dots styling */
+.navDotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 10px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.navDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--ctp-surface2);
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.navDot:hover {
+  opacity: 1;
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.activeDot {
+  background-color: var(--ifm-color-primary);
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 0 2rem;
+  }
+  
+  .carouselControl {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carouselControl svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .projectContent {
+    padding: 1.3rem 1.1rem 1rem;
+  }
+  
+  .projectLinks {
+    padding: 0 1.1rem 1.3rem;
+    gap: 0.7rem;
+  }
+  
+  .prevButton {
+    left: -20px;
+  }
+
+  .nextButton {
+    right: -20px;
+  }
+
+  :global(.slick-slide > div) {
+    margin: 0 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    padding: 0 1.7rem;
+  }
+  
+  .projectImageContainer {
+    padding-top: 65%;
+  }
+  
+  .carouselControl {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carouselControl svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .projectTitle {
+    font-size: 1.5rem;
+  }
+
+  .projectDescription {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .projectContent {
+    padding: 1.2rem 1rem 0.8rem;
+  }
+  
+  .projectTags {
+    margin: 0.2rem 0 0.5rem;
+    gap: 0.15rem;
+  }
+
+  .projectTag {
+    padding: 0.01rem 0.25rem;
+    font-size: 0.55rem;
+  }
+  
+  .projectLinks {
+    padding: 0 1rem 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .projectLink {
+    padding: 0.32rem 0.65rem;
+    font-size: 0.75rem;
+    flex: 1;
+    justify-content: center;
+    min-width: 85px;
+  }
+  
+  .projectLink svg {
+    font-size: 0.9rem;
+  }
+  
+  .prevButton {
+    left: -15px;
+  }
+
+  .nextButton {
+    right: -15px;
+  }
+
+  :global(.slick-slide > div) {
+    margin: 0 0.2rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navDot, .activeDot, .carouselCard, .projectImage, 
+  .projectLink, .carouselControl {
+    transition: none;
+  }
+  
+  .carouselCard {
+    animation: none;
+  }
+}

@@ -80,12 +80,6 @@ const config = {
         desc: 'View my GitLab profile',
         url: `${SrtUrl}/github`,
       },
-/*      {
-        name: 'Instagram',
-        icon: 'instagram',
-        desc: 'Follow me on Instagram',
-        url: `${SrtUrl}/instagram`,
-      }, */
       {
         name: 'Anilist',
         icon: 'anilist',
@@ -133,32 +127,14 @@ const config = {
       },
       {
         title: "SDMP",
-        description: "The only solution needed for student data management ",
-        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/cts-logo.png",
+        description: "Student record management system built with PHP and MySQL",
+        image: "https://github.com/soymadip/SDMP/blob/main/src/images/social%20card.png?raw=true",
         website: null,
         github: "https://github.com/soymadip/SDMP",
         liveDemo: null,
         featured: false,
-        tags: ["python", "pyrogram", "bot"],
-      },
-      {
-        title: "Project astro",
-        description: "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
-        image: "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
-        website: "https://regis.soymadip.me",
-        github: null,
-        liveDemo: null,
-        tags: ["python", "pyrogram", "bot"],
-      },
-      {
-        title: "Google",
-        description: "The only solution needed for student data management ",
-        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/cts-logo.png",
-        website: null,
-        github: "https://github.com/soymadip/SDMP",
-        liveDemo: null,
-        tags: ["python", "pyrogram", "bot"],
-      },
+        tags: ["php", "crud", "sql"],
+      }
     ],
   },
 

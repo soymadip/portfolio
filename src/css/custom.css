@@ -1,42 +1,44 @@
-/**
- * Any CSS included here will be global. The classic template
- * You can override the default Infima variables here. 
-**/
-
 /* Import Alata font */
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 /* Import Catppuccin colors */
 @import url('./catppuccin.css');
 
-/* Add smooth scrolling behavior for the entire page */
-html {
-  scroll-behavior: smooth;
-}
-
-/* For reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 :root {
   /* Light mode (default) theme using Latte */
   --ifm-color-primary: var(--ctp-peach);
+  --ifm-color-primary-rgb: var(--ctp-peach-rgb);
+
   --ifm-color-primary-dark: var(--ctp-maroon);
+  --ifm-color-primary-dark-rgb: var(--ctp-maroon-rgb);
+
   --ifm-color-primary-darker: var(--ctp-red);
+  --ifm-color-primary-darker-rgb: var(--ctp-red-rgb);
+
   --ifm-color-primary-darkest: var(--ctp-flamingo);
+  --ifm-color-primary-darkest-rgb: var(--ctp-flamingo-rgb);
+
   --ifm-color-primary-light: var(--ctp-yellow);
+  --ifm-color-primary-light-rgb: var(--ctp-yellow-rgb);
+
   --ifm-color-primary-lighter: var(--ctp-green);
+  --ifm-color-primary-lighter-rgb: var(--ctp-green-rgb);
+
   --ifm-color-primary-lightest: var(--ctp-teal);
+  --ifm-color-primary-lightest-rgb: var(--ctp-teal-rgb);
   
   --ifm-background-color: var(--ctp-base);
+  --ifm-background-color-rgb: var(--ctp-base-rgb);
+
   --ifm-navbar-background-color: var(--ctp-base);
+
   --ifm-footer-background-color: var(--ctp-mantle);
   
   --ifm-font-color-base: var(--ctp-text);
-  --ifm-heading-color: var(--ctp-text);
+  --ifm-font-color-base-rgb: var(--ctp-text-rgb);
+
+  --ifm-heading-color: var(--ifm-color-primary);
+  --ifm-heading-color-rgb: var(--ifm-color-primary-rgb);
   
   --ifm-navbar-link-color: var(--ctp-subtext1);
   --ifm-navbar-link-hover-color: var(--ctp-peach);
@@ -44,12 +46,16 @@ html {
   --ifm-menu-color: var(--ctp-subtext0);
   --ifm-menu-color-active: var(--ctp-peach);
   
+  --ifm-shadow-color: var(--ctp-overlay0);
+  --ifm-shadow-color-rgb: var(--ctp-overlay0-rgb);
+
   /* Font family */
   --ifm-font-family-base: 'Alata', system-ui, -apple-system, sans-serif;
   --ifm-heading-font-family: 'Alata', system-ui, -apple-system, sans-serif;
   
   --ifm-code-font-size: 95%;
-  --ifm-shadow-color: var(--ctp-overlay0);
+
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -78,3 +84,17 @@ html {
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+

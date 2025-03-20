@@ -259,7 +259,7 @@
   min-height: calc(100vh - 60px);
   margin-bottom: 0;
   width: 100%;
-  padding: .9rem 0 5rem;
+  padding: 0.02rem 0 5rem;
   background-color: var(--ifm-background-color);
 }
 
@@ -271,59 +271,29 @@
 
 .projectsHeader {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.07rem;
 }
 
 .projectsTitle {
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--ifm-color-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   animation: slideUp 0.5s ease-out forwards;
 }
 
 .projectsSubtitle {
-  font-size: 1rem;
+  font-size: .9rem;
   color: var(--ctp-subtext0);
   max-width: 600px;
   margin: 0 auto;
   animation: slideUp 0.5s ease-out 0.2s forwards;
 }
 
-.viewAllProjects {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem; 
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-}
-
-.viewOtherWorkButton {
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  background-color: var(--ifm-color-primary);
-  color: var(--ifm-background-color);
-  border-radius: 4px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid var(--ifm-color-primary);
-  cursor: pointer;
-  font-family: var(--ifm-font-family-base);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.viewOtherWorkButton:hover {
-  background-color: transparent;
-  color: var(--ifm-color-primary);
-  transform: translateY(-2px);
-}
-
 /* Contact section styles */
 .contactSection {
   scroll-margin-top: 80px;
-  padding: 4rem 0 5rem;
+  padding: 2rem 0 5rem;
   background-color: var(--ifm-background-color);
   display: flex;
   flex-direction: column;
@@ -385,16 +355,11 @@
   }
   
   .projectsSubtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .projectsHeader {
     margin-bottom: 2rem;
-  }
-  
-  .viewAllProjects {
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
   }
 
   /* Hero section tablet adjustments */
@@ -527,7 +492,8 @@
 
 /* Responsive styles for mobile devices */
 @media (max-width: 480px) {
-  /* Contact section mobile adjustments */
+
+  /* Contact section */
   .contactSection {
     scroll-margin-top: 65px;
     padding: 1rem 1rem 3rem;

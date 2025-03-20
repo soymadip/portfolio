@@ -31,12 +31,14 @@ As this project is built upon docusaurus, it follows it's guidelines.
 │   └── used for changelog, accessiable in /changelog 
 ├── docs/
 │   ├── ...
+│   ├── sidebars.js
 │   └──  Self written notes, accessiable in /notes
 ├── src/
 │   ├── components/
 │   ├── css/
 │   ├── pages/
 │   │   ├─ ...
+│   │   ├── index.js - entry point
 │   │   └── holds standalone pages
 │   └── ...
 ├── static/
@@ -44,7 +46,6 @@ As this project is built upon docusaurus, it follows it's guidelines.
 │   ├── ...
 │   └── static files.
 ├── docusaurus.config.js
-├── sidebars.js
 └── package.json
 ```
 
@@ -97,5 +98,5 @@ This site is designed to be deployed on [GitHub Pages/Netlify/Vercel]. The deplo
 - [React Icons](https://react-icons.github.io/) - Icon library used throughout the site.
 - [Hugo Profile](https://hugo-profile.netlify.app/) - Design inspiration.
 - [Catppuccin](https://github.com/catppuccin/catppuccin) - Color scheme that inspired the site's palette.
-- [Deepseek R1](https://www.deepseek.com/) hosted using [Ollama](https://ollama.com/library/deepseek-r1) - prismjs theme.
+- [Deepseek R1](https://www.deepseek.com/) hosted using [Ollama](https://ollama.com/library/deepseek-r1) - prism.js theme & project card component.
 - Countless Internet posts - Filling me with information.
