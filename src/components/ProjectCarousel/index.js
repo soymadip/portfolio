@@ -120,12 +120,14 @@ const ProjectCarousel = ({ customProjects = null }) => {
     ));
   }, [totalPages, currentSlide, goToSlide]);
 
+  const fewDots = totalPages <= 4; 
+
   // Keep a reference to the navDotsContainer
   const navDotsContainerRef = useRef(null);
 
   // Scroll active dot into view when currentSlide changes
   useEffect(() => {
-    if (navDotsContainerRef.current && typeof window !== 'undefined') {
+    if (navDotsContainerRef.current && typeof window !== 'undefined' && !fewDots) {
       const container = navDotsContainerRef.current;
       const activeDot = container.querySelector(`.${styles.activeDot}`);
       
@@ -145,13 +147,13 @@ const ProjectCarousel = ({ customProjects = null }) => {
         });
       }
     }
-  }, [currentSlide]);
+  }, [currentSlide, fewDots]);
 
   // Carousel settings
   const settings = useMemo(() => ({
-    dots: false, // Disable built-in dots
+    dots: false,
     infinite: false,
-    speed: 690,
+    speed: 600,
     slidesToShow: Math.min(projects.length, slidesToShow),
     slidesToScroll: slidesToShow,
     autoplay: false,
@@ -314,7 +316,10 @@ const ProjectCarousel = ({ customProjects = null }) => {
                 <FaChevronLeft />
               </button>
               
-              <div className={styles.navDotsContainer} ref={navDotsContainerRef}>
+              <div 
+                className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`} 
+                ref={navDotsContainerRef}
+              >
                 {renderNavDots()}
               </div>
               

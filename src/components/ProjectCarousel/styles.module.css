@@ -291,7 +291,6 @@ transform: translateY(-50%);
 /* Custom navigation dots styling */
 .navDotsContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -354,6 +353,27 @@ transform: translateY(-50%);
   margin: 20px auto 10px;
   width: 100%;
   gap: 15px;
+}
+
+/* Center alignment for desktop dots */
+.desktopDotsContainer {
+  justify-content: center;
+  margin: 15px 0 10px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+/* For few dots - center them */
+.centerDots {
+  justify-content: center !important;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* For many dots - allow scrolling with flex-start */
+.scrollDots {
+  justify-content: flex-start;
 }
 
 /* Responsive styles */
@@ -449,10 +469,46 @@ transform: translateY(-50%);
     height: 20px;
     padding-left: 5px;
     padding-right: 5px;
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-padding-left: 5px;
+  }
+  
+  .mobileNavigationControls .navDotsContainer::-webkit-scrollbar {
+    display: none;
   }
   
   .mobileNavigationControls .navDot {
     flex: 0 0 8px;
+    margin: 0 5px;
+  }
+  
+  .mobileNavigationControls .activeDot {
+    background-color: var(--ifm-color-primary);
+    transform: scale(1.3);
+    box-shadow: 0 0 3px 1px rgba(var(--ifm-color-primary-rgb), 0.4);
+  }
+  
+  /* Add padding to ensure first and last dots are properly visible */
+  .mobileNavigationControls .navDotsContainer::before,
+  .mobileNavigationControls .navDotsContainer::after {
+    content: '';
+    min-width: 4px;
+    height: 1px;
+  }
+
+  /* Ensure the dots are properly centered in the .centerDots case */
+  .mobileNavigationControls .centerDots {
+    display: flex;
+    justify-content: center !important;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Ensures the dots are centered as a group */
+  .mobileNavigationControls .centerDots .navDot {
+    margin: 0 5px;
   }
 }
 
