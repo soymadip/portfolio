@@ -21,6 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci 
+        
+      - name: Remove old artifacts
+        run: rm -rf build       
 
       - name: Build website
         run: npm run build 
