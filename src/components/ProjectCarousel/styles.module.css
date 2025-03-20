@@ -11,6 +11,8 @@
   width: 100%;
   margin: 0 auto;
   padding: 0.75rem 2rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .carouselWrapper {
@@ -220,8 +222,8 @@
   justify-content: center;
   cursor: pointer;
   z-index: 5;
-  opacity: 0.9;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -241,10 +243,10 @@
 .disabledButton {
   opacity: 0.6;
   cursor: not-allowed;
-}
+  }
 
 .disabledButton:hover {
-  transform: translateY(-50%);
+transform: translateY(-50%);
   opacity: 0.5;
 }
 
@@ -278,7 +280,7 @@
 
 :global(.slick-slide > div) {
   height: 100%;
-  margin: 0 0.4rem;
+  margin: 0 0.2rem;
 }
 
 /* Hide default slick dots */
@@ -291,9 +293,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0 10px;
-  padding: 5px 0;
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  width: auto;
 }
 
 .navDot {
@@ -307,6 +309,10 @@
   padding: 0;
   transition: all 0.3s ease;
   opacity: 0.7;
+  /* Ensure perfect circles */
+  flex-shrink: 0;
+  min-width: 8px;
+  min-height: 8px;
 }
 
 .navDot:hover {
@@ -320,10 +326,41 @@
   opacity: 1;
 }
 
+/* styles for navigation controls container */
+.navigationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 10px;
+  width: 100%;
+  gap: 15px;
+}
+
+/* Desktop dots container */
+.desktopDotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 10px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+/* Mobile bottom navigation - hidden on desktop */
+.mobileNavigationControls {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 10px;
+  width: 100%;
+  gap: 15px;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .carouselContainer {
-    padding: 0 2rem;
+    padding: 0 0.5rem;
+    display: block;
   }
   
   .carouselControl {
@@ -356,15 +393,77 @@
   :global(.slick-slide > div) {
     margin: 0 0.3rem;
   }
+  
+  /* Hide desktop side buttons */
+  .desktopOnly {
+    display: none;
+  }
+  
+  /* Hide desktop dots */
+  .desktopDotsContainer {
+    display: none;
+  }
+  
+  /* Show mobile navigation */
+  .mobileNavigationControls {
+    display: flex;
+  }
+  
+  .mobileNavigationControls .carouselControl {
+    position: relative;
+    top: auto;
+    transform: none;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+  
+  .mobileNavigationControls .carouselControl:hover {
+    opacity: 1;
+    transform: none;
+  }
+  
+  /* Fix for disabled buttons in mobile view */
+  .mobileNavigationControls .disabledButton:hover {
+    opacity: 0.6;
+    transform: none;
+  }
+  
+  .mobileNavigationControls .prevButton,
+  .mobileNavigationControls .nextButton {
+    left: auto;
+    right: auto;
+  }
+  
+  /* Make the dots container horizontally scrollable */
+  .mobileNavigationControls .navDotsContainer {
+    overflow-x: auto;
+    max-width: calc(100% - 100px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 5px 0;
+    margin: 0 5px;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    align-items: center;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .mobileNavigationControls .navDot {
+    flex: 0 0 8px;
+  }
 }
 
 @media (max-width: 480px) {
   .carouselContainer {
-    padding: 0 1.7rem;
+    padding: 0 0.1rem;
+    max-width: 100%;
   }
   
   .projectImageContainer {
-    padding-top: 65%;
+    padding-top: 62%;
   }
   
   .carouselControl {
@@ -410,25 +509,47 @@
   .projectLink {
     padding: 0.32rem 0.65rem;
     font-size: 0.75rem;
-    flex: 1;
+    flex: 0 1 auto;
     justify-content: center;
     min-width: 85px;
   }
   
-  .projectLink svg {
-    font-size: 0.9rem;
+  :global(.slick-slide) {
+    width: 100vw !important;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  :global(.slick-slide > div) {
+    margin: 0;
+    width: 100%;
+  }
+  
+  :global(.slick-track) {
+    display: flex !important;
+    justify-content: center;
+  }
+  
+  .carouselWrapper {
+    margin-bottom: 25px;
+    overflow: visible;
   }
   
   .prevButton {
-    left: -15px;
+    left: -8px;
   }
 
   .nextButton {
-    right: -15px;
+    right: -8px;
   }
-
-  :global(.slick-slide > div) {
-    margin: 0 0.2rem;
+  
+  .mobileNavigationControls .navDotsContainer {
+    max-width: calc(100% - 90px);
+  }
+  
+  .mobileNavigationControls .carouselControl {
+    width: 36px;
+    height: 36px;
   }
 }
 

@@ -144,8 +144,8 @@ const config = {
       ({
         docs: {
           routeBasePath: "notes",
-
-          sidebarPath: './docs/sidebar.js',
+          path: "notes",
+          sidebarPath: './notes/sidebar.js',
         },
 
         blog: {

@@ -518,6 +518,12 @@
     scroll-margin-top: 65px;
     padding: 1rem 0 3rem;
   }
+  
+  .projectsContainer {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
   .projectsTitle {
     font-size: 1.8rem;

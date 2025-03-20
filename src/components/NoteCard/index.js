@@ -9,7 +9,7 @@ import { FaBook } from 'react-icons/fa';
 import styles from './styles.module.css';
 
 function indexNotes() {
-  const context = require.context('@site/docs', true, /index\.mdx?$|\.mdx?$/);
+  const context = require.context(`@site/notes`, true, /index\.mdx?$|\.mdx?$/);
 
   return context.keys()
     .filter(path => {

@@ -8,6 +8,10 @@ import styles from './styles.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+/// PART OF THIS COMPONENT IS AI GENERATED
+
+
 const ProjectCarousel = ({ customProjects = null }) => {
   const { siteConfig } = useDocusaurusContext();
   const [projects, setProjects] = useState([]);
@@ -116,6 +120,33 @@ const ProjectCarousel = ({ customProjects = null }) => {
     ));
   }, [totalPages, currentSlide, goToSlide]);
 
+  // Keep a reference to the navDotsContainer
+  const navDotsContainerRef = useRef(null);
+
+  // Scroll active dot into view when currentSlide changes
+  useEffect(() => {
+    if (navDotsContainerRef.current && typeof window !== 'undefined') {
+      const container = navDotsContainerRef.current;
+      const activeDot = container.querySelector(`.${styles.activeDot}`);
+      
+      if (activeDot) {
+        // Calculate the scroll position to center the active dot
+        const containerWidth = container.offsetWidth;
+        const dotPosition = activeDot.offsetLeft;
+        const dotWidth = activeDot.offsetWidth;
+        
+        // Center the dot in the container
+        const scrollPosition = dotPosition - (containerWidth / 2) + (dotWidth / 2);
+        
+        // Smooth scroll to the position
+        container.scrollTo({
+          left: Math.max(0, scrollPosition),
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
+      }
+    }
+  }, [currentSlide]);
+
   // Carousel settings
   const settings = useMemo(() => ({
     dots: false, // Disable built-in dots
@@ -198,8 +229,9 @@ const ProjectCarousel = ({ customProjects = null }) => {
 
   return (
     <div className={styles.carouselContainer}>
+      {/* Desktop navigation buttons (sides) */}
       <button 
-        className={`${styles.carouselControl} ${styles.prevButton} ${atBeginning ? styles.disabledButton : ''}`} 
+        className={`${styles.carouselControl} ${styles.prevButton} ${styles.desktopOnly} ${atBeginning ? styles.disabledButton : ''}`} 
         onClick={goToPrev}
         aria-label="Previous project"
         type="button"
@@ -267,15 +299,49 @@ const ProjectCarousel = ({ customProjects = null }) => {
             </div>
           ))}
         </Slider>
+        
+        {/* Mobile navigation controls (bottom) */}
+        <div className={styles.mobileNavigationControls}>
+          {totalPages > 1 && (
+            <>
+              <button 
+                className={`${styles.carouselControl} ${styles.prevButton} ${atBeginning ? styles.disabledButton : ''}`} 
+                onClick={goToPrev}
+                aria-label="Previous project"
+                type="button"
+                disabled={atBeginning}
+              >
+                <FaChevronLeft />
+              </button>
+              
+              <div className={styles.navDotsContainer} ref={navDotsContainerRef}>
+                {renderNavDots()}
+              </div>
+              
+              <button 
+                className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
+                onClick={goToNext}
+                aria-label="Next project"
+                type="button"
+                disabled={atEnd}
+              >
+                <FaChevronRight />
+              </button>
+            </>
+          )}
+        </div>
+        
+        {/* Desktop dots (without buttons) */}
         {totalPages > 1 && (
-          <div className={styles.navDotsContainer}>
+          <div className={styles.desktopDotsContainer}>
             {renderNavDots()}
           </div>
         )}
       </div>
       
+      {/* Desktop navigation button (right side) */}
       <button 
-        className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
+        className={`${styles.carouselControl} ${styles.nextButton} ${styles.desktopOnly} ${atEnd ? styles.disabledButton : ''}`} 
         onClick={goToNext}
         aria-label="Next project"
         type="button"
