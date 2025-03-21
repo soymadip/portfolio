@@ -28,8 +28,8 @@ As this project is built upon docusaurus, it follows it's guidelines.
 ./
 ├── blog/
 │   ├── ...
-│   └── used for changelog, accessiable in /changelog 
-├── docs/
+│   └── My mindset 
+├── notes/
 │   ├── ...
 │   ├── sidebars.js
 │   └──  Self written notes, accessiable in /notes

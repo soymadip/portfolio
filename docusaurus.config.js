@@ -128,7 +128,7 @@ const config = {
       {
         title: "SDMP",
         description: "Student record management system built with PHP and MySQL",
-        image: "https://github.com/soymadip/SDMP/blob/main/src/images/social%20card.png?raw=true",
+        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/social%20card.png",
         website: null,
         github: "https://github.com/soymadip/SDMP",
         liveDemo: null,
@@ -247,9 +247,16 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} ` + ownerName,
       }, */
+
       prism: {
         theme: catppuccinLatte,
         darkTheme: catppuccinMocha,
+
+        additionalLanguages: [
+          'java',
+          'php', 
+          'bash',
+        ],
       },
     }),
 };
