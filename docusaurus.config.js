@@ -30,6 +30,56 @@ const config = {
     locales: ['en'],
   },
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/favicon/apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon/favicon-32x32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon/favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: '/favicon/site.webmanifest',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'msapplication-TileColor',
+        content: '#202030',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#202030',
+      },
+    },
+  ],
+
   customFields: {
 
     profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
@@ -149,7 +199,6 @@ const config = {
         },
 
         blog: {
-          // routeBasePath: 'changelog',
 
           feedOptions: {
             type: ['rss', 'atom'],
@@ -170,17 +219,9 @@ const config = {
     ],
   ],
 
-
   themeConfig:
     ({
     
-      metadata: [
-        {
-          name: 'theme-color',
-          content: '#202030'
-        },
-      ],
-
       // Social card
       image: 'img/social-card.jpeg',
 
@@ -259,6 +300,10 @@ const config = {
         ],
       },
     }),
+
+  plugins: [
+    require.resolve('./src/utils/generate-favicons')
+  ],
 };
 
 export default config;

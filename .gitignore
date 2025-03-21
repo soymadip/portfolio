@@ -3,6 +3,7 @@
 
 # Production
 /build
+favicon/
 
 # Generated files
 .docusaurus

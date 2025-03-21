@@ -51,7 +51,7 @@ As this project is built upon docusaurus, it follows it's guidelines.
 
 ## 📤 Deployment
 
-This site is designed to be deployed on [GitHub Pages/Netlify/Vercel]. The deployment process is as follows:
+This site is designed to be deployed on any static site hosting service.
 
 >[!NOTE]
 > For GitHub pages, the [workflow](./.github/workflows/deploy.yml) will automatically build & deploy.  
@@ -96,6 +96,7 @@ This site is designed to be deployed on [GitHub Pages/Netlify/Vercel]. The deplo
 - [Docusaurus](https://docusaurus.io/) - The website framework this portfolio is built upon.
 - [React](https://react.dev) - UI library for building the interactive components.
 - [React Icons](https://react-icons.github.io/) - Icon library used throughout the site.
+- Libraries listed in [package.json](./package.json) - Essential dependencies for the project.
 - [Hugo Profile](https://hugo-profile.netlify.app/) - Design inspiration.
 - [Catppuccin](https://github.com/catppuccin/catppuccin) - Color scheme that inspired the site's palette.
 - [Deepseek R1](https://www.deepseek.com/) hosted using [Ollama](https://ollama.com/library/deepseek-r1) - prism.js theme & project card component.
