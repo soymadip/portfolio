@@ -35,7 +35,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--ctp-surface0);
+  background-color: var(--ifm-card-background-color);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -43,7 +43,7 @@
   animation: fadeIn 0.5s ease-out forwards;
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid var(--ctp-surface1);
+  border: 1px solid var(--ifm-shadow-color);
   width: 100%;
 }
 
@@ -88,7 +88,7 @@
   width: 100%;
   padding-top: 62%;
   overflow: hidden;
-  background-color: var(--ctp-surface1);
+  background-color: var(--ifm-shadow-color);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -127,7 +127,7 @@
 }
 
 .projectDescription {
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   margin: 0.4rem 0;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -144,14 +144,14 @@
 }
 
 .projectTag {
-  background-color: var(--ctp-surface1);
-  color: var(--ctp-subtext1);
+  background-color: var(--ifm-shadow-color);
+  color: var(--ifm-font-color-secondary);
   padding: 0.02rem 0.3rem;
   border-radius: 40px;
   font-size: 0.6rem;
   font-weight: 400;
   transition: background-color 0.2s ease;
-  border: 1px solid var(--ctp-surface2);
+  border: 1px solid var(--ifm-color-gray-500);
   margin: 0.05rem;
 }
 
@@ -167,14 +167,14 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   text-decoration: none;
   font-size: 0.8rem;
   transition: all 0.2s ease;
   padding: 0.35rem 0.7rem;
   border-radius: 6px;
-  border: 1px solid var(--ctp-surface2);
-  background-color: var(--ctp-surface1);
+  border: 1px solid var(--ifm-color-gray-500);
+  background-color: var(--ifm-shadow-color);
   font-weight: 500;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -182,7 +182,7 @@
 
 .projectLink:hover {
   color: var(--ifm-color-primary);
-  background-color: var(--ctp-surface0);
+  background-color: var(--ifm-card-background-color);
   transform: translateY(-2px);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.08);
   border-color: var(--ifm-color-primary);
@@ -197,7 +197,7 @@
 .projectLink svg {
   font-size: 0.95rem;
   transition: transform 0.2s ease;
-  color: var(--ctp-subtext1);
+  color: var(--ifm-font-color-secondary);
 }
 
 .projectLink:hover svg {
@@ -258,8 +258,8 @@
 .noProjects {
   text-align: center;
   padding: 2rem;
-  color: var(--ctp-subtext0);
-  background-color: var(--ctp-surface1);
+  color: var(--ifm-font-color-tertiary);
+  background-color: var(--ifm-shadow-color);
   border-radius: 8px;
   margin: 1rem 0;
 }
@@ -298,7 +298,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--ctp-surface2);
+  background-color: var(--ifm-color-gray-500);
   border: none;
   margin: 0 5px;
   cursor: pointer;

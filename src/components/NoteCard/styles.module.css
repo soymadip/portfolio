@@ -1,4 +1,3 @@
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -25,9 +24,8 @@
   border-radius: 8px;
   text-align: center;
   padding: 1.2rem;
-  background-color: var(--ctp-surface0);
+  background-color: var(--ifm-card-background-color);
   opacity: 0;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
   animation: fadeIn 0.5s ease-out forwards;
   animation-name: fadeIn;
@@ -56,7 +54,7 @@
 
 .noteTitle {
   margin-bottom: 1.8rem;
-  color: var(--ctp-text);
+  color: var(--ifm-font-color-base);
   font-size: 1.8rem;
   font-weight: 600;
 }

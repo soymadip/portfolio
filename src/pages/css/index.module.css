@@ -83,7 +83,7 @@
 .intro {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--ctp-overlay2);
+  color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
   margin-bottom: 0rem;
   animation: slideUp 0.6s ease-out 0.4s both;
@@ -124,7 +124,7 @@
 .titleComma {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--ctp-overlay2);
+  color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
   margin-left: 0.1rem;
   margin-right: 0.5rem;
@@ -142,7 +142,7 @@
 .subtitlePrefix {
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--ctp-overlay2);
+  color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
   margin-right: 0.5rem;
 }
@@ -181,7 +181,7 @@
   margin-top: 1.3rem;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   max-width: 600px;
   font-family: var(--ifm-font-family-base);
   text-align: left;
@@ -284,7 +284,7 @@
 
 .projectsSubtitle {
   font-size: .9rem;
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   max-width: 600px;
   margin: 0 auto;
   animation: slideUp 0.5s ease-out 0.2s forwards;
@@ -320,7 +320,7 @@
 
 .contactSubtitle {
   font-size: 1rem;
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   max-width: 600px;
   margin: 0 auto;
   padding: 0 1rem;

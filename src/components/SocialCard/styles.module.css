@@ -30,7 +30,7 @@
   min-height: 160px;
   border-radius: 8px;
   padding: 1.3rem 1.2rem;
-  background-color: var(--ctp-surface0);
+  background-color: var(--ifm-card-background-color);
   opacity: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   animation: fadeIn 0.5s ease-out forwards;
@@ -51,7 +51,7 @@
 .socialCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
-  background-color: var(--ctp-surface1);
+  background-color: var(--ifm-shadow-color);
   text-decoration: none;
 }
 
@@ -101,12 +101,12 @@
   transform: translateX(-50%);
   width: 70px;
   height: 1px;
-  background-color: var(--ctp-overlay0);
-  opacity: 0.2;
+  background-color: var(--ifm-color-gray-400);
+  opacity: 0.15;
 }
 
 .socialDesc {
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   font-size: 0.9rem;
   margin-top: 0.3rem;
   margin-bottom: 0;

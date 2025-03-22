@@ -31,7 +31,7 @@
 .pageDescription {
   font-size: 1.2rem;
   text-align: center;
-  color: var(--ctp-subtext0);
+  color: var(--ifm-font-color-tertiary);
   margin-bottom: 2rem;
   animation: slideUp 0.5s ease-out 0.2s forwards;
   opacity: 0;
