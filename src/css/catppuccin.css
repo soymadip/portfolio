@@ -206,9 +206,6 @@
 
     /* Code block */
     --ifm-code-background: var(--ctp-latte-surface0);
-    --ifm-code-padding-horizontal: 0.4rem;
-    --ifm-code-padding-vertical: 0.1rem;
-    --ifm-code-font-size: 95%;
 
     /* Other UI elements */
     --ifm-blockquote-color: var(--ctp-latte-subtext0);
@@ -435,7 +432,7 @@
     --ifm-shadow-color-rgb: var(--ctp-mocha-surface1-rgb);
     --ifm-button-color: var(--ctp-mocha-text);
     --ifm-hover-overlay: rgba(var(--ctp-mocha-surface2-rgb), 0.5) !important;
-    
+
     /* Code highlighting */
     --docusaurus-highlighted-code-line-bg: rgba(var(--ctp-mocha-surface2-rgb), 0.5);
 }
