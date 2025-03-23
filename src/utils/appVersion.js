@@ -20,7 +20,7 @@ function appVersion() {
     console.warn('Could not read package.json version:', err.message);
   }
 
-  console.info('App version:', cachedVersion);
+  console.info('\n[INFO] App version:', cachedVersion);
   return cachedVersion;
 }
 

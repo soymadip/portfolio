@@ -1,13 +1,13 @@
 import { catppuccinMocha, catppuccinLatte } from "./static/prism.js";
-import { getCssVar } from "./src/utils/cssUtils.js";
 import { appVersion } from "./src/utils/appVersion.js";
+import { metaTags } from "./src/config/metaTags.js";
 
 const ownerName = 'soymadip';
 const SiteUrl = 'https://soymadip.me';
 const SrtUrl = `${SiteUrl}/l`;
 
 const config = {
-  
+
   projectName: 'portfolio',
 
   title: ownerName,
@@ -29,55 +29,7 @@ const config = {
     locales: ['en'],
   },
 
-  headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'apple-touch-icon',
-        sizes: '180x180',
-        href: '/favicon/apple-touch-icon.png',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '32x32',
-        href: '/favicon/favicon-32x32.png',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'icon',
-        type: 'image/png',
-        sizes: '16x16',
-        href: '/favicon/favicon-16x16.png',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'manifest',
-        href: '/favicon/site.webmanifest',
-      },
-    },
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'msapplication-TileColor',
-        content: getCssVar('--ifm-color-primary'),
-      },
-    },
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'theme-color',
-        content: getCssVar('--ifm-color-primary'),
-      },
-    },
-  ],
+  headTags: metaTags,
 
   customFields: {
     version: appVersion(),
@@ -239,7 +191,7 @@ const config = {
     ({
     
       // Social card
-      image: 'img/social-card.jpeg',
+      image: '/img/social-card.jpeg',
 
       // Default: Dark mode
       colorMode: {

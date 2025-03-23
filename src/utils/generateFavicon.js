@@ -38,7 +38,7 @@ module.exports = function(context, options) {
 async function generateFavicons(context, options = {}) {
 
   try {
-    console.log('\nGenerating favicons...');
+    console.log('\n[INFO] Generating favicons...');
     
     const {siteConfig} = context;
     const profilePicUrl = options.imagePath || siteConfig.customFields.profilePic;
@@ -54,7 +54,6 @@ async function generateFavicons(context, options = {}) {
     const configuration = {
       path: `/${options.outputPath}/`,
       appName: siteConfig.title || 'Portfolio',
-      appShortName: siteConfig.title || 'Portfolio',
       appDescription: siteConfig.tagline || 'Portfolio',
       background: getCssVar('--ifm-background-color'),
       theme_color: getCssVar('--ifm-color-primary'),
@@ -63,13 +62,13 @@ async function generateFavicons(context, options = {}) {
       scope: '/',
       start_url: '/',
       version: appVersion,
-      orientation: 'portrait',
+      orientation: 'natural',
       logging: true,
       icons: {
         android: {
           offset: 0,
-          background: true,
-          mask: false,
+          background: false,
+          mask: true,
           overlayGlow: false,
           androidPlayStore: false,
         },
@@ -78,7 +77,7 @@ async function generateFavicons(context, options = {}) {
         favicons: true,
         windows: false,
         yandex: false,
-      },
+      }
     };
     
     // Download and process image
@@ -99,38 +98,27 @@ async function generateFavicons(context, options = {}) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
     
-    // List of files we want to keep
-    const requiredFiles = [
-      'android-chrome-192x192.png',
-      'android-chrome-512x512.png',
-      'apple-touch-icon.png',
-      'favicon-16x16.png',
-      'favicon-32x32.png',
-      'favicon.ico'
-    ];
-    
-    // Save only the required image files
-    response.images
-      .filter(image => requiredFiles.includes(image.name))
-      .forEach(image => {
-        fs.writeFileSync(path.join(outputDir, image.name), image.contents);
-        console.log(`Generated: ${image.name}`);
-      });
-    
-    // Save the webmanifest file
-    response.files
-      .filter(file => file.name === 'manifest.webmanifest')
-      .forEach(file => {
-        fs.writeFileSync(path.join(outputDir, 'site.webmanifest'), file.contents);
-        console.log('Generated: site.webmanifest');
-      });
-    
+    // Save all generated images 
+    response.images.forEach(image => {
+
+      fs.writeFileSync(path.join(outputDir, image.name), image.contents);
+      console.log(`Generated: ${image.name}`);
+    });
+
+    // Save all manifest/config files
+    response.files.forEach(file => {
+
+      fs.writeFileSync(path.join(outputDir, file.name), file.contents);
+      console.log(`Generated: ${file.name}`);
+    });
+
     // Clean up temporary files
     fs.unlinkSync(finalImagePath);
-    
-    console.log('Favicons generated successfully!\n');
+
+    console.log('[SUCCESS] Favicons generated successfully!\n');
   } catch (error) {
-    console.error('Error generating favicons:', error);
+
+    console.error('[ERROR] Error generating favicons:', error);
   }
 }
 
