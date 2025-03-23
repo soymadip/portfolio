@@ -25,3 +25,7 @@ public class HelloWorld {
 This program defines a class `HelloWorld` with a `main` method, which is the entry point of any Java application. When executed, it prints "Hello, World!" to the console.
 
 Java is widely adopted in industries such as finance, healthcare, and e-commerce, making it a versatile and enduring choice for developers.
+
+:::note
+There **68** reserve keywords in java
+:::

@@ -6,7 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import Tooltip from '@site/src/components/Tooltip';
-import { iconMap } from '@site/src/data/iconMappings';
+import { iconMap } from '@site/src/config/iconMappings';
 
 
 // Default icon & icon

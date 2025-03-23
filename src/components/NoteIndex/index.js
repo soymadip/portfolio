@@ -3,7 +3,7 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import { iconMap } from '@site/src/data/iconMappings';
+import { iconMap } from '@site/src/config/iconMappings';
 
 import { FaBook } from 'react-icons/fa';
 import styles from './styles.module.css';

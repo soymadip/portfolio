@@ -1,6 +1,6 @@
 import React from 'react';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { iconMap } from "@site/src/data/iconMappings";
+import { iconMap } from "@site/src/config/iconMappings";
 import { FaQuestionCircle } from "react-icons/fa";
 import styles from './styles.module.css';
 

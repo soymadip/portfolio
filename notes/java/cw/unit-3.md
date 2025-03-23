@@ -7,6 +7,7 @@ desc: Java OOP Concepts
 A **class** is a blueprint for creating objects. It defines the **properties (variables)** and **behaviors (methods)** an object will have.  
 
 **Example:**  
+
 ```java
 class Car {
     String brand;  // Property
@@ -161,10 +162,6 @@ class Car {
 ```
 
 ---
-
-> [!note]
-> There **68** reserve keywords in java
-
 
 
 ## **Polymorphism in Java**  
