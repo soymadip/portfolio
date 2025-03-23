@@ -1,5 +1,7 @@
 import { getCssVar } from "../utils/cssUtils.js";
 
+const backgroundColor = getCssVar('--ifm-background-color');
+
 export const metaTags = [
 
   // Theme color meta tags
@@ -7,14 +9,14 @@ export const metaTags = [
     tagName: 'meta',
     attributes: {
       name: 'msapplication-TileColor',
-      content: getCssVar('--ifm-color-primary'),
+      content: backgroundColor,
     },
   },
   {
     tagName: 'meta',
     attributes: {
       name: 'theme-color',
-      content: getCssVar('--ifm-color-primary'),
+      content: backgroundColor,
     },
   },
 
