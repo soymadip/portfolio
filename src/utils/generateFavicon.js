@@ -70,7 +70,7 @@ async function generateFavicons(context, options = {}) {
           background: false,
           mask: true,
           overlayGlow: false,
-          androidPlayStore: false,
+          androidPlayStore: true,
         },
         appleIcon: true,
         appleStartup: false,
@@ -108,8 +108,30 @@ async function generateFavicons(context, options = {}) {
     // Save all manifest/config files
     response.files.forEach(file => {
 
-      fs.writeFileSync(path.join(outputDir, file.name), file.contents);
-      console.log(`Generated: ${file.name}`);
+      // Inject version into manifest
+      if (file.name === 'manifest.webmanifest') {
+        try {
+          const manifest = JSON.parse(file.contents);
+          manifest.version = appVersion;
+
+          fs.writeFileSync(
+            path.join(outputDir, file.name), 
+            JSON.stringify(manifest, null, 2)
+          );
+          console.log(`Generated: ${file.name}`);
+
+        } catch (err) {
+
+          fs.writeFileSync(path.join(outputDir, file.name), file.contents);
+
+          console.error('[ERROR] Failed to inject version into manifest:', err);
+          console.log(`Generated: ${file.name} (without version)`);
+        }
+      } else {
+
+        fs.writeFileSync(path.join(outputDir, file.name), file.contents);
+        console.log(`Generated: ${file.name}`);
+      }
     });
 
     // Clean up temporary files
