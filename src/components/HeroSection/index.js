@@ -9,7 +9,12 @@ export default function HeroSection({ id, className }) {
   const profilePic = customFields.profilePic;
 
   return (
-    <div className={`${styles.hero} ${className || ''}`} id={id}>
+    <div
+        className={`${styles.hero} ${className || ''}`}
+        id={id} 
+        role="region" 
+        aria-label="Hero section"
+    >
       <div className={styles.container}>
         <div className={styles.leftSection}>
           <p className={styles.intro}>Hello there, I'm</p>
@@ -30,6 +35,7 @@ export default function HeroSection({ id, className }) {
               <a 
                 href="#projects"
                 className={styles.ctaButton}
+                aria-label="View my projects"
               >
                 View My Work
               </a>

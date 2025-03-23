@@ -29,7 +29,7 @@ export default function ContactSection({ id, className, title, subtitle }) {
   socialLinks = sortEmail(socialLinks);
 
   return (
-    <div id={id} className={`${styles.contactSection} ${className || ''}`}>
+    <div id={id} className={`${styles.contactSection} ${className || ''}`} role="region" aria-label="Contact section">
       <div className={styles.contactContainer}>
         <div className={styles.contactHeader}>
           <h2 className={styles.contactTitle}>
@@ -42,7 +42,7 @@ export default function ContactSection({ id, className, title, subtitle }) {
         
         {/* SocialCard */}
         <div className={styles.gridWrapper}>
-          <div className={styles.socialGrid}>
+          <div className={styles.socialGrid} role="list" aria-label="Social media and contact links">
             {socialLinks.map((social, index) => {
               const iconData = iconMap[social.icon] || {};
               
@@ -63,11 +63,12 @@ export default function ContactSection({ id, className, title, subtitle }) {
                     "--card-index": index,
                     "--icon-hover-color": iconColor,
                   }}
-                  aria-label={name}
+                  aria-label={`Connect with me on ${name}: ${description}`}
+                  role="listitem"
                 >
                   {Icon && (
                     <div className={styles.socialIcon}>
-                      <Icon />
+                      <Icon aria-hidden="true" />
                     </div>
                   )}
                   <h3 className={styles.socialTitle}>

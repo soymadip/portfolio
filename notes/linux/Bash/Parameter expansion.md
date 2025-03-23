@@ -22,7 +22,7 @@ The basic syntax of parameter expansion is `${parameter}` or `${parameter:-word}
    ```
    If `variable` is not set or is null, this will return `defaultValue`.
 2. **Assign Default Value**: 
- ```
+ ```bash
  ${parameter:=word}
  ```
    - Assigns `word` to `parameter` if `parameter` is unset or null; otherwise, retains the value of `parameter`.

@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./static/img/profile-circle.png" width=140>
+    <img src="https://avatars.githubusercontent.com/u/84225810?v=4" width=140>
     <h1>My portfolio</h1>
     <p>This is my (not yet live) portfolio website.</p>
     <p>Holds collection of my projects, notes, and other content that I am passionate about.</p>

@@ -8,7 +8,7 @@ export default function AboutSection({ id, className, title }) {
   const aboutMe = customFields.aboutMe || {};
 
   return (
-    <div id={id} className={`${styles.aboutSection} ${className || ''}`}>
+    <div id={id} className={`${styles.aboutSection} ${className || ''}`} role="region" aria-label="About me section">
       <div className={styles.aboutContainer}>
         <div className={styles.aboutHeader}>
           <h2 className={styles.aboutTitle}>{title || aboutMe.title || "About Me"}</h2>
@@ -52,6 +52,7 @@ export default function AboutSection({ id, className, title }) {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={styles.resumeButton}
+                    aria-label="View my resume in a new tab"
                   >
                     View My Resume
                   </a>
@@ -60,11 +61,11 @@ export default function AboutSection({ id, className, title }) {
             </div>
             
             {aboutMe.skills && aboutMe.skills.length > 0 && (
-              <div className={styles.skillsSection}>
-                <h3 className={styles.skillsTitle}>My Skills</h3>
-                <div className={styles.skillsGrid}>
+              <div className={styles.skillsSection} aria-labelledby="skills-heading">
+                <h3 className={styles.skillsTitle} id="skills-heading">My Skills</h3>
+                <div className={styles.skillsGrid} role="list">
                   {aboutMe.skills.map((skill, index) => (
-                    <div key={index} className={styles.skillBadge}>
+                    <div key={index} className={styles.skillBadge} role="listitem">
                       {skill}
                     </div>
                   ))}

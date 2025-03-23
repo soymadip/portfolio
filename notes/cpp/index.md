@@ -7,7 +7,8 @@ sidebar_position: 3
 
 C++ is a high-level, general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language. It supports procedural, object-oriented, and generic programming paradigms, making it a versatile choice for a wide range of applications.
 
-### Key Features of C++
+## Key Features of C++
+
 - **Object-Oriented Programming**: Enables encapsulation, inheritance, and polymorphism.
 - **Performance**: Offers low-level memory manipulation and high execution speed.
 - **Standard Template Library (STL)**: Provides a collection of pre-built classes and functions for common data structures and algorithms.

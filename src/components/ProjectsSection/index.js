@@ -115,7 +115,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
         key={i}
         className={`${styles.navDot} ${i === currentSlide ? styles.activeDot : ''}`}
         onClick={() => goToSlide(i)}
-        aria-label={`Go to page ${i + 1}`}
+        aria-label={`Go to project page ${i + 1} of ${totalPages}`}
+        aria-current={i === currentSlide ? 'true' : 'false'}
         type="button"
       />
     ));
@@ -223,7 +224,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
   }, []);
 
   return (
-    <div id={id} className={`${styles.projectsSection} ${className || ''}`}>
+    <div id={id} className={`${styles.projectsSection} ${className || ''}`} role="region" aria-label="Projects section">
       <div className={styles.projectsContainer}>
         <div className={styles.projectsHeader}>
           <h2 className={styles.projectsTitle}>
@@ -244,21 +245,22 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
             <button 
               className={`${styles.carouselControl} ${styles.prevButton} ${styles.desktopOnly} ${atBeginning ? styles.disabledButton : ''}`} 
               onClick={goToPrev}
-              aria-label="Previous project"
+              aria-label="View previous projects"
+              aria-disabled={atBeginning}
               type="button"
               disabled={atBeginning}
             >
-              <FaChevronLeft />
+              <FaChevronLeft aria-hidden="true" />
             </button>
             
-            <div className={styles.carouselWrapper}>
+            <div className={styles.carouselWrapper} aria-roledescription="carousel" aria-label="Projects carousel">
               <Slider ref={sliderRef} {...settings}>
                 {projects.map((project, index) => (
-                  <div key={project.id || project.title + index} className={styles.carouselSlide}>
+                  <div key={project.id || project.title + index} className={styles.carouselSlide} aria-roledescription="slide" aria-label={`Project ${index + 1} of ${projects.length}: ${project.title}`}>
                     <div className={`${styles.carouselCard} ${project.featured ? styles.featuredCard : ''}`}>
                       {project.featured && (
-                        <div className={styles.featuredBadge} title="Featured Project">
-                          <FaStar />
+                        <div className={styles.featuredBadge} title="Featured Project" aria-label="Featured project">
+                          <FaStar aria-hidden="true" />
                         </div>
                       )}
                       <div className={styles.projectImageContainer}>
@@ -318,7 +320,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                     <button 
                       className={`${styles.carouselControl} ${styles.prevButton} ${atBeginning ? styles.disabledButton : ''}`} 
                       onClick={goToPrev}
-                      aria-label="Previous project"
+                      aria-label="View previous projects"
+                      aria-disabled={atBeginning}
                       type="button"
                       disabled={atBeginning}
                     >
@@ -335,7 +338,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                     <button 
                       className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
                       onClick={goToNext}
-                      aria-label="Next project"
+                      aria-label="View next projects"
+                      aria-disabled={atEnd}
                       type="button"
                       disabled={atEnd}
                     >
@@ -357,7 +361,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
             <button 
               className={`${styles.carouselControl} ${styles.nextButton} ${styles.desktopOnly} ${atEnd ? styles.disabledButton : ''}`} 
               onClick={goToNext}
-              aria-label="Next project"
+              aria-label="View next projects"
+              aria-disabled={atEnd}
               type="button"
               disabled={atEnd}
             >
