@@ -4,6 +4,7 @@ const path = require('path');
 const { favicons } = require('favicons');
 const { downloadImage } = require('./imageDownloader');
 const { reshapeImage } = require('./imageProcessor');
+const { getCssVar } = require('./cssUtils');
 
 // favicon-generator plugin
 module.exports = function(context, options) {
@@ -41,11 +42,13 @@ async function generateFavicons(context, options = {}) {
     
     const {siteConfig} = context;
     const profilePicUrl = options.imagePath || siteConfig.customFields.profilePic;
+    const appVersion = siteConfig.customFields.version || '1.0';
+
     const circular = options.circular !== false;
     const shape = options.shape || 'circle';
     const outputDir = path.resolve(context.siteDir, 'static', options.outputPath);
     const reshapedImagePath = path.resolve(context.siteDir, 'temp_reshaped_pic.png');
-    
+
 
     // Configuration for favicons
     const configuration = {
@@ -53,13 +56,14 @@ async function generateFavicons(context, options = {}) {
       appName: siteConfig.title || 'Portfolio',
       appShortName: siteConfig.title || 'Portfolio',
       appDescription: siteConfig.tagline || 'Portfolio',
-      background: '#1e1e2e',
-      theme_color: '#202030',
+      background: getCssVar('--ifm-background-color'),
+      theme_color: getCssVar('--ifm-color-primary'),
       appleStatusBarStyle: 'black-translucent',
       display: 'standalone',
       scope: '/',
       start_url: '/',
-      version: '1.0',
+      version: appVersion,
+      orientation: 'portrait',
       logging: true,
       icons: {
         android: {
@@ -130,15 +134,14 @@ async function generateFavicons(context, options = {}) {
   }
 }
 
-// CLI command for manual triggar 
+// CLI command for manual trigger
 if (require.main === module) {
   const siteDir = path.resolve(__dirname, '../..');
-  const siteConfig = require('../../docusaurus.config.js');
-  const config = siteConfig.default || siteConfig;
+  const siteConfig = require('../../docusaurus.config.js').default;
   
   generateFavicons({
     siteDir,
-    siteConfig: config
+    siteConfig
   }).catch(error => {
     console.error('Error in CLI mode:', error);
     process.exit(1);

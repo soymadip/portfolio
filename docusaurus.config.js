@@ -1,7 +1,6 @@
-import {
-  catppuccinMocha, 
-  catppuccinLatte
-} from "./static/prism.js";
+import { catppuccinMocha, catppuccinLatte } from "./static/prism.js";
+import { getCssVar } from "./src/utils/cssUtils.js";
+import { appVersion } from "./src/utils/appVersion.js";
 
 const ownerName = 'soymadip';
 const SiteUrl = 'https://soymadip.me';
@@ -68,19 +67,20 @@ const config = {
       tagName: 'meta',
       attributes: {
         name: 'msapplication-TileColor',
-        content: '#202030',
+        content: getCssVar('--ifm-color-primary'),
       },
     },
     {
       tagName: 'meta',
       attributes: {
         name: 'theme-color',
-        content: '#202030',
+        content: getCssVar('--ifm-color-primary'),
       },
     },
   ],
 
   customFields: {
+    version: appVersion(),
 
     profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
