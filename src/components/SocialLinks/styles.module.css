@@ -1,5 +1,5 @@
 
-/* Animation for fade in effect */
+/* Animation */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

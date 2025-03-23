@@ -1,3 +1,16 @@
+
+/* Animations */
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -9,10 +22,60 @@
   }
 }
 
+
+/* Contact Section styles */
+.contactSection {
+  scroll-margin-top: 90px;
+  min-height: calc(100vh - 60px);
+  margin-bottom: 0;
+  width: 100%;
+  padding: 0rem 0 5rem;
+  background-color: var(--ifm-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.contactHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: 0rem;
+}
+
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.6rem;
+  animation: slideUp 0.5s ease-out forwards;
+  position: relative;
+  display: inline-block;
+}
+
+.contactSubtitle {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-tertiary);
+  max-width: 600px;
+  margin: 0.05rem auto 0;
+  animation: slideUp 0.5s ease-out 0.2s forwards;
+}
+
+
+/* SocialCard */
 .gridWrapper {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-top: 1.2rem;
 }
 
 .socialGrid {
@@ -20,9 +83,11 @@
   flex-wrap: wrap;
   gap: 1.2rem;
   justify-content: center;
-  margin: 1rem auto;
-  max-width: 1250px;
+  margin: 0 auto;
+  margin-top: 0.9rem;
+  max-width: 1300px;
   width: 100%;
+  padding: 0 0.5rem;
 }
 
 .socialCard {
@@ -119,9 +184,14 @@
   text-decoration: none;
 }
 
+/* Responsive styles */
 @media (max-width: 1200px) {
   .socialCard {
     width: 140px;
+  }
+  
+  .socialGrid {
+    gap: 1.1rem;
   }
 }
 
@@ -129,9 +199,36 @@
   .socialCard {
     width: 150px;
   }
+  
+  .socialGrid {
+    gap: 1rem;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
+  .contactSection {
+    scroll-margin-top: 70px;
+    padding: 0.5rem 0 4rem;
+  }
+  
+  .contactContainer {
+    padding: 0;
+  }
+  
+  .contactHeader {
+    margin-bottom: 1.2rem;
+    margin-top: 0rem;
+  }
+  
+  .contactTitle {
+    font-size: 2.2rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 0.9rem;
+  }
+  
   .socialCard {
     width: 150px;
     min-height: 150px;
@@ -146,13 +243,45 @@
   .socialTitle {
     font-size: 1.5rem;
   }
+  
+  .socialGrid {
+    padding: 0 1rem;
+  }
+  
+  .gridWrapper {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .socialGrid {
-    gap: 1rem;
+  .contactSection {
+    scroll-margin-top: 65px;
+    padding: 0rem 0 3rem;
   }
   
+  .contactContainer {
+    padding: 0;
+  }
+
+  .contactHeader {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+
+  .contactTitle {
+    font-size: 1.9rem;
+  }
+
+  .contactSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .socialGrid {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
   .socialCard {
     width: 60px;
     height: 60px;
@@ -162,29 +291,36 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .socialIcon {
     font-size: 2.5rem;
     margin: 3px 0 0;
     position: relative;
     top: 1.5px;
   }
-  
+
   .socialTitle, 
   .socialDesc,
   .socialCard::after {
     display: none;
   }
-  
+
   .socialCard:hover {
     transform: translateY(-3px) scale(1.05);
+  }
+
+  .gridWrapper {
+    margin-top: 0.8rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .contactTitle, .contactSubtitle, .socialCard {
+    animation: none !important;
+    transition: none !important;
+  }
+
   .socialCard {
-    animation: none;
     opacity: 1;
   }
 }
-

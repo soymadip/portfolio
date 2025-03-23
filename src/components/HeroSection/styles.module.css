@@ -1,5 +1,5 @@
-/* Animations */
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -56,7 +56,6 @@
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 60px);
-  background-color: var(--ifm-background-color);
   font-family: var(--ifm-font-family-base);
   animation: fadeIn 0.8s ease-in-out;
 }
@@ -68,6 +67,7 @@
   max-width: 1300px;
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 4rem;
   padding: 0 2rem; 
 }
 
@@ -233,6 +233,7 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  margin-top: 1rem;
   padding-right: 2rem; 
   animation: slideInRight 0.8s ease-out 0.3s both;
 }
@@ -254,113 +255,8 @@
   box-shadow: 0 8px 20px var(--ifm-shadow-color);
 }
 
-.featuredProjects {
-  scroll-margin-top: 80px;
-  min-height: calc(100vh - 60px);
-  margin-bottom: 0;
-  width: 100%;
-  padding: 0.02rem 0 5rem;
-  background-color: var(--ifm-background-color);
-}
-
-.projectsContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 2rem;
-}
-
-.projectsHeader {
-  text-align: center;
-  margin-bottom: 1.07rem;
-}
-
-.projectsTitle {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--ifm-color-primary);
-  margin-bottom: 0.6rem;
-  animation: slideUp 0.5s ease-out forwards;
-}
-
-.projectsSubtitle {
-  font-size: .9rem;
-  color: var(--ifm-font-color-tertiary);
-  max-width: 600px;
-  margin: 0 auto;
-  animation: slideUp 0.5s ease-out 0.2s forwards;
-}
-
-/* Contact section styles */
-.contactSection {
-  scroll-margin-top: 80px;
-  padding: 2rem 0 5rem;
-  background-color: var(--ifm-background-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0;
-  position: relative;
-  min-height: calc(100vh - 60px);
-}
-
-.contactSectionHeader {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  animation: slideUp 0.6s ease-out both;
-  margin-top: -1.5rem;
-}
-
-.contactTitle {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: var(--ifm-color-primary);
-  margin-bottom: 0.75rem;
-}
-
-.contactSubtitle {
-  font-size: 1rem;
-  color: var(--ifm-font-color-tertiary);
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 /* Responsive styles for sections */
 @media (max-width: 768px) {
-
-  /* Contact section tablet adjustments */
-  .contactSection {
-    scroll-margin-top: 70px;
-    padding: 1.5rem 1rem 4rem;
-  }
-  
-  .contactSectionHeader {
-    margin-top: -1rem;
-  }
-  
-  .contactTitle {
-    font-size: 2rem;
-  }
-
-  /* Featured projects tablet adjustments */
-  .featuredProjects {
-    scroll-margin-top: 70px;
-    min-height: calc(100vh);
-    padding: 1.5rem 0 4rem;
-  }
-
-  .projectsTitle {
-    font-size: 2rem;
-  }
-  
-  .projectsSubtitle {
-    font-size: 0.9rem;
-  }
-
-  .projectsHeader {
-    margin-bottom: 2rem;
-  }
 
   /* Hero section tablet adjustments */
   .intro {
@@ -488,67 +384,12 @@
     width: 25px;
     height: 25px;
   }
+  
 }
 
 /* Responsive styles for mobile devices */
 @media (max-width: 480px) {
 
-  /* Contact section */
-  .contactSection {
-    scroll-margin-top: 65px;
-    padding: 1rem 1rem 3rem;
-  }
-  
-  .contactSectionHeader {
-    margin-top: -0.5rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .contactTitle {
-    font-size: 1.8rem;
-  }
-  
-  .contactSubtitle {
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-
-  /* Featured projects mobile adjustments */
-  .featuredProjects {
-    scroll-margin-top: 65px;
-    padding: 1rem 0 3rem;
-  }
-  
-  .projectsContainer {
-
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .projectsTitle {
-    font-size: 1.8rem;
-  }
-  
-  .projectsSubtitle {
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-
-  .projectsHeader {
-    margin-bottom: 1.5rem;
-  }
-
-  .viewAllProjects {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .viewOtherWorkButton {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  /* Hero section mobile adjustments */
   .hero {
     min-height: calc(100vh);
     padding: 0.5rem 0 2rem;

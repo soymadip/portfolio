@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect, useCallback, useMemo } from 'react'
 import Slider from "react-slick";
 import { FaGithub, FaGlobe, FaPlay, FaChevronLeft, FaChevronRight, FaStar } from 'react-icons/fa';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import styles from './styles.module.css';
 
 // Import slick carousel css
-import styles from './styles.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 /// PART OF THIS COMPONENT IS AI GENERATED
 
 
-const ProjectCarousel = ({ customProjects = null }) => {
+export default function ProjectsSection({ id, className, title, subtitle }) {
   const { siteConfig } = useDocusaurusContext();
   const [projects, setProjects] = useState([]);
   const sliderRef = useRef(null);
@@ -77,10 +77,11 @@ const ProjectCarousel = ({ customProjects = null }) => {
 
   // Load and set up projects on initial load and on resize
   useEffect(() => {
-    const projectsToUse = customProjects || (siteConfig.customFields?.projects || []);
+    const projectsToUse = siteConfig.customFields?.projects || [];
     
     const handleLayout = () => {
       const newSlidesToShow = getCurrentSlidesToShow();
+      
       if (newSlidesToShow !== slidesToShow || !projects.length) {
         setSlidesToShow(newSlidesToShow);
         const { projects: newProjects, totalPages: newTotalPages } = 
@@ -98,7 +99,7 @@ const ProjectCarousel = ({ customProjects = null }) => {
     // Resize handler
     window.addEventListener('resize', handleLayout);
     return () => window.removeEventListener('resize', handleLayout);
-  }, [customProjects, siteConfig, getCurrentSlidesToShow, prepareProjects, slidesToShow, projects.length]);
+  }, [siteConfig, getCurrentSlidesToShow, prepareProjects, slidesToShow, projects.length]);
 
   // Method to go to a specific slide
   const goToSlide = useCallback((index) => {
@@ -221,141 +222,150 @@ const ProjectCarousel = ({ customProjects = null }) => {
     );
   }, []);
 
-  if (projects.length === 0) {
-    return (
-      <div className={styles.noProjects}>
-        <p>No projects to display.</p>
-      </div>
-    );
-  }
-
   return (
-    <div className={styles.carouselContainer}>
-      {/* Desktop navigation buttons (sides) */}
-      <button 
-        className={`${styles.carouselControl} ${styles.prevButton} ${styles.desktopOnly} ${atBeginning ? styles.disabledButton : ''}`} 
-        onClick={goToPrev}
-        aria-label="Previous project"
-        type="button"
-        disabled={atBeginning}
-      >
-        <FaChevronLeft />
-      </button>
-      
-      <div className={styles.carouselWrapper}>
-        <Slider ref={sliderRef} {...settings}>
-          {projects.map((project, index) => (
-            <div key={project.id || project.title + index} className={styles.carouselSlide}>
-              <div className={`${styles.carouselCard} ${project.featured ? styles.featuredCard : ''}`}>
-                {project.featured && (
-                  <div className={styles.featuredBadge} title="Featured Project">
-                    <FaStar />
-                  </div>
-                )}
-                <div className={styles.projectImageContainer}>
-                  {project.image && (
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className={styles.projectImage} 
-                      loading="lazy"
-                    />
-                  )}
-                </div>
-                <div className={styles.projectContent}>
-                  <h3 className={styles.projectTitle}>{project.title}</h3>
-                  
-                  {project.tags?.length > 0 && (
-                    <div className={styles.projectTags}>
-                      {project.tags.map(tag => (
-                        <span key={tag} className={styles.projectTag}>{tag}</span>
-                      ))}
-                    </div>
-                  )}
-                  <p className={styles.projectDescription}>{project.description}</p>
-                </div>
-                
-                <div className={styles.projectLinks}>
-                  {renderProjectLink(
-                    project.website, 
-                    FaGlobe, 
-                    "Website", 
-                    `Visit ${project.title} website`
-                  )}
-                  
-                  {renderProjectLink(
-                    project.github, 
-                    FaGithub, 
-                    "Source", 
-                    `Repository with source code`
-                  )}
-                  
-                  {renderProjectLink(
-                    project.liveDemo, 
-                    FaPlay, 
-                    "Demo", 
-                    `Live demo for ${project.title}`
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
-        
-        {/* Mobile navigation controls (bottom) */}
-        <div className={styles.mobileNavigationControls}>
-          {totalPages > 1 && (
-            <>
-              <button 
-                className={`${styles.carouselControl} ${styles.prevButton} ${atBeginning ? styles.disabledButton : ''}`} 
-                onClick={goToPrev}
-                aria-label="Previous project"
-                type="button"
-                disabled={atBeginning}
-              >
-                <FaChevronLeft />
-              </button>
-              
-              <div 
-                className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`} 
-                ref={navDotsContainerRef}
-              >
-                {renderNavDots()}
-              </div>
-              
-              <button 
-                className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
-                onClick={goToNext}
-                aria-label="Next project"
-                type="button"
-                disabled={atEnd}
-              >
-                <FaChevronRight />
-              </button>
-            </>
-          )}
+    <div id={id} className={`${styles.projectsSection} ${className || ''}`}>
+      <div className={styles.projectsContainer}>
+        <div className={styles.projectsHeader}>
+          <h2 className={styles.projectsTitle}>
+            {title || "My Projects"}
+          </h2>
+          <p className={styles.projectsSubtitle}>
+            {subtitle || "A collection of all my works, with featured projects highlighted"}
+          </p>
         </div>
         
-        {/* Desktop dots (without buttons) */}
-        {totalPages > 1 && (
-          <div className={styles.desktopDotsContainer}>
-            {renderNavDots()}
+        {projects.length === 0 ? (
+          <div className={styles.noProjects}>
+            <p>No projects to display.</p>
+          </div>
+        ) : (
+          <div className={styles.carouselContainer}>
+            {/* Desktop navigation buttons (sides) */}
+            <button 
+              className={`${styles.carouselControl} ${styles.prevButton} ${styles.desktopOnly} ${atBeginning ? styles.disabledButton : ''}`} 
+              onClick={goToPrev}
+              aria-label="Previous project"
+              type="button"
+              disabled={atBeginning}
+            >
+              <FaChevronLeft />
+            </button>
+            
+            <div className={styles.carouselWrapper}>
+              <Slider ref={sliderRef} {...settings}>
+                {projects.map((project, index) => (
+                  <div key={project.id || project.title + index} className={styles.carouselSlide}>
+                    <div className={`${styles.carouselCard} ${project.featured ? styles.featuredCard : ''}`}>
+                      {project.featured && (
+                        <div className={styles.featuredBadge} title="Featured Project">
+                          <FaStar />
+                        </div>
+                      )}
+                      <div className={styles.projectImageContainer}>
+                        {project.image && (
+                          <img 
+                            src={project.image} 
+                            alt={project.title} 
+                            className={styles.projectImage} 
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+                      <div className={styles.projectContent}>
+                        <h3 className={styles.projectTitle}>{project.title}</h3>
+                        
+                        {project.tags?.length > 0 && (
+                          <div className={styles.projectTags}>
+                            {project.tags.map(tag => (
+                              <span key={tag} className={styles.projectTag}>{tag}</span>
+                            ))}
+                          </div>
+                        )}
+                        <p className={styles.projectDescription}>{project.description}</p>
+                      </div>
+                      
+                      <div className={styles.projectLinks}>
+                        {renderProjectLink(
+                          project.website, 
+                          FaGlobe, 
+                          "Website", 
+                          `Visit ${project.title} website`
+                        )}
+                        
+                        {renderProjectLink(
+                          project.github, 
+                          FaGithub, 
+                          "Source", 
+                          `Repository with source code`
+                        )}
+                        
+                        {renderProjectLink(
+                          project.liveDemo, 
+                          FaPlay, 
+                          "Demo", 
+                          `Live demo for ${project.title}`
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+              
+              {/* Mobile navigation controls (bottom) */}
+              <div className={styles.mobileNavigationControls}>
+                {totalPages > 1 && (
+                  <>
+                    <button 
+                      className={`${styles.carouselControl} ${styles.prevButton} ${atBeginning ? styles.disabledButton : ''}`} 
+                      onClick={goToPrev}
+                      aria-label="Previous project"
+                      type="button"
+                      disabled={atBeginning}
+                    >
+                      <FaChevronLeft />
+                    </button>
+                    
+                    <div 
+                      className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`} 
+                      ref={navDotsContainerRef}
+                    >
+                      {renderNavDots()}
+                    </div>
+                    
+                    <button 
+                      className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
+                      onClick={goToNext}
+                      aria-label="Next project"
+                      type="button"
+                      disabled={atEnd}
+                    >
+                      <FaChevronRight />
+                    </button>
+                  </>
+                )}
+              </div>
+              
+              {/* Desktop dots (without buttons) */}
+              {totalPages > 1 && (
+                <div className={styles.desktopDotsContainer}>
+                  {renderNavDots()}
+                </div>
+              )}
+            </div>
+            
+            {/* Desktop navigation button (right side) */}
+            <button 
+              className={`${styles.carouselControl} ${styles.nextButton} ${styles.desktopOnly} ${atEnd ? styles.disabledButton : ''}`} 
+              onClick={goToNext}
+              aria-label="Next project"
+              type="button"
+              disabled={atEnd}
+            >
+              <FaChevronRight />
+            </button>
           </div>
         )}
       </div>
-      
-      {/* Desktop navigation button (right side) */}
-      <button 
-        className={`${styles.carouselControl} ${styles.nextButton} ${styles.desktopOnly} ${atEnd ? styles.disabledButton : ''}`} 
-        onClick={goToNext}
-        aria-label="Next project"
-        type="button"
-        disabled={atEnd}
-      >
-        <FaChevronRight />
-      </button>
     </div>
   );
-};
-
-export default React.memo(ProjectCarousel);
+}

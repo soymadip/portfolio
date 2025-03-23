@@ -1,7 +1,58 @@
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+
+.projectsSection {
+  scroll-margin-top: 65px;
+  min-height: calc(100vh - 60px);
+  margin-bottom: 0;
+  width: 100%;
+  padding: 1.5rem 0 5rem;
+  background-color: var(--ifm-background-color);
+}
+
+.projectsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.projectsHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.projectsTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.6rem;
+  animation: slideUp 0.5s ease-out forwards;
+  position: relative;
+  display: inline-block;
+}
+
+.projectsSubtitle {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-tertiary);
+  max-width: 600px;
+  margin: 0.4rem auto 0;
+  animation: slideUp 0.5s ease-out 0.2s forwards;
 }
 
 
@@ -82,7 +133,6 @@
   border-width: 1.5px;
 }
 
-/* Image container styling */
 .projectImageContainer {
   position: relative;
   width: 100%;
@@ -321,7 +371,6 @@
   opacity: 1;
 }
 
-/* styles for navigation controls container */
 .navigationControls {
   display: flex;
   justify-content: center;
@@ -331,7 +380,6 @@
   gap: 15px;
 }
 
-/* Desktop dots container */
 .desktopDotsContainer {
   display: flex;
   justify-content: center;
@@ -359,7 +407,6 @@
   width: 100%;
 }
 
-/* For few dots - center them */
 .centerDots {
   justify-content: center !important;
   text-align: center;
@@ -367,13 +414,29 @@
   margin-right: auto;
 }
 
-/* For many dots - allow scrolling with flex-start */
 .scrollDots {
   justify-content: flex-start;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .projectsSection {
+    scroll-margin-top: 70px;
+    min-height: calc(100vh);
+    padding: 1.5rem 0 4rem;
+  }
+
+  .projectsTitle {
+    font-size: 2.2rem;
+  }
+  
+  .projectsSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .projectsHeader {
+    margin-bottom: 2rem;
+  }
 
   .carouselContainer {
     padding: 0 0.5rem;
@@ -424,6 +487,11 @@
   /* Show mobile navigation */
   .mobileNavigationControls {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px auto 10px;
+    width: 100%;
+    gap: 10px;
   }
   
   .mobileNavigationControls .carouselControl {
@@ -440,7 +508,6 @@
     transform: none;
   }
   
-  /* Fix for disabled buttons in mobile view */
   .mobileNavigationControls .disabledButton:hover {
     opacity: 0.6;
     transform: none;
@@ -486,15 +553,13 @@
     box-shadow: 0 0 3px 1px rgba(var(--ifm-color-primary-rgb), 0.4);
   }
   
-  /* Add padding to ensure first and last dots are properly visible */
   .mobileNavigationControls .navDotsContainer::before,
   .mobileNavigationControls .navDotsContainer::after {
     content: '';
     min-width: 4px;
     height: 1px;
   }
-
-  /* Ensure the dots are properly centered in the .centerDots case */
+  
   .mobileNavigationControls .centerDots {
     display: flex;
     justify-content: center !important;
@@ -503,13 +568,35 @@
     padding-right: 0;
   }
 
-  /* Ensures the dots are centered as a group */
   .mobileNavigationControls .centerDots .navDot {
     margin: 0 5px;
   }
 }
 
 @media (max-width: 480px) {
+  .projectsSection {
+    scroll-margin-top: 65px;
+    padding: 1rem 0 3rem;
+  }
+  
+  .projectsContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .projectsTitle {
+    font-size: 1.9rem;
+  }
+  
+  .projectsSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .projectsHeader {
+    margin-bottom: 1.5rem;
+  }
+
   .carouselContainer {
     padding: 0 0.1rem;
     max-width: 100%;
@@ -608,6 +695,10 @@
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
+  .projectsTitle, .projectsSubtitle {
+    animation: none !important;
+    transition: none !important;
+  }
 
   .navDot, .activeDot, .carouselCard, .projectImage, 
   .projectLink, .carouselControl {

@@ -84,6 +84,65 @@ const config = {
 
     profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
+    aboutMe: {
+
+      title: "About Me",
+      image: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+      description: [
+        "I'm a passionate FOSS developer with expertise in designing and building solutions for real-world problems.",
+        "My journey in software development started with a simple desire to automate repetitive tasks, which evolved into creating tools and applications that help make life easier for people.",
+        "I believe in the power of open-source software and the community around it. My goal is to contribute to projects that have a positive impact and to continuously learn and improve my skills."
+      ],
+      skills: [
+        "JavaScript/TypeScript", "React", "Node.js", "Python", "Bash",
+        "Linux", "Git", "Docker", "CI/CD", "Cloud Services"
+      ],
+      resumeLink: `${SrtUrl}/resume`
+    },
+    
+    projects: [
+      {
+        title: "KireiSakura Kit",
+        description: "A framework written in Bash for making powerful shell scripts.",
+        image: "https://raw.githubusercontent.com/soymadip/KireiSakura-Kit/refs/heads/main/Assets/social-card.png",
+        website: "https://kireisakura.soymadip.me",
+        github: null,
+        liveDemo: null,
+        featured: true,
+        tags: ["Bash", "Shell", "CLI"],
+      },
+      {
+        title: "StaticShort",
+        description: "A simple static URL shortener - no backend required, just static hosting.",
+        image: "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
+        website: "https://github.com/soymadip/StaticShort",
+        github: null,
+        liveDemo: "https://short.soymadip.me/demo",
+        featured: true,
+        tags: ["shortener", "static"],
+      },
+      {
+        title: "Regis",
+        description: "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
+        image: "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
+        website: "https://regis.soymadip.me",
+        github: null,
+        liveDemo: null,
+        featured: true,
+        tags: ["python", "pyrogram", "bot"],
+      },
+      {
+        title: "SDMP",
+        description: "Student record management system built with PHP and MySQL",
+        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/social%20card.png",
+        website: null,
+        github: "https://github.com/soymadip/SDMP",
+        liveDemo: null,
+        featured: false,
+        tags: ["php", "crud", "sql"],
+      }
+    ],
+
     socialLinks: [
       {
         name: 'Email',
@@ -143,49 +202,6 @@ const config = {
         url: `${SrtUrl}/simkl`,
       }
     ],
-
-    projects: [
-      {
-        title: "KireiSakura Kit",
-        description: "A framework written in Bash for making powerful shell scripts.",
-        image: "https://raw.githubusercontent.com/soymadip/KireiSakura-Kit/refs/heads/main/Assets/social-card.png",
-        website: "https://kireisakura.soymadip.me",
-        github: null,
-        liveDemo: null,
-        featured: true,
-        tags: ["Bash", "Shell", "CLI"],
-      },
-      {
-        title: "StaticShort",
-        description: "A simple static URL shortener - no backend required, just static hosting.",
-        image: "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
-        website: "https://github.com/soymadip/StaticShort",
-        github: null,
-        liveDemo: "https://short.soymadip.me/demo",
-        featured: true,
-        tags: ["shortener", "static"],
-      },
-      {
-        title: "Regis",
-        description: "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
-        image: "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
-        website: "https://regis.soymadip.me",
-        github: null,
-        liveDemo: null,
-        featured: true,
-        tags: ["python", "pyrogram", "bot"],
-      },
-      {
-        title: "SDMP",
-        description: "Student record management system built with PHP and MySQL",
-        image: "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/social%20card.png",
-        website: null,
-        github: "https://github.com/soymadip/SDMP",
-        liveDemo: null,
-        featured: false,
-        tags: ["php", "crud", "sql"],
-      }
-    ],
   },
 
   presets: [
@@ -241,19 +257,19 @@ const config = {
 
         items: [
           {
-            label: 'About Me*',
+            label: 'About Me',
             to: '/#about',
             position: 'right',
             activeBaseRegex: '^/#about',
           },
           {
             label: 'Projects',
-            to: '/#featured-projects',
+            to: '/#projects',
             position: 'right',
-            activeBaseRegex: '^/#featured-projects',
+            activeBaseRegex: '^/#projects',
           },
           {
-            label: 'Experience*',
+            label: 'Experience',
             to: '/#experience',
             position: 'right', 
             activeBaseRegex: '^/#experience',
@@ -276,18 +292,6 @@ const config = {
           }
         ],
       },
-/*      footer: {
-        style: 'dark',
-      links: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} ` + ownerName,
-      }, */
 
       prism: {
         theme: catppuccinLatte,
@@ -299,10 +303,22 @@ const config = {
           'bash',
         ],
       },
+    
+      footer: {
+      /* links: [
+        {
+            label: 'GitHub',
+            href: 'https://github.com/',
+          }
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} ` + ownerName,
+      */
+      },
+      
     }),
 
   plugins: [
-    require.resolve('./src/utils/generate-favicons')
+    require.resolve('./src/utils/generateFavicon')
   ],
 };
 

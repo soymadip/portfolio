@@ -1,0 +1,354 @@
+
+.aboutSection {
+  scroll-margin-top: 40px;
+  padding: 0rem 0 4.5rem;
+  background-color: var(--ifm-background-color);
+  min-height: calc(100vh - 45px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.aboutContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.aboutTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.6rem;
+  animation: slideUp 0.5s ease-out forwards;
+  position: relative;
+  display: inline-block;
+}
+
+.aboutSubtitle {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-tertiary);
+  max-width: 600px;
+  margin: 1.2rem auto 0;
+  animation: slideUp 0.5s ease-out 0.2s forwards;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  padding: 0;
+  animation: fadeIn 0.8s ease-out 0.3s both;
+  align-items: flex-start;
+}
+
+.aboutImageContainer {
+  flex: 1.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  animation: slideInLeft 0.8s ease-out both;
+  margin-left: -3rem;
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 6px 20px var(--ifm-shadow-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.imageFrame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--ifm-color-primary-lightest);
+  border-radius: 10px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.imageFrame:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 28px var(--ifm-shadow-color);
+}
+
+.aboutImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.aboutTextContent {
+  flex: 3.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-right: 1rem;
+}
+
+.aboutDescription {
+  width: 100%;
+}
+
+.aboutParagraph {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ifm-font-color-base);
+}
+
+.resumeButtonWrapper {
+  margin-top: 2rem;
+}
+
+.resumeButton {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ifm-background-color);
+  background-color: var(--ifm-color-primary);
+  border-radius: 4px;
+  transition: all 0.3s ease, transform 0.2s ease;
+  border: 2px solid var(--ifm-color-primary);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.resumeButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    var(--ifm-color-gray-600),
+    transparent
+  );
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.resumeButton:hover {
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.resumeButton:hover::before {
+  left: 100%;
+}
+
+.skillsSection {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 10px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 16px var(--ifm-shadow-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--ifm-color-primary);
+  opacity: 0.8;
+}
+
+.skillsTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.skillBadge {
+  background-color: rgba(var(--ctp-lavender-rgb), 0.1);
+  color: var(--ctp-lavender);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(var(--ctp-lavender-rgb), 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillBadge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(var(--ctp-lavender-rgb), 0.2);
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .aboutImageContainer {
+    margin-left: -1.5rem;
+  }
+  
+  .aboutContent {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    scroll-margin-top: 70px;
+    padding: 1.5rem 0 3rem;
+  }
+  
+  .aboutContainer {
+    padding: 0 1.5rem;
+  }
+  
+  .aboutHeader {
+    margin-bottom: 1.5rem;
+  }
+  
+  .aboutTitle {
+    font-size: 2.2rem;
+  }
+  
+  .aboutContent {
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0;
+  }
+  
+  .aboutImageContainer {
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .imageFrame {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  
+  .skillsSection {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    scroll-margin-top: 65px;
+    padding: 1rem 0 2rem;
+  }
+  
+  .aboutHeader {
+    margin-bottom: 1.5rem;
+  }
+  
+  .aboutTitle {
+    font-size: 1.9rem;
+  }
+  
+  .aboutSubtitle {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+  
+  .imageFrame {
+    max-width: 90%;
+  }
+  
+  .aboutParagraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .skillsTitle {
+    font-size: 1.2rem;
+  }
+  
+  .skillBadge {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.9rem;
+  }
+  
+  .resumeButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutTitle, .aboutSubtitle, .aboutContent, .aboutImage, .aboutImageContainer, 
+  .resumeButton, .skillBadge, .imageFrame, .resumeButton::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
