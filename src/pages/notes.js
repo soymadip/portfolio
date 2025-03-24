@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import NoteCards from '@site/src/components/NoteIndex';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import ScrollToTop from '../components/ScrollToTop';
+import HashNavigation from '../utils/HashNavigation';
 
 const style = {
 
@@ -58,48 +59,6 @@ export default function Notes() {
   const pathName = docsBasePath.replace('/', '');
   const pageTitle = pathName.charAt(0).toUpperCase() + pathName.slice(1);
 
-  // AI generated (partially)
-  useEffect(() => {
-
-    if (window.location.hash) {
-      const noteId = window.location.hash.substring(1);
-      const targetElement = document.getElementById(`note-${noteId}`);
-      
-      if (targetElement) {
-
-        // Wait a moment for the page to fully render
-        setTimeout(() => {
-
-          // Scroll to the element
-          targetElement.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'center'
-          });
-          
-          // Add blur to all other note cards
-          const allNoteCards = document.querySelectorAll('.note-card');
-          
-          // Add highlight class to the target card 
-          targetElement.classList.add('highlight-card');
-          
-          allNoteCards.forEach(card => {
-            if (card.id !== `note-${noteId}`) {
-              card.classList.add('blur-card');
-            }
-          });
-          
-          // Remove blur and highlight after a delay
-          setTimeout(() => {
-            allNoteCards.forEach(card => {
-              card.classList.remove('blur-card');
-            });
-            targetElement.classList.remove('highlight-card');
-          }, 6000);
-        }, 300);
-      }
-    }
-  }, []);
-
   return (
     <Layout
       title={pageTitle}
@@ -117,6 +76,11 @@ export default function Notes() {
           </header>
           <NoteCards/>
           <ScrollToTop/>
+          <HashNavigation 
+            elementPrefix="note-"
+            elementSelector=".note-card"
+            effectDuration={6000}
+          />
         </div>
       </main>
     </Layout>
