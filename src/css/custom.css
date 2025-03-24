@@ -31,6 +31,18 @@ html {
   font-size: 0.95rem;
 }
 
+._navbar-separator { 
+  border-left: 1.5px solid var(--ifm-background-surface-color) !important;
+}
+
+@media (max-width: 768px) {
+
+  ._navbar-separator {
+  border-left: 0 !important;
+  border-top: 1.5px solid var(--ifm-background-surface-color) !important;
+  }
+}
+
 .docs-wrapper, article, .markdown {
   background-color: var(--ifm-background-color) !important;
 }

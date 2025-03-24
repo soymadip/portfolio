@@ -33,11 +33,11 @@ export default function HeroSection({ id, className }) {
           <div className={styles.actionRow}>
             <div className={styles.cta}>
               <a 
-                href="#projects"
+                href="#about"
                 className={styles.ctaButton}
-                aria-label="View my projects"
+                aria-label="Learn more about me"
               >
-                View My Work
+                Learn More
               </a>
             </div>
             <SocialLinks />

@@ -235,6 +235,7 @@ const config = {
           {
             label: 'Notes', 
             to: '/notes',
+            className: '_navbar-separator',
             position: 'right'
           },
           {

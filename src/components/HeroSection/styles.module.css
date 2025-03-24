@@ -1,4 +1,3 @@
-
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -58,6 +57,7 @@
   min-height: calc(100vh - 60px);
   font-family: var(--ifm-font-family-base);
   animation: fadeIn 0.8s ease-in-out;
+  padding: 2rem 0;
 }
 
 .container {
@@ -67,31 +67,31 @@
   max-width: 1300px;
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   padding: 0 2rem; 
 }
 
-/* Left section elements */
+/* Left section */
 .leftSection {
   flex: 1;
   text-align: left;
-  padding-right: 2rem;
+  padding-right: 3rem;
   padding-left: 1rem; 
   animation: slideInLeft 0.8s ease-out 0.2s both;
 }
 
 .intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
-  margin-bottom: 0rem;
+  margin-bottom: 0.2rem;
   animation: slideUp 0.6s ease-out 0.4s both;
 }
 
 .title {
   font-size: 4.5rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0.2rem 0;
   color: var(--ifm-color-primary);
   font-family: var(--ifm-font-family-base);
@@ -99,6 +99,7 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
+  line-height: 1.2;
 }
 
 .title:hover {
@@ -110,7 +111,7 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 3px;
   bottom: 0;
   left: 0;
   background-color: var(--ifm-color-primary);
@@ -122,7 +123,7 @@
 }
 
 .titleComma {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
@@ -140,7 +141,7 @@
 }
 
 .subtitlePrefix {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: var(--ifm-font-color-tertiary);
   font-family: var(--ifm-font-family-base);
@@ -148,7 +149,7 @@
 }
 
 .subtitle {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 550;
   color: var(--ctp-lavender);
   font-family: var(--ifm-font-family-base);
@@ -166,7 +167,7 @@
   content: '';
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 3px;
   bottom: 0;
   left: 0;
   background-color: var(--ctp-lavender);
@@ -178,9 +179,9 @@
 }
 
 .description {
-  margin-top: 1.3rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--ifm-font-color-tertiary);
   max-width: 600px;
   font-family: var(--ifm-font-family-base);
@@ -188,24 +189,25 @@
   animation: slideUp 0.6s ease-out 1s both;
 }
 
+/* Action row styling */
 .actionRow {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   animation: slideUp 0.6s ease-out 1.2s both;
 }
 
 .cta {
   margin-top: 0;
-  margin-right: 1.5rem;
+  margin-right: 1.8rem;
   display: flex;
   align-items: center;
 }
 
 .ctaButton {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem; 
   font-weight: 500;
   text-decoration: none;
   color: var(--ifm-background-color);
@@ -213,52 +215,58 @@
   border-radius: 4px;
   transition: all 0.3s ease, transform 0.2s ease;
   border: 2px solid var(--ifm-color-primary);
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ctaButton:hover {
   background-color: transparent;
   color: var(--ifm-color-primary);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   text-decoration: none;
 }
 
 .ctaButton:active {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
+.ctaButton:focus {
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.3);
+}
 
 /* Right section - Profile image */
 .rightSection {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  margin-top: 1rem;
+  margin-top: 0;
   padding-right: 2rem; 
   animation: slideInRight 0.8s ease-out 0.3s both;
 }
 
 .profilePic {
-  height: 260px; 
+  height: 270px; 
   border-radius: 20%;
   object-fit: cover;
-  box-shadow: 0 0 15px var(--ifm-shadow-color);
+  box-shadow: 0 10px 25px var(--ifm-shadow-color);
   margin-top: -30px;
   margin-right: 2rem; 
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   animation: gentleAppear 0.8s ease-out both;
   will-change: transform;
+  position: relative;
 }
 
 .profilePic:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px var(--ifm-shadow-color);
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 15px 30px var(--ifm-shadow-color);
 }
 
 /* Responsive styles for sections */
 @media (max-width: 768px) {
 
-  /* Hero section tablet adjustments */
   .intro {
     animation: slideUp 0.6s ease-out 0.4s both;
   }
@@ -293,10 +301,11 @@
 
   .profilePic {
     animation: gentleAppear 0.7s ease-out both;
-    height: 175px;
-    margin-top: -18px;
-    margin-bottom: 0.9rem;
+    height: 180px;
+    margin-top: -20px;
+    margin-bottom: 1.2rem;
     margin-right: 0;
+    box-shadow: 0 8px 20px var(--ifm-shadow-color);
   }
 
   .profilePic:hover {
@@ -335,7 +344,7 @@
 
   .description {
     animation: slideUp 0.6s ease-out 0.7s both;
-    margin: 1rem auto 0;
+    margin: 1.2rem auto 0;
     max-width: 95%;
     font-size: 1rem;
     padding: 0;
@@ -402,9 +411,10 @@
 
   .profilePic {
     animation: gentleAppear 0.6s ease-out both;
-    height: 155px;
-    margin-top: -32px;
-    margin-bottom: 1.3rem;
+    height: 160px;
+    margin-top: -25px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 15px var(--ifm-shadow-color);
   }
 
   .title { 
@@ -440,7 +450,7 @@
   }
 
   .ctaButton {
-    padding: 0.4rem 1.2rem;
+    padding: 0.4rem 1rem;
     font-size: 0.85rem;
   }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import NoteCards from '@site/src/components/NoteIndex';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import ScrollToTop from '../components/ScrollToTop';
 
 const style = {
 
@@ -73,6 +74,7 @@ export default function Notes() {
             </p>
           </header>
           <NoteCards/>
+          <ScrollToTop/>
         </div>
       </main>
     </Layout>

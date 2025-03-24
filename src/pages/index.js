@@ -9,6 +9,7 @@ import AboutSection from "@site/src/components/AboutSection";
 import ProjectsSection from "@site/src/components/ProjectsSection";
 import ContactSection from "@site/src/components/ContactSection";
 import ExperienceSection from "@site/src/components/ExperienceSection";
+import ScrollToTop from "@site/src/components/ScrollToTop";
 
 
 
@@ -67,6 +68,10 @@ export default function Home() {
           subtitle="Feel free to reach out for collaborations, questions, or just to say hello!"
         />
 
+        {/* Scroll to top button */}
+        <ScrollToTop
+          hideDelay={3500}
+        />
       </main>
     </Layout>
   );
