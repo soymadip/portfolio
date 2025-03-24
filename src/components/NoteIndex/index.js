@@ -56,27 +56,33 @@ export default function Notecards({ buttonText = 'Open Note' }) {
   const { path: docsBasePath } = usePluginData('docusaurus-plugin-content-docs');
 
   return (
-    <div className={styles.notesGrid}> {
+    <div className={styles.notesGrid} role="list" aria-label="Notes collection"> {
       notes.map(({ title, language, link }, index) => {
 
         const noteUrl = useBaseUrl(`${docsBasePath}/${link}`);
-        const { icon: Icon = FaBook, color = '#666666' } = iconMap[language] || {};
+        const { icon: Icon = FaBook, color = 'var(--ifm-color-primary)' } = iconMap[language] || {};
 
         return (
           <div 
             key={title} 
-            className={styles.noteCard}
+            className={`${styles.noteCard} note-card`}
             style={{ '--card-index': index }}
+            role="listitem"
+            id={`note-${link}`}
           >
             <div 
               className={styles.noteIcon}
               style={{ color }}
-              aria-label={title}
+              aria-hidden="true"
             >
               <Icon />
             </div>
             <h3 className={styles.noteTitle}>{title}</h3>
-            <Link className="button button--primary" to={noteUrl}>
+            <Link 
+              className="button button--primary" 
+              to={noteUrl}
+              aria-label={`Open ${title} note`}
+            >
               {buttonText}
             </Link>
           </div>

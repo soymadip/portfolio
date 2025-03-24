@@ -14,7 +14,7 @@ const config = {
   tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
 
-  url: 'https://portfolio.soymadip.me',
+  url: 'https://new.soymadip.me',
   baseUrl: '/',
 
   // GH Pages config
@@ -163,7 +163,7 @@ const config = {
         docs: {
           routeBasePath: "notes",
           path: "notes",
-          sidebarPath: './notes/sidebar.js',
+          sidebarPath: './src/config/sidebar.js',
         },
 
         blog: {
