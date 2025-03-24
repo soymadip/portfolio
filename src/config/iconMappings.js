@@ -12,7 +12,7 @@ import {
   SiZoom, SiNotion, SiObsidian, SiMarkdown, SiSubstack, SiThreads, SiOpenai, SiDocker, SiPodman, 
   SiLinuxcontainers, SiVmware, SiXing, SiKaggle, SiCodesandbox,
   SiGooglechrome, SiFirefox, SiSafari, SiBrave, SiOpera, SiTorbrowser, SiVivaldi, SiZendesk,
-  SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu,SiSimkl
+  SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu, SiSimkl
 } from 'react-icons/si';
 
 import { 
@@ -21,10 +21,15 @@ import {
   FaGitlab, FaBitbucket, FaKeybase, FaCodepen, FaJsSquare, FaHackerNews, FaVimeoV, FaFlickr, 
   FaDribbble, FaBehance, FaPatreon, FaPaypal, FaEthereum, FaBitcoin, FaLaptopCode, FaCode, 
   FaBlogger, FaWordpress, FaHashtag, FaUserCircle, FaUserSecret, FaBug, FaRobot, FaHtml5, FaCss3Alt, 
-  FaFedora, FaInternetExplorer, FaEdge, FaTv, FaFilm, FaVideo, FaPodcast
+  FaFedora, FaInternetExplorer, FaEdge, FaTv, FaFilm, FaVideo, FaPodcast,
+  FaSearch, FaCog, FaEdit, FaHome, FaInfoCircle, FaLink, FaDownload, 
+  FaUpload, FaSave, FaTrash, FaExclamationTriangle, FaExclamationCircle, FaCheckCircle, 
+  FaQuestionCircle, FaClock, FaComments, FaBell
 } from "react-icons/fa";
 
-
+import {
+  FaCalendar, FaCheckSquare, FaBookmark, FaStar, FaHeart, FaClipboard, FaEnvelopeOpen
+} from "react-icons/fa";
 
 //--------- Icon mappings ---------
 
@@ -51,9 +56,11 @@ export const iconMap = {
   hackerrank: { icon: SiHackerrank, color: '#2EC866' },
   codeforces: { icon: SiCodeforces, color: '#1F8ACB' },
   replit: { icon: SiReplit, color: '#FA5302' },
+
   
 
 
+  
   // Operating systems and containers
   linux: { icon: SiLinux, color: '#FCC624' },
   linuxfoundation: { icon: SiLinuxfoundation, color: '#000000' },
@@ -117,7 +124,43 @@ export const iconMap = {
   snapchat: { icon: FaSnapchatGhost, color: '#FFFC00' },
   tiktok: { icon: FaTiktok, color: '#000000' },
   threads: { icon: SiThreads, color: '#000000' },
+  
 
+  // Utility icons
+  note: { icon: SiObsidian, color: '#7C3AED' },
+  notes: { icon: SiObsidian, color: '#7C3AED' },
+  document: { icon: SiNotion, color: '#000000' },
+  docs: { icon: SiNotion, color: '#000000' },
+  calendar: { icon: FaCalendar, color: '#4285F4' },
+  task: { icon: FaCheckSquare, color: '#00BCD4' },
+  todo: { icon: FaCheckSquare, color: '#00BCD4' },
+  bookmark: { icon: FaBookmark, color: '#FFC107' },
+  star: { icon: FaStar, color: '#FFC107' },
+  favorite: { icon: FaHeart, color: '#E91E63' },
+  clipboard: { icon: FaClipboard, color: '#795548' },
+  search: { icon: FaSearch, color: '#607D8B' },
+  settings: { icon: FaCog, color: '#546E7A' },
+  config: { icon: FaCog, color: '#546E7A' },
+  edit: { icon: FaEdit, color: '#2196F3' },
+  home: { icon: FaHome, color: '#8BC34A' },
+  info: { icon: FaInfoCircle, color: '#2196F3' },
+  link: { icon: FaLink, color: '#9C27B0' },
+  url: { icon: FaLink, color: '#9C27B0' },
+  download: { icon: FaDownload, color: '#00BCD4' },
+  upload: { icon: FaUpload, color: '#FF9800' },
+  save: { icon: FaSave, color: '#4CAF50' },
+  delete: { icon: FaTrash, color: '#F44336' },
+  remove: { icon: FaTrash, color: '#F44336' },
+  warning: { icon: FaExclamationTriangle, color: '#FF9800' },
+  error: { icon: FaExclamationCircle, color: '#F44336' },
+  success: { icon: FaCheckCircle, color: '#4CAF50' },
+  help: { icon: FaQuestionCircle, color: '#2196F3' },
+  time: { icon: FaClock, color: '#607D8B' },
+  clock: { icon: FaClock, color: '#607D8B' },
+  chat: { icon: FaComments, color: '#03A9F4' },
+  message: { icon: FaEnvelopeOpen, color: '#03A9F4' },
+  notification: { icon: FaBell, color: '#FF9800' },
+  alert: { icon: FaBell, color: '#FF9800' },
 
   // Messaging platforms
   telegram: { icon: FaTelegramPlane, color: '#26A5E4' },
@@ -138,7 +181,7 @@ export const iconMap = {
   gmail: { icon: SiGmail, color: '#EA4335' },
   protonmail: { icon: SiProtonmail, color: '#8B89CC' },
 
-  
+
   // Blog/writing platforms
   medium: { icon: FaMedium, color: '#000000' },
   blog: { icon: FaBlogger, color: '#FF5722' },
@@ -187,14 +230,9 @@ export const iconMap = {
   steam: { icon: FaSteam, color: '#000000' },
   hashtag: { icon: FaHashtag, color: '#ffffff' },
   codesandbox: { icon: SiCodesandbox, color: '#151515' },
-  codeforces: { icon: SiCodeforces, color: '#1F8ACB' },
   codepen: { icon: FaCodepen, color: '#000000' },
-  gitlab: { icon: FaGitlab, color: '#FC6D26' },
-  bitbucket: { icon: FaBitbucket, color: '#0052CC' },
-  dev: { icon: FaDev, color: '#0A0A0A' },
   website: { icon: FaGlobe, color: '#4285F4' },
   web: { icon: FaGlobe, color: '#4285F4' },
-  rss: { icon: FaRss, color: '#FFA500' },
   
   // Content and anime tracking
   imdb: { icon: SiImdb, color: '#F5C518' },
@@ -228,5 +266,5 @@ export const iconMap = {
   internetexplorer: { icon: FaInternetExplorer, color: '#0076D6' },
   "zen-browser": { icon: SiZendesk, color: '#00363D' },
   zenbrowser: { icon: SiZendesk, color: '#00363D' },
-  zen: { icon: SiZendesk, color: '#00363D' },
+  zen: { icon: SiZendesk, color: '#00363D' }
 };

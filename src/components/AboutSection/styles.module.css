@@ -67,15 +67,17 @@
   flex-direction: row;
   gap: 4rem;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .bioImageContainer {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 1.3rem;
+  align-items: center;
+  padding-top: 0;
+  align-self: stretch;
+  margin-bottom: 1.3rem;
 }
 
 .imageWrapper {
@@ -86,6 +88,7 @@
   transform: none; 
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   max-width: 350px;
+  margin: auto 0;
 }
 
 .imageWrapper::before {
@@ -345,7 +348,8 @@
   
   .bioImageContainer {
     width: 100%;
-    padding-top: 0.8rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
   }
   
   .imageWrapper {
@@ -416,7 +420,8 @@
   }
   
   .bioImageContainer {
-    padding-top: 0.5rem;
+    padding-top: 0;
+    padding-bottom: 0.5rem;
   }
   
   .imageWrapper {

@@ -17,7 +17,7 @@ async function downloadImage(url, outputDir, filename = 'temp_image.png') {
 
   const tmpImagePath = path.resolve(outputDir, filename);
   
-  console.log(`Downloading image from: ${url}`);
+  console.log(`[INFO] Downloading image from: ${url}`);
   
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(tmpImagePath);

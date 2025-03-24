@@ -128,10 +128,9 @@
 
 /* Light Mode - Catppuccin Latte */
 [data-theme='light'] {
-    
+
     --ifm-color-scheme: light;
 
-    /* Theme-agnostic - Mocha in dark mode */
     --ctp-rosewater: var(--ctp-latte-rosewater);
     --ctp-rosewater-rgb: var(--ctp-latte-rosewater-rgb);
     --ctp-flamingo: var(--ctp-latte-flamingo);
@@ -211,12 +210,12 @@
 
     /* === STANDARD COLOR VARIABLES === */
 
-    --ifm-color-black: var(--ctp-latte-crust);
-    --ifm-color-black-rgb: var(--ctp-latte-crust-rgb);
+    --ifm-color-black: var(--ctp-latte-text);
+    --ifm-color-black-rgb: var(--ctp-latte-text-rgb);
+
     --ifm-color-white: var(--ctp-latte-base);
     --ifm-color-white-rgb: var(--ctp-latte-base-rgb);
 
-    /* Basic color palette */
     --ifm-color-gray: var(--ctp-latte-overlay0);
     --ifm-color-gray-rgb: var(--ctp-latte-overlay0-rgb);
     
@@ -337,11 +336,11 @@
     --ifm-color-emphasis-1000: var(--ctp-latte-crust)   !important;
 
     /* Text colors */
-    --ifm-font-color-tertiary: var(--ctp-latte-subtext1);
-    --ifm-font-color-secondary: var(--ctp-latte-subtext0);
-    --ifm-font-color-quaternary: var(--ctp-latte-overlay2);
     --ifm-font-color-base: var(--ctp-latte-text);
     --ifm-font-color-base-rgb: var(--ctp-latte-text-rgb);
+    --ifm-font-color-secondary: var(--ctp-latte-subtext0);
+    --ifm-font-color-tertiary: var(--ctp-latte-subtext1);
+    --ifm-font-color-quaternary: var(--ctp-latte-overlay2);
     
     /* Content colors */
     --ifm-color-content: var(--ctp-latte-text) !important;
@@ -365,8 +364,8 @@
     --ifm-toc-border-color: var(--ctp-latte-crust) !important;
 
     /* Code block */
-    --ifm-code-color: var(--ctp-latte-red);
-    --ifm-code-background: var(--ctp-latte-surface0);
+    --ifm-code-color: var(--ctp-latte-red) !important;
+    --ifm-code-background: var(--ctp-latte-surface0) !important;
 
     /* Other UI elements */
     --ifm-blockquote-color: var(--ctp-latte-subtext0);
@@ -387,7 +386,6 @@
 
     --ifm-color-scheme: dark;
 
-    /* Theme-agnostic - Mocha in dark mode */
     --ctp-rosewater: var(--ctp-mocha-rosewater);
     --ctp-rosewater-rgb: var(--ctp-mocha-rosewater-rgb);
     --ctp-flamingo: var(--ctp-mocha-flamingo);
@@ -470,8 +468,8 @@
     --ifm-color-black: var(--ctp-mocha-crust);
     --ifm-color-black-rgb: var(--ctp-mocha-crust-rgb);
 
-    --ifm-color-white: var(--ctp-mocha-base);
-    --ifm-color-white-rgb: var(--ctp-mocha-base-rgb);
+    --ifm-color-white: var(--ctp-mocha-text);
+    --ifm-color-white-rgb: var(--ctp-mocha-text-rgb);
     
     /* Basic color palette */
     --ifm-color-gray: var(--ctp-mocha-overlay0);
@@ -622,8 +620,8 @@
     --ifm-toc-border-color: var(--ctp-mocha-crust) !important;
 
     /* Code block */
-    --ifm-code-color: var(--ctp-mocha-red);
-    --ifm-code-background: var(--ctp-mocha-surface0);
+    --ifm-code-color: var(--ctp-mocha-red) !important;
+    --ifm-code-background: var(--ctp-mocha-surface0) !important;
 
     /* Other UI elements */
     --ifm-blockquote-color: var(--ctp-mocha-subtext0);

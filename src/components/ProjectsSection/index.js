@@ -8,12 +8,11 @@ import styles from './styles.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 /// PART OF THIS COMPONENT IS AI GENERATED
-
 
 export default function ProjectsSection({ id, className, title, subtitle }) {
   const { siteConfig } = useDocusaurusContext();
+
   const [projects, setProjects] = useState([]);
   const sliderRef = useRef(null);
   const [atBeginning, setAtBeginning] = useState(true);
@@ -22,29 +21,38 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Optimize by memoizing the placeholder generator
+
+  // Default Settings 
+  const projectDefaults = {
+    title: "Future Project",
+    desc:  "Coming soon...",
+    image: "/img/project-blank.png",
+    state: "active",
+    tags:  ["planned"]
+  };
+
+
   const createPlaceholders = useCallback((count, existingProjects) => {
     if (existingProjects.length === 0) return [];
     
-    const placeholderData = {
-      title: "Future Project",
-      description: "Coming soon...",
-      tags: ["planned"],
-      image: "/img/project-blank.png"
-    };
-
-    // Use a more efficient array creation
     return [
       ...existingProjects,
       ...Array.from({ length: count }, (_, i) => ({
-        ...placeholderData,
-        id: `placeholder-${i}`
+        ...projectDefaults,
+
+        // Dummy card config
+        state: "n/a",
+        title: `Project ${existingProjects.length + i + 1}`,
+        description: projectDefaults.desc,
+        image: null,
+        id: `placeholder-${i}`,
+        tags: null 
       }))
     ];
   }, []);
 
   // Get current slidesToShow based on screen width
-  const getCurrentSlidesToShow = useCallback(() => {
+  const getVisibleSlidesPerView = useCallback(() => {
     if (typeof window === 'undefined') return 3;
     
     const width = window.innerWidth;
@@ -56,36 +64,58 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
   const prepareProjects = useCallback((projectList, slides) => {
     if (!projectList?.length) return { projects: [], totalPages: 0 };
     
-    // Sort projects - featured first
+    // Sort featured first
     const sortedProjects = [...projectList].sort((a, b) => 
       (a.featured ? -1 : 0) - (b.featured ? -1 : 0)
-    );
-    
-    // Calculate placeholder needs
+    ).map(project => {
+      
+      // Apply defaults if value not null 
+      const processedProject = {
+        ...project,
+        description: project.desc === undefined ? projectDefaults.desc : project.desc,
+        image: project.image === undefined ? projectDefaults.image : project.image,
+        tags: project.tags === undefined ? [...projectDefaults.tags] : project.tags,
+        state: project.state === undefined ? projectDefaults.state : project.state
+      };
+      
+      // Add ID
+      if (!processedProject.id) {
+        processedProject.id = processedProject.title
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-');
+      }
+      
+      return processedProject;
+    });
+
+    // Calculate pagination and placeholder needs
     const totalPages = Math.ceil(sortedProjects.length / slides);
-    const totalNeeded = totalPages * slides;
-    const placeholdersNeeded = totalNeeded - sortedProjects.length;
-    
+    const slotsPerPage = slides;
+    const totalSlots = totalPages * slotsPerPage;
+    const placeholderCount = totalSlots - sortedProjects.length;
+
     // Return prepared data
     return {
-      projects: placeholdersNeeded > 0 
-        ? createPlaceholders(placeholdersNeeded, sortedProjects) 
+      projects: placeholderCount > 0 
+        ? createPlaceholders(placeholderCount, sortedProjects) 
         : sortedProjects,
       totalPages
     };
-  }, [createPlaceholders]);
+  }, [createPlaceholders, projectDefaults]);
 
   // Load and set up projects on initial load and on resize
   useEffect(() => {
-    const projectsToUse = siteConfig.customFields?.projects || [];
+    const configuredProjects = siteConfig.customFields?.projects || [];
     
     const handleLayout = () => {
-      const newSlidesToShow = getCurrentSlidesToShow();
+      const newSlidesToShow = getVisibleSlidesPerView();
       
       if (newSlidesToShow !== slidesToShow || !projects.length) {
         setSlidesToShow(newSlidesToShow);
         const { projects: newProjects, totalPages: newTotalPages } = 
-          prepareProjects(projectsToUse, newSlidesToShow);
+          prepareProjects(configuredProjects, newSlidesToShow);
         
         setProjects(newProjects);
         setTotalPages(newTotalPages);
@@ -99,7 +129,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
     // Resize handler
     window.addEventListener('resize', handleLayout);
     return () => window.removeEventListener('resize', handleLayout);
-  }, [siteConfig, getCurrentSlidesToShow, prepareProjects, slidesToShow, projects.length]);
+  }, [siteConfig, getVisibleSlidesPerView, prepareProjects, slidesToShow, projects.length]);
 
   // Method to go to a specific slide
   const goToSlide = useCallback((index) => {
@@ -223,6 +253,55 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
     );
   }, []);
 
+  // Get state label and class
+  const getProjectStateInfo = useCallback((state) => {
+    switch(state?.toLowerCase()) {
+      // For projects currently in active development
+      case 'active':
+        return { 
+          label: 'Active', 
+          className: styles.stateActive,
+        };
+      // For finished projects
+      case 'completed':
+        return { 
+          label: 'Completed', 
+          className: styles.stateCompleted,
+        };
+      // For projects receiving updates/maintenance
+      case 'maintenance':
+        return { 
+          label: 'Maintenance', 
+          className: styles.stateMaintenance,
+        };
+      // For temporarily paused development
+      case 'paused':
+        return { 
+          label: 'Paused', 
+          className: styles.statePaused,
+        };
+      // For projects no longer maintained
+      case 'archived':
+        return { 
+          label: 'Archived', 
+          className: styles.stateArchived,
+        };
+      // For future projects in planning stage
+      case 'planned':
+        return { 
+          label: 'Planned', 
+          className: styles.statePlanned,
+        };
+      // Default state when not specified
+      case 'n/a':
+      default:
+        return { 
+          label: 'N/A', 
+          className: styles.stateNA,
+        };
+    }
+  }, []);
+
   return (
     <div id={id} className={`${styles.projectsSection} ${className || ''}`} role="region" aria-label="Projects section">
       <div className={styles.projectsContainer}>
@@ -256,13 +335,26 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
             <div className={styles.carouselWrapper} aria-roledescription="carousel" aria-label="Projects carousel">
               <Slider ref={sliderRef} {...settings}>
                 {projects.map((project, index) => (
-                  <div key={project.id || project.title + index} className={styles.carouselSlide} aria-roledescription="slide" aria-label={`Project ${index + 1} of ${projects.length}: ${project.title}`}>
+                  <div 
+                    key={project.id || project.title + index} 
+                    className={styles.carouselSlide} 
+                    data-project-id={project.id}
+                    aria-roledescription="slide" 
+                    aria-label={`Project ${index + 1} of ${projects.length}: ${project.title}`}
+                  >
                     <div className={`${styles.carouselCard} ${project.featured ? styles.featuredCard : ''}`}>
-                      {project.featured && (
-                        <div className={styles.featuredBadge} title="Featured Project" aria-label="Featured project">
-                          <FaStar aria-hidden="true" />
+                      {/* Project state badge */}
+                      {project.state && (
+                        <div 
+                          className={styles.projectStateBadge}
+                          title={`Project status: ${getProjectStateInfo(project.state).label}`}
+                        >
+                          <span className={`${styles.projectStateLabel} ${getProjectStateInfo(project.state).className}`}>
+                            {getProjectStateInfo(project.state).label}
+                          </span>
                         </div>
                       )}
+
                       <div className={styles.projectImageContainer}>
                         {project.image && (
                           <img 
@@ -272,7 +364,15 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                             loading="lazy"
                           />
                         )}
+                        
+                        {/* Featured badge inside image container at bottom right */}
+                        {project.featured && (
+                          <div className={styles.featuredBadge} title="Featured Project" aria-label="Featured project">
+                            <FaStar aria-hidden="true" />
+                          </div>
+                        )}
                       </div>
+                      
                       <div className={styles.projectContent}>
                         <h3 className={styles.projectTitle}>{project.title}</h3>
                         
@@ -283,6 +383,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                             ))}
                           </div>
                         )}
+                        
                         <p className={styles.projectDescription}>{project.description}</p>
                       </div>
                       
@@ -302,7 +403,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                         )}
                         
                         {renderProjectLink(
-                          project.liveDemo, 
+                          project.Demo, 
                           FaPlay, 
                           "Demo", 
                           `Live demo for ${project.title}`
@@ -325,7 +426,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       type="button"
                       disabled={atBeginning}
                     >
-                      <FaChevronLeft />
+                      <FaChevronLeft aria-hidden="true" />
                     </button>
                     
                     <div 
@@ -343,7 +444,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       type="button"
                       disabled={atEnd}
                     >
-                      <FaChevronRight />
+                      <FaChevronRight aria-hidden="true" />
                     </button>
                   </>
                 )}
