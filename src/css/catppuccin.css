@@ -209,6 +209,48 @@
     --ifm-color-primary-darkest-rgb: var(--ctp-latte-flamingo-rgb);
 
 
+    /* === STANDARD COLOR VARIABLES === */
+
+    --ifm-color-black: var(--ctp-latte-crust);
+    --ifm-color-black-rgb: var(--ctp-latte-crust-rgb);
+    --ifm-color-white: var(--ctp-latte-base);
+    --ifm-color-white-rgb: var(--ctp-latte-base-rgb);
+
+    /* Basic color palette */
+    --ifm-color-gray: var(--ctp-latte-overlay0);
+    --ifm-color-gray-rgb: var(--ctp-latte-overlay0-rgb);
+    
+    --ifm-color-red: var(--ctp-latte-red);
+    --ifm-color-red-rgb: var(--ctp-latte-red-rgb);
+    
+    --ifm-color-orange: var(--ctp-latte-peach);
+    --ifm-color-orange-rgb: var(--ctp-latte-peach-rgb);
+    
+    --ifm-color-yellow: var(--ctp-latte-yellow);
+    --ifm-color-yellow-rgb: var(--ctp-latte-yellow-rgb);
+    
+    --ifm-color-green: var(--ctp-latte-green);
+    --ifm-color-green-rgb: var(--ctp-latte-green-rgb);
+    
+    --ifm-color-teal: var(--ctp-latte-teal);
+    --ifm-color-teal-rgb: var(--ctp-latte-teal-rgb);
+    
+    --ifm-color-cyan: var(--ctp-latte-sky);
+    --ifm-color-cyan-rgb: var(--ctp-latte-sky-rgb);
+    
+    --ifm-color-blue: var(--ctp-latte-blue);
+    --ifm-color-blue-rgb: var(--ctp-latte-blue-rgb);
+    
+    --ifm-color-indigo: var(--ctp-latte-sapphire);
+    --ifm-color-indigo-rgb: var(--ctp-latte-sapphire-rgb);
+    
+    --ifm-color-purple: var(--ctp-latte-mauve);
+    --ifm-color-purple-rgb: var(--ctp-latte-mauve-rgb);
+    
+    --ifm-color-pink: var(--ctp-latte-pink);
+    --ifm-color-pink-rgb: var(--ctp-latte-pink-rgb);
+
+
     /* === SEMANTIC COLOR SYSTEM === */
 
     /* Success color - Green */
@@ -267,10 +309,6 @@
     --ifm-pre-background: var(--ctp-latte-surface0);
     --ifm-alert-background-color: var(--ctp-latte-surface0);
     --ifm-card-background-color: var(--ctp-latte-surface0);
-
-    /* Color contrast overrides */
-    --ifm-color-white: var(--ctp-latte-text);
-    --ifm-color-black: var(--ctp-latte-base);
 
     /* Gray color scale */
     --ifm-color-gray-0: var(--ctp-latte-base);
@@ -427,6 +465,49 @@
     --ifm-color-primary-darkest-rgb: var(--ctp-mocha-flamingo-rgb);
 
 
+    /* === STANDARD COLOR VARIABLES === */
+
+    --ifm-color-black: var(--ctp-mocha-crust);
+    --ifm-color-black-rgb: var(--ctp-mocha-crust-rgb);
+
+    --ifm-color-white: var(--ctp-mocha-base);
+    --ifm-color-white-rgb: var(--ctp-mocha-base-rgb);
+    
+    /* Basic color palette */
+    --ifm-color-gray: var(--ctp-mocha-overlay0);
+    --ifm-color-gray-rgb: var(--ctp-mocha-overlay0-rgb);
+    
+    --ifm-color-red: var(--ctp-mocha-red);
+    --ifm-color-red-rgb: var(--ctp-mocha-red-rgb);
+    
+    --ifm-color-orange: var(--ctp-mocha-peach);
+    --ifm-color-orange-rgb: var(--ctp-mocha-peach-rgb);
+    
+    --ifm-color-yellow: var(--ctp-mocha-yellow);
+    --ifm-color-yellow-rgb: var(--ctp-mocha-yellow-rgb);
+    
+    --ifm-color-green: var(--ctp-mocha-green);
+    --ifm-color-green-rgb: var(--ctp-mocha-green-rgb);
+    
+    --ifm-color-teal: var(--ctp-mocha-teal);
+    --ifm-color-teal-rgb: var(--ctp-mocha-teal-rgb);
+    
+    --ifm-color-cyan: var(--ctp-mocha-sky);
+    --ifm-color-cyan-rgb: var(--ctp-mocha-sky-rgb);
+    
+    --ifm-color-blue: var(--ctp-mocha-blue);
+    --ifm-color-blue-rgb: var(--ctp-mocha-blue-rgb);
+    
+    --ifm-color-indigo: var(--ctp-mocha-sapphire);
+    --ifm-color-indigo-rgb: var(--ctp-mocha-sapphire-rgb);
+    
+    --ifm-color-purple: var(--ctp-mocha-mauve);
+    --ifm-color-purple-rgb: var(--ctp-mocha-mauve-rgb);
+    
+    --ifm-color-pink: var(--ctp-mocha-pink);
+    --ifm-color-pink-rgb: var(--ctp-mocha-pink-rgb);
+
+
     /* === SEMANTIC COLOR SYSTEM === */
 
     /* Success color - Green */
@@ -480,15 +561,11 @@
     --ifm-footer-background-color: var(--ctp-mocha-mantle)    !important;
 
     /* Component-specific background colors */
-    --ifm-navbar-background-color: var(--ctp-mocha-base) !important;
+    --ifm-navbar-background-color: var(--ctp-mocha-base)     !important;
     --ifm-table-stripe-background: var(--ctp-mocha-surface0) !important;
     --ifm-pre-background: var(--ctp-mocha-surface0);
     --ifm-alert-background-color: var(--ctp-mocha-surface1);
     --ifm-card-background-color: var(--ctp-mocha-surface0);
-
-    /* Color contrast */
-    --ifm-color-white: var(--ctp-mocha-text);
-    --ifm-color-black: var(--ctp-mocha-base);
 
     /* Gray color scale */
     --ifm-color-gray-0: var(--ctp-mocha-text);

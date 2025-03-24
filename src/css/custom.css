@@ -96,28 +96,9 @@ h2 {
 }
 
 
-
-/* === Theme switch transition ===*/
-
-:root {
-  --transition-duration: 0.3s;
-  --transition-timing: ease;
-}
-
-*, *::before, *::after {
-  transition: background-color var(--transition-duration) var(--transition-timing),
-              color var(--transition-duration) var(--transition-timing),
-              border-color var(--transition-duration) var(--transition-timing),
-              box-shadow var(--transition-duration) var(--transition-timing);
-}
-
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  
-  *, *::before, *::after {
-    transition: none !important;
   }
 }
