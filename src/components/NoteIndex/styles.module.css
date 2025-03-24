@@ -127,10 +127,6 @@
   .noteCard:active .noteIcon {
     transform: scale(1.1);
   }
-
-  :global(.highlight-card) {
-    transform: scale(1.02);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -142,54 +138,6 @@
   
   .noteIcon {
     transition: none !important;
-  }
-}
-
-:global(.blur-card) {
-  filter: blur(4px); 
-  opacity: 0.4;  /* Reduced from 0.6 to 0.4 for darker appearance */
-  transform: scale(0.96);
-  transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.05);  /* Slight dark overlay */
-}
-
-:global(.highlight-card) {
-  box-shadow: 0 0 20px rgba(var(--ifm-color-primary-rgb), 0.8);  /* Increased glow */
-  transform: scale(1.05);
-  z-index: 2;  /* Increased to ensure it's above the darkened cards */
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-/* Add a semi-transparent overlay to darken the entire background */
-:global(.hash-navigation-active) {
-  position: relative;
-}
-
-:global(.hash-navigation-active::before) {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);  /* Dark overlay for entire page */
-  z-index: 1;
-  pointer-events: none;  /* Allow clicks to pass through */
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :global(.blur-card) {
-    transition: none !important;
-    filter: opacity(0.4);
-    transform: none;
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-  :global(.highlight-card) {
-    transition: none !important;
-    box-shadow: 0 0 15px rgba(var(--ifm-color-primary-rgb), 0.7);
-    transform: none;
   }
 }
 
