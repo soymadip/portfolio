@@ -12,7 +12,7 @@ const sharp = require('sharp');
  * @returns {Promise<string>} - A promise that resolves with the path to the processed image
  */
 async function reshapeImage(imagePath, outputPath, shape = 'circle', roundedCornerRadius = 50) {
-  console.log(`Processing image to ${shape} shape...`);
+  console.log(`[INFO] Processing image to ${shape} shape...`);
   
   try {
     // Get image dimensions
