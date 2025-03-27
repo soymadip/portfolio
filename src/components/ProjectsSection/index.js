@@ -20,7 +20,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-
+  const activeDotRef = useRef(null);
+  const dotsContainerRef = useRef(null);
 
   // Default Settings 
   const projectDefaults = {
@@ -134,52 +135,74 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
   // Method to go to a specific slide
   const goToSlide = useCallback((index) => {
     if (sliderRef.current) {
+
       sliderRef.current.slickGoTo(index * slidesToShow);
+      setCurrentSlide(index);
+
     }
   }, [slidesToShow]);
 
-  // Helper function for navigation dots
-  const renderNavDots = useCallback(() => {
-    return Array.from({ length: totalPages }, (_, i) => (
-      <button
-        key={i}
-        className={`${styles.navDot} ${i === currentSlide ? styles.activeDot : ''}`}
-        onClick={() => goToSlide(i)}
-        aria-label={`Go to project page ${i + 1} of ${totalPages}`}
-        aria-current={i === currentSlide ? 'true' : 'false'}
-        type="button"
-      />
-    ));
-  }, [totalPages, currentSlide, goToSlide]);
-
-  const fewDots = totalPages <= 4; 
-
-  // Keep a reference to the navDotsContainer
-  const navDotsContainerRef = useRef(null);
-
-  // Scroll active dot into view when currentSlide changes
   useEffect(() => {
-    if (navDotsContainerRef.current && typeof window !== 'undefined' && !fewDots) {
-      const container = navDotsContainerRef.current;
-      const activeDot = container.querySelector(`.${styles.activeDot}`);
-      
-      if (activeDot) {
-        // Calculate the scroll position to center the active dot
-        const containerWidth = container.offsetWidth;
-        const dotPosition = activeDot.offsetLeft;
-        const dotWidth = activeDot.offsetWidth;
+    const scrollTimeout = setTimeout(() => {
+
+      if (activeDotRef.current && dotsContainerRef.current) {
+        const container = dotsContainerRef.current;
+        const activeDot = activeDotRef.current;
         
-        // Center the dot in the container
-        const scrollPosition = dotPosition - (containerWidth / 2) + (dotWidth / 2);
-        
-        // Smooth scroll to the position
-        container.scrollTo({
-          left: Math.max(0, scrollPosition),
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
+        try {
+
+          // For first few
+          const adaptiveThreshold = Math.max(1, Math.floor(totalPages * 0.1));
+          if (currentSlide <= adaptiveThreshold) {
+            container.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+            });
+            return;
+          }
+          
+          // For last few
+          if (currentSlide >= totalPages - 2) {
+            const scrollMax = container.scrollWidth - container.clientWidth;
+            container.scrollTo({
+              left: scrollMax,
+              behavior: 'smooth'
+            });
+            return;
+          }
+          
+          // Center the active dot at mobile
+          const dotRect = activeDot.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+          
+          // Check if dot is within visible area with margins
+          const isOutsideLeft = dotRect.left < containerRect.left + 20;
+          const isOutsideRight = dotRect.right > containerRect.right - 20;
+          
+          if (isOutsideLeft || isOutsideRight) {
+            const dotPosition = activeDot.offsetLeft;
+            const dotWidth = activeDot.clientWidth;
+            const containerWidth = container.clientWidth;
+            const scrollPosition = dotPosition - (containerWidth / 2) + (dotWidth / 2);
+            
+            // Disable smooth scroll if not supported
+            if ('scrollBehavior' in document.documentElement.style) {
+              container.scrollTo({
+                left: Math.max(0, scrollPosition),
+                behavior: 'smooth'
+              });
+            } else {
+              container.scrollLeft = Math.max(0, scrollPosition);
+            }
+          }
+        } catch (error) {
+          console.warn('Dot scrolling error:', error);
+        }
       }
-    }
-  }, [currentSlide, fewDots]);
+    }, 50);
+    
+    return () => clearTimeout(scrollTimeout);
+  }, [currentSlide, totalPages]);
 
   // Carousel settings
   const settings = useMemo(() => ({
@@ -302,6 +325,35 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
     }
   }, []);
 
+  // Render navigation dots with proper CSS classes based on count
+  const renderNavigationDots = useCallback(() => {
+    if (totalPages <= 1) return null;
+
+    // Determine if we should use scrollable or centered layout
+    const fewDots = totalPages <= 5;
+    
+    return (
+      <div 
+        className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`}
+        role="tablist"
+        aria-label="Project carousel navigation"
+      >
+        {Array.from({ length: totalPages }, (_, i) => (
+          <button
+            key={i}
+            className={`${styles.navDot} ${currentSlide === i ? styles.activeDot : ''}`}
+            onClick={() => goToSlide(i)}
+            aria-label={`Go to slide ${i + 1} of ${totalPages}`}
+            aria-selected={currentSlide === i}
+            role="tab"
+            type="button"
+            ref={currentSlide === i ? activeDotRef : null}
+          />
+        ))}
+      </div>
+    );
+  }, [currentSlide, totalPages, goToSlide]);
+
   return (
     <div id={id} className={`${styles.projectsSection} ${className || ''}`} role="region" aria-label="Projects section">
       <div className={styles.projectsContainer}>
@@ -365,7 +417,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                           />
                         )}
                         
-                        {/* Featured badge inside image container at bottom right */}
+                        {/* Featured badge */}
                         {project.featured && (
                           <div className={styles.featuredBadge} title="Featured Project" aria-label="Featured project">
                             <FaStar aria-hidden="true" />
@@ -414,6 +466,11 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                 ))}
               </Slider>
               
+              {/* Desktop navigation dots */}
+              <div className={styles.desktopDotsContainer}>
+                {renderNavigationDots()}
+              </div>
+              
               {/* Mobile navigation controls (bottom) */}
               <div className={styles.mobileNavigationControls}>
                 {totalPages > 1 && (
@@ -429,11 +486,12 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       <FaChevronLeft aria-hidden="true" />
                     </button>
                     
+                    {/* Mobile navigation dots */}
                     <div 
-                      className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`} 
-                      ref={navDotsContainerRef}
+                      className={styles.dotsScrollContainer}
+                      ref={dotsContainerRef}
                     >
-                      {renderNavDots()}
+                      {renderNavigationDots()}
                     </div>
                     
                     <button 
@@ -449,13 +507,6 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                   </>
                 )}
               </div>
-              
-              {/* Desktop dots (without buttons) */}
-              {totalPages > 1 && (
-                <div className={styles.desktopDotsContainer}>
-                  {renderNavDots()}
-                </div>
-              )}
             </div>
             
             {/* Desktop navigation button (right side) */}
