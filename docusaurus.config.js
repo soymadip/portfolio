@@ -215,6 +215,7 @@ const config = {
 
       navbar: {
         title: ownerName,
+        hideOnScroll: true,
 
         logo: {
           alt: 'Site Logo',
@@ -222,6 +223,11 @@ const config = {
         },
 
         items: [
+          {
+            type: 'search',
+            position: 'right',
+            className: 'navbar-search-bar'
+          },
           {
             label: 'About Me',
             to: '/#about',
@@ -285,7 +291,21 @@ const config = {
     }),
 
   plugins: [
-    require.resolve('./src/utils/generateFavicon')
+    require.resolve('./src/utils/generateFavicon'),
+  [
+    require.resolve("@easyops-cn/docusaurus-search-local"),
+    ({
+      hashed: true,
+      indexDocs: true,
+      docsDir: "notes",
+      docsRouteBasePath: "notes",
+      highlightSearchTermsOnTargetPage: true,
+      explicitSearchResultPath: true,
+      hideSearchBarWithNoSearchContext: true,
+      searchContextByPaths: ['notes','blog'],
+      language: ["en"]
+    }),
+  ],
   ],
 };
 

@@ -4,9 +4,12 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { iconMap } from '@site/src/config/iconMappings';
+import DocCardList from '@theme/DocCardList';
 
 import { FaBook } from 'react-icons/fa';
 import styles from './styles.module.css';
+
+
 
 function indexNotes() {
   const context = require.context(`@site/notes`, true, /index\.mdx?$|\.mdx?$/);
@@ -51,6 +54,7 @@ function indexNotes() {
     }).sort((a, b) => a.position - b.position);
 }
 
+
 export default function Notecards({ buttonText = 'Open Note' }) {
   const notes = indexNotes();
   const { path: docsBasePath } = usePluginData('docusaurus-plugin-content-docs');
@@ -89,5 +93,23 @@ export default function Notecards({ buttonText = 'Open Note' }) {
         );
       })}
     </div>
+  );
+}
+
+
+// List Topics inside Individual Notes
+export function TopicList({
+  description = 'Click on the links below to explore the topics.',
+  style = { 
+    marginTop: '-2.5rem',
+    marginBottom: '2.5rem',
+    textAlign: 'center'
+  }
+}) {
+  return (
+    <>
+      <p style={style}>{description}</p>
+      <DocCardList/>
+    </>
   );
 }

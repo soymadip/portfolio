@@ -304,6 +304,7 @@
 
     /* Component-specific background colors */
     --ifm-navbar-background-color: var(--ctp-latte-base)   !important;
+    --ifm-navbar-search-input-background-color: var(--ctp-latte-surface0);
     --ifm-table-stripe-background: var(--ctp-latte-mantle) !important;
     --ifm-pre-background: var(--ctp-latte-surface0);
     --ifm-alert-background-color: var(--ctp-latte-surface0);
@@ -341,7 +342,7 @@
     --ifm-font-color-secondary: var(--ctp-latte-subtext0);
     --ifm-font-color-tertiary: var(--ctp-latte-subtext1);
     --ifm-font-color-quaternary: var(--ctp-latte-overlay2);
-    
+
     /* Content colors */
     --ifm-color-content: var(--ctp-latte-text) !important;
     --ifm-color-content-secondary: var(--ctp-latte-subtext0) !important;
@@ -378,7 +379,6 @@
     /* Code highlighting */
     --docusaurus-highlighted-code-line-bg: rgba(var(--ctp-latte-surface2-rgb), 0.5) !important;
 }
-
 
 
 /* Dark mode - Catppuccin Mocha */
@@ -445,7 +445,7 @@
 
     --ifm-color-primary: var(--ctp-mocha-peach);
     --ifm-color-primary-rgb: var(--ctp-mocha-peach-rgb);
-    
+
     /* Light variations of primary color */
     --ifm-color-primary-lightest: var(--ctp-mocha-teal);
     --ifm-color-primary-lightest-rgb: var(--ctp-mocha-teal-rgb);
@@ -453,7 +453,7 @@
     --ifm-color-primary-lighter-rgb: var(--ctp-mocha-green-rgb);
     --ifm-color-primary-light: var(--ctp-mocha-yellow);
     --ifm-color-primary-light-rgb: var(--ctp-mocha-yellow-rgb);
-    
+
     /* Dark variations of primary color */
     --ifm-color-primary-dark: var(--ctp-mocha-red);
     --ifm-color-primary-dark-rgb: var(--ctp-mocha-red-rgb);
@@ -470,38 +470,28 @@
 
     --ifm-color-white: var(--ctp-mocha-text);
     --ifm-color-white-rgb: var(--ctp-mocha-text-rgb);
-    
+
     /* Basic color palette */
     --ifm-color-gray: var(--ctp-mocha-overlay0);
     --ifm-color-gray-rgb: var(--ctp-mocha-overlay0-rgb);
-    
     --ifm-color-red: var(--ctp-mocha-red);
     --ifm-color-red-rgb: var(--ctp-mocha-red-rgb);
-    
     --ifm-color-orange: var(--ctp-mocha-peach);
     --ifm-color-orange-rgb: var(--ctp-mocha-peach-rgb);
-    
     --ifm-color-yellow: var(--ctp-mocha-yellow);
     --ifm-color-yellow-rgb: var(--ctp-mocha-yellow-rgb);
-    
     --ifm-color-green: var(--ctp-mocha-green);
     --ifm-color-green-rgb: var(--ctp-mocha-green-rgb);
-    
     --ifm-color-teal: var(--ctp-mocha-teal);
     --ifm-color-teal-rgb: var(--ctp-mocha-teal-rgb);
-    
     --ifm-color-cyan: var(--ctp-mocha-sky);
     --ifm-color-cyan-rgb: var(--ctp-mocha-sky-rgb);
-    
     --ifm-color-blue: var(--ctp-mocha-blue);
     --ifm-color-blue-rgb: var(--ctp-mocha-blue-rgb);
-    
     --ifm-color-indigo: var(--ctp-mocha-sapphire);
     --ifm-color-indigo-rgb: var(--ctp-mocha-sapphire-rgb);
-    
     --ifm-color-purple: var(--ctp-mocha-mauve);
     --ifm-color-purple-rgb: var(--ctp-mocha-mauve-rgb);
-    
     --ifm-color-pink: var(--ctp-mocha-pink);
     --ifm-color-pink-rgb: var(--ctp-mocha-pink-rgb);
 
@@ -560,6 +550,7 @@
 
     /* Component-specific background colors */
     --ifm-navbar-background-color: var(--ctp-mocha-base)     !important;
+    --ifm-navbar-search-input-background-color: var(--ctp-mocha-surface0);
     --ifm-table-stripe-background: var(--ctp-mocha-surface0) !important;
     --ifm-pre-background: var(--ctp-mocha-surface0);
     --ifm-alert-background-color: var(--ctp-mocha-surface1);
@@ -594,10 +585,10 @@
     /* Text colors */
     --ifm-font-color-base: var(--ctp-mocha-text);
     --ifm-font-color-base-rgb: var(--ctp-mocha-text-rgb);
-    --ifm-font-color-secondary: var(--ctp-mocha-subtext1); 
-    --ifm-font-color-tertiary: var(--ctp-mocha-subtext0); 
+    --ifm-font-color-secondary: var(--ctp-mocha-subtext1);
+    --ifm-font-color-tertiary: var(--ctp-mocha-subtext0);
     --ifm-font-color-quaternary: var(--ctp-mocha-overlay2);
-    
+
     /* Content colors */
     --ifm-color-content: var(--ctp-mocha-text) !important;
     --ifm-color-content-secondary: var(--ctp-mocha-subtext0) !important;
@@ -633,5 +624,4 @@
 
     /* Code highlighting */
     --docusaurus-highlighted-code-line-bg: rgba(var(--ctp-mocha-surface2-rgb), 0.5);
-
 }
