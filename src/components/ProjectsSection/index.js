@@ -152,7 +152,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
         try {
 
           // For first few
-          if (currentSlide <= 2) {
+          const adaptiveThreshold = Math.max(1, Math.floor(totalPages * 0.1));
+          if (currentSlide <= adaptiveThreshold) {
             container.scrollTo({
               left: 0,
               behavior: 'smooth'
