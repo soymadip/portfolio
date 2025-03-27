@@ -425,16 +425,41 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       aria-disabled={atBeginning}
                       type="button"
                       disabled={atBeginning}
+                      style={{ flexShrink: 0 }}
                     >
                       <FaChevronLeft aria-hidden="true" />
                     </button>
                     
-                    <div 
-                      className={`${styles.navDotsContainer} ${fewDots ? styles.centerDots : styles.scrollDots}`} 
-                      ref={navDotsContainerRef}
-                    >
-                      {renderNavDots()}
-                    </div>
+                    {/* For few dots, we'll use a different approach */}
+                    {fewDots ? (
+                      <div 
+                        className={`${styles.navDotsContainer} ${styles.centerDots}`}
+                        style={{
+                          display: 'inline-flex',
+                          justifyContent: 'center',
+                          textAlign: 'center',
+                          width: '100%',
+                          position: 'absolute',
+                          left: 0,
+                          right: 0
+                        }}
+                      >
+                        {renderNavDots()}
+                      </div>
+                    ) : (
+                      <div 
+                        className={`${styles.navDotsContainer} ${styles.scrollDots}`} 
+                        ref={navDotsContainerRef}
+                        style={{
+                          flexGrow: 1,
+                          overflow: 'auto',
+                          msOverflowStyle: 'none',
+                          scrollbarWidth: 'none'
+                        }}
+                      >
+                        {renderNavDots()}
+                      </div>
+                    )}
                     
                     <button 
                       className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
@@ -443,6 +468,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       aria-disabled={atEnd}
                       type="button"
                       disabled={atEnd}
+                      style={{ flexShrink: 0 }}
                     >
                       <FaChevronRight aria-hidden="true" />
                     </button>
