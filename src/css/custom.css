@@ -60,32 +60,9 @@ html {
   display: none !important;
 }
 
-.navbar-search-bar {
-  width: 150px;
-}
-
 .navbar__search-input {
-  width: 100%;
+  width: 130px;
   font-size: 0.85rem;
-}
-
-@media (max-width: 996px) {
-  .navbar-search-bar {
-    right: 4rem; 
-    top: 0.9rem;
-    width: 130px;
-  }
-  
-  @media (max-width: 480px) {
-    .navbar-search-bar {
-      width: 100px;
-      right: 3.5rem;
-    }
-    
-    .navbar__search-input {
-      font-size: 0.8rem;
-    }
-  }
 }
 
 .docs-wrapper, article, .markdown {
