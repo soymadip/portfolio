@@ -91,7 +91,7 @@ const config = {
         state:   'paused',
         featured: false,
         desc:    "Student record management system built with PHP and MySQL",
-        image:   "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/src/images/social%20card.png",
+        image:   "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/app/src/images/social%20card.png",
         website: null,
         github:  "https://github.com/soymadip/SDMP",
         Demo:    null,

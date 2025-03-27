@@ -138,49 +138,6 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
     }
   }, [slidesToShow]);
 
-  // Helper function for navigation dots
-  const renderNavDots = useCallback(() => {
-    return Array.from({ length: totalPages }, (_, i) => (
-      <button
-        key={i}
-        className={`${styles.navDot} ${i === currentSlide ? styles.activeDot : ''}`}
-        onClick={() => goToSlide(i)}
-        aria-label={`Go to project page ${i + 1} of ${totalPages}`}
-        aria-current={i === currentSlide ? 'true' : 'false'}
-        type="button"
-      />
-    ));
-  }, [totalPages, currentSlide, goToSlide]);
-
-  const fewDots = totalPages <= 4; 
-
-  // Keep a reference to the navDotsContainer
-  const navDotsContainerRef = useRef(null);
-
-  // Scroll active dot into view when currentSlide changes
-  useEffect(() => {
-    if (navDotsContainerRef.current && typeof window !== 'undefined' && !fewDots) {
-      const container = navDotsContainerRef.current;
-      const activeDot = container.querySelector(`.${styles.activeDot}`);
-      
-      if (activeDot) {
-        // Calculate the scroll position to center the active dot
-        const containerWidth = container.offsetWidth;
-        const dotPosition = activeDot.offsetLeft;
-        const dotWidth = activeDot.offsetWidth;
-        
-        // Center the dot in the container
-        const scrollPosition = dotPosition - (containerWidth / 2) + (dotWidth / 2);
-        
-        // Smooth scroll to the position
-        container.scrollTo({
-          left: Math.max(0, scrollPosition),
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-      }
-    }
-  }, [currentSlide, fewDots]);
-
   // Carousel settings
   const settings = useMemo(() => ({
     dots: false,
@@ -414,7 +371,7 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                 ))}
               </Slider>
               
-              {/* Mobile navigation controls (bottom) */}
+              {/* Mobile navigation controls (bottom) - Only navigation buttons */}
               <div className={styles.mobileNavigationControls}>
                 {totalPages > 1 && (
                   <>
@@ -425,41 +382,12 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       aria-disabled={atBeginning}
                       type="button"
                       disabled={atBeginning}
-                      style={{ flexShrink: 0 }}
                     >
                       <FaChevronLeft aria-hidden="true" />
                     </button>
                     
-                    {/* For few dots, we'll use a different approach */}
-                    {fewDots ? (
-                      <div 
-                        className={`${styles.navDotsContainer} ${styles.centerDots}`}
-                        style={{
-                          display: 'inline-flex',
-                          justifyContent: 'center',
-                          textAlign: 'center',
-                          width: '100%',
-                          position: 'absolute',
-                          left: 0,
-                          right: 0
-                        }}
-                      >
-                        {renderNavDots()}
-                      </div>
-                    ) : (
-                      <div 
-                        className={`${styles.navDotsContainer} ${styles.scrollDots}`} 
-                        ref={navDotsContainerRef}
-                        style={{
-                          flexGrow: 1,
-                          overflow: 'auto',
-                          msOverflowStyle: 'none',
-                          scrollbarWidth: 'none'
-                        }}
-                      >
-                        {renderNavDots()}
-                      </div>
-                    )}
+                    {/* Spacer div to maintain layout */}
+                    <div className={styles.mobileControlsSpacer}></div>
                     
                     <button 
                       className={`${styles.carouselControl} ${styles.nextButton} ${atEnd ? styles.disabledButton : ''}`} 
@@ -468,20 +396,12 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
                       aria-disabled={atEnd}
                       type="button"
                       disabled={atEnd}
-                      style={{ flexShrink: 0 }}
                     >
                       <FaChevronRight aria-hidden="true" />
                     </button>
                   </>
                 )}
               </div>
-              
-              {/* Desktop dots (without buttons) */}
-              {totalPages > 1 && (
-                <div className={styles.desktopDotsContainer}>
-                  {renderNavDots()}
-                </div>
-              )}
             </div>
             
             {/* Desktop navigation button (right side) */}
