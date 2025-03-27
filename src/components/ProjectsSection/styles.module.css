@@ -1,3 +1,4 @@
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -399,22 +400,43 @@
   margin: 0;
   padding: 0;
   width: auto;
+  min-width: fit-content;
+}
+
+.dotsScrollContainer {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0;
+  max-width: 60vw; 
+  scroll-padding: 0 20px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.dotsScrollContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .navDot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background-color: var(--ifm-color-gray-500);
   border: none;
-  margin: 0 5px;
+  margin: 0 6px;
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease;
   opacity: 0.7;
   flex-shrink: 0;
-  min-width: 8px;
-  min-height: 8px;
+  min-width: 9px;
+  min-height: 9px;
 }
 
 .navDot:hover {
@@ -424,8 +446,28 @@
 
 .activeDot {
   background-color: var(--ifm-color-primary);
-  transform: scale(1.2);
+  transform: scale(1.5);
   opacity: 1;
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.4);
+  z-index: 5; /* Ensure active dot appears above others */
+}
+
+.dotsScrollContainer .navDot {
+  opacity: 0.8;
+}
+
+/* Center alignment for dots */
+.centerDots {
+  display: flex !important;
+  justify-content: center !important; 
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+.scrollDots {
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin: 0;
 }
 
 .navigationControls {
@@ -453,23 +495,12 @@
   align-items: center;
   margin: 20px auto 10px;
   width: 100%;
-  gap: 15px;
+  gap: 5px;
 }
 
 /* Add a spacer to center the navigation buttons */
 .mobileControlsSpacer {
   flex: 1;
-}
-
-/* Center alignment for dots */
-.centerDots {
-  display: flex !important;
-  justify-content: center !important; 
-  text-align: center !important;
-}
-
-.scrollDots {
-  justify-content: flex-start;
 }
 
 /* Responsive styles */
@@ -551,6 +582,15 @@
     width: 100%;
   }
 
+  .mobileNavigationControls .dotsScrollContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobileNavigationControls .centerDots {
+    margin: 0 auto;
+  }
+
   .mobileNavigationControls .carouselControl {
     position: relative;
     top: auto;
@@ -558,6 +598,7 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+    z-index: 10; 
   }
 
   .mobileNavigationControls .carouselControl:hover {
@@ -584,6 +625,28 @@
   .projectStateLabel {
     font-size: 0.6rem;
     padding: 1px 3px;
+  }
+
+  .mobileNavigationControls .dotsScrollContainer {
+    justify-content: flex-start; 
+    padding-left: 10px;
+    min-height: 40px; 
+    align-items: center;
+  }
+  
+  .mobileNavigationControls .centerDots {
+    justify-content: center !important;
+    padding-left: 0;
+  }
+  
+  .mobileNavigationControls .navDot:first-child {
+    margin-left: 2px;
+  }
+  
+  .mobileNavigationControls .activeDot {
+    transform: scale(1.6);
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.5); 
   }
 }
 
@@ -704,9 +767,23 @@
     right: -8px;
   }
 
+  .dotsScrollContainer {
+    max-width: 45vw;
+    padding: 0.6rem 0;
+  }
+
+  .navDot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    margin: 0 5px;
+  }
+
   .mobileNavigationControls .carouselControl {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
   }
 
   .projectStateBadge {
@@ -718,6 +795,11 @@
     font-size: 0.55rem;
     padding: 0px 3px;
     letter-spacing: 0.3px;
+  }
+
+  .mobileNavigationControls .activeDot {
+    box-shadow: 0 0 0 1.5px rgba(var(--ifm-color-primary-rgb), 0.4);
+    transform: scale(1.5); 
   }
 }
 
