@@ -5,8 +5,8 @@
         "description": "Add frontmatter for a note page",
         "body": [
             "---",
-            "title: ${1:Title}",
-            "description: ${3:Description of the topic}",
+            "title: \"${1:Title}\"",
+            "description: \"${3:Description of the topic}\"",
             "sidebar_position: ${2:1}",
             "---"
         ],
@@ -15,10 +15,10 @@
     "Note Index Page": {
         "scope": "markdown,mdx",
         "prefix": "note",
-        "description": "Add a standard index page structure for note directories",
+        "description": "\"Add a standard index page structure for note directories\"",
         "body": [
             "---",
-            "title: ${1:Title}",
+            "title: \"${1:Title}\"",
             "page_type: ${index}",
             "description: ${3:Description of the topic}",
             "sidebar_position: ${2:1}",
