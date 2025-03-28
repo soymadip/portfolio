@@ -96,6 +96,14 @@ h2 {
   color: var(--ifm-color-primary);
 }
 
+mark {
+  background-color: rgba(var(--ctp-peach-rgb), 0.2);
+  color: var(--ifm-font-color-base);
+  padding: 0.17rem 0.27rem;
+  border-radius: 0.2rem;
+  border-bottom: 1px solid var(--ifm-color-primary);
+}
+
 .pagination-nav__link {
   border: 1px solid var(--ifm-background-color);
   background-color: var(--ifm-background-surface-color);
