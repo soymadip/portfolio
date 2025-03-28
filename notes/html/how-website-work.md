@@ -1,6 +1,7 @@
 ---
 title: WebSite Basic Structure
-sidebar_position: 1
+description: How does websites work? Take a high level view
+sidebar_position: 3
 ---
 
 ## Structure of a webpage

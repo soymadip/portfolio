@@ -1,6 +1,7 @@
 ---
 title: "Emmet: The linter"
-sidebar_position: 1
+description: A toolkit that can greatly improve your workflow.
+sidebar_position: 2
 ---
 
 Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow. It is a plugin for many popular text editors which greatly improves HTML & CSS workflow.
@@ -9,7 +10,7 @@ Emmet allows you to write a line of simple code called an ‘abbreviation’, an
 
 ### For easy elements multiply:
 
-in HTML, you could write:
+In HTML, you could write:
 
 ```html
 ul>li*5
@@ -42,6 +43,4 @@ By typing `!`  we can get boiler plate code for HTML:
 
 </body>
 </html>
-
-
 ```
