@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -100,12 +100,30 @@ export default function Notecards({ buttonText = 'Open Note' }) {
 // List Topics inside Individual Notes
 export function TopicList({
   description = 'Click on the links below to explore the topics.',
+  hideCodeBlocks = true,
   style = { 
     marginTop: '-2.5rem',
     marginBottom: '2.5rem',
     textAlign: 'center'
   }
 }) {
+  // Hide code Dataview code Blocks in page.
+  useEffect(() => {
+    if (hideCodeBlocks) {
+      const styleElement = document.createElement('style');
+
+      styleElement.textContent = `
+        div.language-dataviewjs { 
+          display: none !important;
+        }`;
+
+      document.head.appendChild(styleElement);
+      return () => {
+        document.head.removeChild(styleElement);
+      };
+    }
+  }, [hideCodeBlocks]);
+
   return (
     <>
       <p style={style}>{description}</p>
