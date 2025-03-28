@@ -1,6 +1,6 @@
 ---
 title: Java 
-sidebar_position: 8
+sidebar_position: 9
 ---
 Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is widely used for building enterprise-scale applications, mobile applications, and web-based systems. Java's "write once, run anywhere" philosophy allows compiled code to run on all platforms that support Java without the need for recompilation.
 
