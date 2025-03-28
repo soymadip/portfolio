@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ## Structure of a webpage
 
-{/* Thanks Harry sir for this one. */}
+<!-- Thanks Harry sir for this one. -->
 
 ![webpage-structure.png](./Assets/webpage-structure.png)
 

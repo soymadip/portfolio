@@ -1,9 +1,10 @@
 ---
-title: March 1 
+title: "March 1" 
+description: "Class concepts, objects, methods, and OOP fundamentals in Java"
 sidebar_position: 3
 ---
 
-##  class in Java
+## Class in Java
 A class is a blueprint for creating objects. It defines fields (variables) and methods
 (functions) that describe the properties and behaviours of an object.
 Example:
@@ -14,7 +15,7 @@ public class CST{
 ```
 
 ---
-## define fields and methods in a class
+## Define Fields and Methods in a Class
 Fields are variables, and methods are functions inside a class.
 
 ```java
@@ -29,7 +30,7 @@ Fields are variables, and methods are functions inside a class.
 ```
 
 ---
-## create an object of a class
+## Create an Object of a Class
 Use the new keyword to create an object.
 
 ```java
@@ -38,7 +39,7 @@ Car myCar = new Car();  // Creating an object of the Car class
 ```
 
 ---
-## access fields and methods of a class
+## Access Fields and Methods of a Class
 Use the dot `.` operator to access fields and methods.
 ```java
 myCar.model = "Toyota";  // Access field
@@ -47,7 +48,7 @@ myCar.display();        // Call method
 ```
 
 ---
-## `this` keyword
+## The `this` Keyword
 
 The this keyword refers to the current object within the class, used to distinguish between class fields and parameters with the same name.
 
@@ -66,7 +67,7 @@ class Person {
 ```
 
 ---
-## `static` keyword
+## The `static` Keyword
 
 The static keyword makes a field or method belong to the class, not instances(objects). It is shared by all objects.
 without creating objects, I can access the methods directly
@@ -83,7 +84,7 @@ class Counter {
 ```
 
 ---
-## method overloading
+## Method Overloading
 
 Method overloading occurs when multiple methods in the same class have the
 same name but different parameters.
@@ -96,7 +97,7 @@ class Calculator {
 ```
 
 ---
-## `final` keyword?
+## The `final` Keyword
 
 The final keyword is used to define constants (final variables), prevent method
 overriding, and prevent class inheritance.

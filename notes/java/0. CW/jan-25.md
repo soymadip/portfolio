@@ -1,5 +1,6 @@
 ---
-title: Jan 25
+title: "Jan 25"
+description: "Type casting, identifiers, strings, and control flow in Java"
 sidebar_position: 1
 ---
 
@@ -123,5 +124,3 @@ if (condition1) {
     // Code to execute if both condition1 and condition2 are false
 }
 ```
-
-``

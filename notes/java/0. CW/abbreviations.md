@@ -1,8 +1,8 @@
 ---
-title: Abbreviations
+title: "Abbreviations"
+description: "Common Java abbreviations and their meanings"
 sidebar_position: 0
 ---
-
 
 ## JVM  
 **Java Virtual Machine**
@@ -34,5 +34,5 @@ A set of classes and methods to interact with Java libraries.
 
 ## JDBC  
 **Java Database Connectivity** 
-An API to connect Java applications with databases (MySQL, PostgreSQL, etc.).  
+An API to connect Java applications with databases (MySQL, PostgreSQL, etc.).
 
