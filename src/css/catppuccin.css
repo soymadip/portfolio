@@ -304,6 +304,7 @@
 
     /* Component-specific background colors */
     --ifm-navbar-background-color: var(--ctp-latte-base)   !important;
+    --ifm-navbar-search-input-color: var(--ifm-font-color-base);
     --ifm-navbar-search-input-background-color: var(--ctp-latte-surface0);
     --ifm-table-stripe-background: var(--ctp-latte-mantle) !important;
     --ifm-pre-background: var(--ctp-latte-surface0);
@@ -550,6 +551,7 @@
 
     /* Component-specific background colors */
     --ifm-navbar-background-color: var(--ctp-mocha-base)     !important;
+    --ifm-navbar-search-input-color: var(--ifm-font-color-base);
     --ifm-navbar-search-input-background-color: var(--ctp-mocha-surface0);
     --ifm-table-stripe-background: var(--ctp-mocha-surface0) !important;
     --ifm-pre-background: var(--ctp-mocha-surface0);
