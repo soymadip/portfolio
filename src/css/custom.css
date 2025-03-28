@@ -104,6 +104,10 @@ mark {
   border-bottom: 1px solid var(--ifm-color-primary);
 }
 
+.hide-this {
+  display: none !important;
+}
+
 .pagination-nav__link {
   border: 1px solid var(--ifm-background-color);
   background-color: var(--ifm-background-surface-color);
