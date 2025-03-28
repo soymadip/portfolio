@@ -1,0 +1,31 @@
+{
+    "Topic List Index Page": {
+        "scope": "markdown,mdx",
+        "prefix": "note",
+        "body": [
+            "---",
+            "title: ${1:Title}",
+            "page_type: index",
+            "description: ${3:Description of the topic}",
+            "sidebar_position: ${2:1}",
+            "---",
+            "import { TopicList } from '@site/src/components/NoteIndex';",
+            "",
+            "<TopicList/>"
+        ],
+        "description": "Create an index page with TopicList component"
+    },
+                   
+    "Note Frontmatter": {
+        "scope": "markdown,mdx",
+        "prefix": "---",
+        "body": [
+            "---",
+            "title: ${1:Title}",
+            "description: ${3:Description of the topic}",
+            "sidebar_position: ${2:1}",
+            "---"
+        ],
+        "description": "Add frontmatter for a note page"
+    }
+}

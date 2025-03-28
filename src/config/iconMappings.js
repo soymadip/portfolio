@@ -1,10 +1,11 @@
-import { TbBrandCSharp } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandCassandra } from "react-icons/tb";
 import { GrVirtualMachine } from "react-icons/gr";
 import { DiRasberryPi } from "react-icons/di";
 import { PiGithubLogoFill } from "react-icons/pi";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 import { 
-  SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiGnubash, 
+  SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiPostgresql, SiGnubash, 
   SiLinux, SiLinuxfoundation, SiArchlinux, SiAlmalinux, SiAlpinelinux, SiKalilinux, SiLinuxmint, 
   SiRockylinux, SiVoidlinux, SiUbuntu, SiKubuntu, SiUbuntumate, SiDebian, SiRedhat, SiGithub, 
   SiLinkedin, SiMastodon, SiInstagram, SiFacebook, SiYoutube, SiTwitch, SiDiscord, SiReddit, 
@@ -12,7 +13,9 @@ import {
   SiZoom, SiNotion, SiObsidian, SiMarkdown, SiSubstack, SiThreads, SiOpenai, SiDocker, SiPodman, 
   SiLinuxcontainers, SiVmware, SiXing, SiKaggle, SiCodesandbox,
   SiGooglechrome, SiFirefox, SiSafari, SiBrave, SiOpera, SiTorbrowser, SiVivaldi, SiZendesk,
-  SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu, SiSimkl
+  SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu, SiSimkl,
+  SiOracle, SiMongodb, SiSqlite, SiMariadb, SiInfluxdb, SiRedis, SiCouchbase, SiApachecassandra,
+  SiAmazondynamodb, SiFirebase, SiNeo4J, SiElasticsearch, SiGraphql
 } from 'react-icons/si';
 
 import { 
@@ -24,12 +27,11 @@ import {
   FaFedora, FaInternetExplorer, FaEdge, FaTv, FaFilm, FaVideo, FaPodcast,
   FaSearch, FaCog, FaEdit, FaHome, FaInfoCircle, FaLink, FaDownload, 
   FaUpload, FaSave, FaTrash, FaExclamationTriangle, FaExclamationCircle, FaCheckCircle, 
-  FaQuestionCircle, FaClock, FaComments, FaBell
-} from "react-icons/fa";
-
-import {
+  FaQuestionCircle, FaClock, FaComments, FaBell, FaDatabase,
   FaCalendar, FaCheckSquare, FaBookmark, FaStar, FaHeart, FaClipboard, FaEnvelopeOpen
 } from "react-icons/fa";
+
+
 
 //--------- Icon mappings ---------
 
@@ -49,7 +51,34 @@ export const iconMap = {
   html: { icon: FaHtml5, color: '#E34F26' },
   css: { icon: FaCss3Alt, color: '#1572B6' },
   sql: { icon: SiMysql, color: '#4479A1' },
-
+  postgresql: { icon: BiLogoPostgresql, color: '#336791' },
+  postgres: { icon: BiLogoPostgresql, color: '#336791' },
+  oraclesql: { icon: SiOracle, color: '#F80000' },
+  oracle: { icon: SiOracle, color: '#F80000' },
+  database: { icon: FaDatabase, color: '#47A248' },
+  db: { icon: FaDatabase, color: '#47A248' },
+  dbms: { icon: FaDatabase, color: '#47A248' },
+  mysql: { icon: SiMysql, color: '#4479A1' },
+  mariadb: { icon: SiMariadb, color: '#003545' },
+  sqlite: { icon: SiSqlite, color: '#003B57' },
+  mongodb: { icon: SiMongodb, color: '#47A248' },
+  mongo: { icon: SiMongodb, color: '#47A248' },
+  nosql: { icon: SiMongodb, color: '#47A248' },
+  redis: { icon: SiRedis, color: '#DC382D' },
+  couchbase: { icon: SiCouchbase, color: '#EA2328' },
+  cassandra: { icon: SiApachecassandra, color: '#1287B1' },
+  dynamodb: { icon: SiAmazondynamodb, color: '#4053D6' },
+  firebase: { icon: SiFirebase, color: '#FFCA28' },
+  firestore: { icon: SiFirebase, color: '#FFCA28' },
+  mssql: { icon: FaDatabase, color: '#CC2927' },
+  sqlserver: { icon: FaDatabase, color: '#CC2927' },
+  microsoftsqlserver: { icon: FaDatabase, color: '#CC2927' },
+  neo4j: { icon: SiNeo4J, color: '#008CC1' },
+  graphdb: { icon: SiNeo4J, color: '#008CC1' },
+  elasticsearch: { icon: SiElasticsearch, color: '#005571' },
+  graphql: { icon: SiGraphql, color: '#E10098' },
+  influxdb: { icon: SiInfluxdb, color: '#22ADF6' },
+  timeseries: { icon: SiInfluxdb, color: '#22ADF6' },
 
   // Competitive programming platforms
   leetcode: { icon: SiLeetcode, color: '#FFA116' },

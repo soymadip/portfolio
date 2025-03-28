@@ -12,7 +12,6 @@ import ExperienceSection from "@site/src/components/ExperienceSection";
 import ScrollToTop from "@site/src/components/ScrollToTop";
 
 
-
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
@@ -23,12 +22,20 @@ export default function Home() {
     'experience':  `Experience | ${siteConfig.title}`,
     'contact':     `Contact | ${siteConfig.title}`
   };
+  
+  const customStyles = `
+  /* For future */
+  `;
+
 
   return (
     <Layout 
       title="Me"
       description="My portfolio website"
     >
+      {/* Custom styles */}
+      <style>{customStyles}</style>
+      
       <UpdateTitle
         sections={sectionTitles}
         defaultTitle={siteConfig.title}
