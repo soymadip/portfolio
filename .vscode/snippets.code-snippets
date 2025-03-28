@@ -14,13 +14,13 @@
                  
     "Note Index Page": {
         "scope": "markdown,mdx",
-        "prefix": "note",
+        "prefix": "index",
         "description": "\"Add a standard index page structure for note directories\"",
         "body": [
             "---",
             "title: \"${1:Title}\"",
             "page_type: ${index}",
-            "description: ${3:Description of the topic}",
+            "description: \"${3:Description of the topic}\"",
             "sidebar_position: ${2:1}",
             "---",
             "",        
@@ -30,6 +30,19 @@
             "<TopicList/>",
             "</div>",
             "",
+            "<div class=\"hide-this\" align=\"center\">",
+            "    <h1>DO NOT EDIT</h1>",
+            "    <h3>This File is Used for Entrypoint of this note.<br/>Do not edit/delete. </h3>",
+            "</div>"
+           
+        ]
+    },
+
+    "DataView JS": {
+        "scope": "markdown,mdx",
+        "prefix": "dataview",
+        "description": "Add a dataview JS code block",
+        "body": [
             "<h1 align=\"center\" class=\"hide-this\"> Topics</h1>",
             " ", 
             "",
