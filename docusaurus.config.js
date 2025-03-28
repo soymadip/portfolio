@@ -178,6 +178,11 @@ const config = {
           routeBasePath: "notes",
           path: "notes",
           sidebarPath: './src/config/sidebar.js',
+
+          admonitions: {
+            keywords: ['note', 'tip', 'info', 'warning', 'danger','question'],
+            extendDefaults: true,
+          },
         },
 
         blog: {
@@ -197,6 +202,7 @@ const config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        
       }),
     ],
   ],

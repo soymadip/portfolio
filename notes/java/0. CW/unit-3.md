@@ -1,6 +1,6 @@
 ---
-title: Unit 3
-desc: Java OOP Concepts  
+title: "Unit 3: OOP Fundamentals"
+description: "Java OOP Concepts"  
 ---
 
 ## Class  
@@ -112,7 +112,7 @@ public class Main {
 ---
 
 ## `this` Keyword  
-Used to refer to the current object’s instance variables.  
+Used to refer to the current object's instance variables.  
 ```java
 class Car {
     String brand;
@@ -163,19 +163,18 @@ class Car {
 
 ---
 
+## Polymorphism in Java  
 
-## **Polymorphism in Java**  
-
-### **What is Polymorphism?**  
+### What is Polymorphism?  
 Polymorphism means **"many forms"** and allows the same method or function to perform different behaviors based on the object that calls it.  
 
-#### **Types of Polymorphism:**  
+#### Types of Polymorphism:  
 1. **Compile-time Polymorphism (Method Overloading)**  
 2. **Runtime Polymorphism (Method Overriding)**  
 
 ---
 
-### **1. Compile-time Polymorphism** (Method Overloading)  
+### 1. Compile-time Polymorphism (Method Overloading)  
 - **Method overloading** allows multiple methods in the same class to have the same name but **different parameters (different type or number of arguments).**  
 - It is **resolved at compile-time.**  
 
@@ -214,7 +213,7 @@ public class Main {
 
 ---
 
-### **2. Runtime Polymorphism** (Method Overriding)
+### 2. Runtime Polymorphism (Method Overriding)
 - **Method overriding** happens when a **subclass provides a specific implementation** of a method that is already defined in its **parent class**.  
 - It is **resolved at runtime** using **dynamic method dispatch**.  
 
@@ -258,7 +257,7 @@ public class Main {
 
 ---
 
-### **Method Overloading vs Method Overriding**
+### Method Overloading vs Method Overriding
 | Feature             | Method Overloading                                       | Method Overriding                            |
 | ------------------- | -------------------------------------------------------- | -------------------------------------------- |
 | **Definition**      | Multiple methods with same name but different parameters | Redefining a method in the subclass          |

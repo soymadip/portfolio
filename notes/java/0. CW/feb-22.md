@@ -1,8 +1,9 @@
 ---
-title: Feb 22
+title: "Feb 22"
+description: "Variable scope, wrapper classes, and garbage collection in Java"
 sidebar_position: 2
 ---
-## **What are scope variables and default values?**
+## **Scope Variables and Default Values**
 
 ### Scope of Variables in Java
 
@@ -38,7 +39,6 @@ public class VariableScope {
         obj.method();  // Calling the method to see the variable output
     }
 }
-
 ```
 
 ### Default values of variables
@@ -51,10 +51,10 @@ when a variable is declared but not initialised, Java automatically  defines def
 - *object reference*: null
 
 ---
-## What is a Wrapper class in Java? 
+## Wrapper Classes in Java
 
 A wrapper class in Java is a class that encapsulates (wraps) a primitive data type into an
-object. .
+object.
 
 >[!info]
 > - The  **wrapper classes are part of the java.lang package**
@@ -84,10 +84,9 @@ public class Main {
 }
 ```
 
-
 ---
 
-## What is Garbage Collection? How Does It Work?
+## Garbage Collection and How It Works
 
 Garbage collection in Java is the process by which Java programs automatically reclaim
 memory that is no longer in use. This helps in preventing memory leaks and optimizing
@@ -96,12 +95,11 @@ memory usage.
 **Java's Garbage Collector (GC)** identifies and removes objects that are no longer reachable or
 referenced by any part of the program.
 # How Does It Work?
-*Java uses automatic garbage collection*, so you don’t need to manually free memory.
-System.gc() can be used to suggest that the garbage collector runs, but it’s not
+*Java uses automatic garbage collection*, so you don't need to manually free memory.
+System.gc() can be used to suggest that the garbage collector runs, but it's not
 guaranteed.
 
 ```java
-
 public class GarbageCollectionExample {
     public static void main(String[] args) {
         // Creating an object of the class
