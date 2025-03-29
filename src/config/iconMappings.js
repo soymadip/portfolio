@@ -5,7 +5,7 @@ import { PiGithubLogoFill } from "react-icons/pi";
 import { BiLogoPostgresql } from "react-icons/bi";
 
 import { 
-  SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiPostgresql, SiGnubash, 
+  SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiGnubash, 
   SiLinux, SiLinuxfoundation, SiArchlinux, SiAlmalinux, SiAlpinelinux, SiKalilinux, SiLinuxmint, 
   SiRockylinux, SiVoidlinux, SiUbuntu, SiKubuntu, SiUbuntumate, SiDebian, SiRedhat, SiGithub, 
   SiLinkedin, SiMastodon, SiInstagram, SiFacebook, SiYoutube, SiTwitch, SiDiscord, SiReddit, 

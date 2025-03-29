@@ -41,7 +41,9 @@ function indexNotes() {
       const { frontMatter } = context(path);
 
       const title = frontMatter.title || slug.charAt(0).toUpperCase() + slug.slice(1);
-      const language = frontMatter.language || slug.toLowerCase() || title.toLowerCase();
+      const language = frontMatter.language
+        ? frontMatter.language.toLowerCase().replace(/ /g, "").replace(/[\s-]/g, "")
+        : slug.toLowerCase() || title.toLowerCase();
       const position = frontMatter.sidebar_position || 999;
 
       return {
@@ -64,7 +66,7 @@ export default function Notecards({ buttonText = 'Open Note' }) {
       notes.map(({ title, language, link }, index) => {
 
         const noteUrl = useBaseUrl(`${docsBasePath}/${link}`);
-        const { icon: Icon = FaBook, color = 'var(--ifm-color-primary)' } = iconMap[language] || {};
+        const { icon: Icon = FaBook, color = 'var(--ifm-color-primary)' } = iconMap[language] || iconMap[title.toLowerCase()] || {};
 
         return (
           <div 
