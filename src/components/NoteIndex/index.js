@@ -57,7 +57,7 @@ function indexNotes() {
 }
 
 
-export default function Notecards({ buttonText = 'Open Note' }) {
+export default function NoteCards({ buttonText = 'Open Note' }) {
   const notes = indexNotes();
   const { path: docsBasePath } = usePluginData('docusaurus-plugin-content-docs');
 
