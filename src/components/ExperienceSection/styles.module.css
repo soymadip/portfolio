@@ -1,6 +1,6 @@
 
 .experienceSection {
-  scroll-margin-top: 60px;
+  scroll-margin-top: var(--ifm-scroll-margin-top);
   min-height: calc(100vh - 45px);
   margin-bottom: 0;
   width: 100%;
@@ -137,7 +137,7 @@
 
 @media (max-width: 480px) {
   .experienceSection {
-    scroll-margin-top: 65px;
+    scroll-margin-top: var(--ifm-scroll-margin-top-mobile);
     padding: 0rem 0 3rem;
   }
   

@@ -21,7 +21,7 @@
 }
 
 .projectsSection {
-  scroll-margin-top: 65px;
+  scroll-margin-top: var(--ifm-scroll-margin-top);
   min-height: calc(100vh - 60px);
   margin-bottom: 0;
   width: 100%;
@@ -652,7 +652,7 @@
 
 @media (max-width: 480px) {
   .projectsSection {
-    scroll-margin-top: 65px;
+    scroll-margin-top: var(--ifm-scroll-margin-top-mobile);
     padding: 1rem 0 3rem;
   }
 
