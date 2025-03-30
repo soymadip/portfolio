@@ -195,7 +195,7 @@ const config = {
           showReadingTime: false,
 
           onInlineTags: 'warn',
-          onInlineAuthors: 'ignore',
+          onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
 
@@ -207,83 +207,98 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    ({
-    
-      // Social card
-      image: '/img/social-card.jpeg',
+/*   themes: ['@docusaurus/theme-mermaid'],
+  markdown: {
+    mermaid: true,
+  }, */
 
-      // Default: Dark mode
-      colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
+  themeConfig: ({
+
+    // Social card
+    image: '/img/social-card.jpeg',
+    
+    imageZoom: {
+      options: {
+        margin: 2,
+        background: 'rgba(var(--ifm-background-color-rgb), 0.9)',
+      }
+    },
+
+    // Default: Dark mode
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+    },
+
+    navbar: {
+      title: ownerName,
+      hideOnScroll: true,
+
+      logo: {
+        alt: 'Site Logo',
+        src: 'favicon/favicon.ico',
       },
 
-      navbar: {
-        title: ownerName,
-        hideOnScroll: true,
-
-        logo: {
-          alt: 'Site Logo',
-          src: 'favicon/favicon.ico',
+      items: [
+        {
+          type: 'search',
+          position: 'right',
+          className: 'navbar-search-bar'
         },
+        {
+          label: 'About Me',
+          to: '/#about',
+          position: 'right',
+          activeBaseRegex: '^/#about',
+        },
+        {
+          label: 'Projects',
+          to: '/#projects',
+          position: 'right',
+          activeBaseRegex: '^/#projects',
+        },
+        {
+          label: 'Experience',
+          to: '/#experience',
+          position: 'right', 
+          activeBaseRegex: '^/#experience',
+        },
+        {
+          label: 'Contact',
+          to: '/#contact',
+          position: 'right',
+          activeBaseRegex: '^/$contact',
+        },
+        {
+          label: 'Notes', 
+          to: '/notes',
+          className: '_navbar-separator',
+          position: 'right'
+        },
+        {
+          label: 'Blog',
+          to: '/blog',
+          position: 'right'
+        }
+      ],
+    },
 
-        items: [
-          {
-            type: 'search',
-            position: 'right',
-            className: 'navbar-search-bar'
-          },
-          {
-            label: 'About Me',
-            to: '/#about',
-            position: 'right',
-            activeBaseRegex: '^/#about',
-          },
-          {
-            label: 'Projects',
-            to: '/#projects',
-            position: 'right',
-            activeBaseRegex: '^/#projects',
-          },
-          {
-            label: 'Experience',
-            to: '/#experience',
-            position: 'right', 
-            activeBaseRegex: '^/#experience',
-          },
-          {
-            label: 'Contact',
-            to: '/#contact',
-            position: 'right',
-            activeBaseRegex: '^/$contact',
-          },
-          {
-            label: 'Notes', 
-            to: '/notes',
-            className: '_navbar-separator',
-            position: 'right'
-          },
-          {
-            label: 'Blog',
-            to: '/blog',
-            position: 'right'
-          }
-        ],
-      },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
+    },
 
-      prism: {
-        theme: catppuccinLatte,
-        darkTheme: catppuccinMocha,
+    prism: {
+      theme: catppuccinLatte,
+      darkTheme: catppuccinMocha,
+      additionalLanguages: [
+        'java',
+        'php', 
+        'bash',
+      ],
+    },
 
-        additionalLanguages: [
-          'java',
-          'php', 
-          'bash',
-        ],
-      },
-    
-      footer: {
+    footer: {
       /* links: [
         {
             label: 'GitHub',
@@ -292,26 +307,26 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} ` + ownerName,
       */
-      },
-      
-    }),
+    },
+    
+  }),
 
   plugins: [
     require.resolve('./src/utils/generateFavicon'),
-  [
-    require.resolve("@easyops-cn/docusaurus-search-local"),
-    ({
-      hashed: true,
-      indexDocs: true,
-      docsDir: "notes",
-      docsRouteBasePath: "notes",
-      highlightSearchTermsOnTargetPage: true,
-      explicitSearchResultPath: true,
-      hideSearchBarWithNoSearchContext: true,
-      searchContextByPaths: ['notes','blog'],
-      language: ["en"]
-    }),
-  ],
+    [ require.resolve("@easyops-cn/docusaurus-search-local"),
+      ({
+        hashed: true,
+        indexDocs: true,
+        docsDir: "notes",
+        docsRouteBasePath: "notes",
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        hideSearchBarWithNoSearchContext: true,
+        searchContextByPaths: ['notes','blog'],
+        language: ["en"]
+      }),
+    ],
+    'plugin-image-zoom'
   ],
 };
 

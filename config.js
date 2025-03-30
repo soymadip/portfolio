@@ -22,5 +22,11 @@ export const tasks = [
     description: "add sub todos",
     status: "pending",
     priority: "low"
-  }
+  },
+  {
+    title: "Fix Mermaid Diagram support",
+    description: "showing: Hook is called outside the <ColorModeProvider>. Please see https://docusaurus.io/docs/api/themes/configuration#use-color-mode.",
+    status: "pending",
+    priority: "medium"
+  } 
 ];
