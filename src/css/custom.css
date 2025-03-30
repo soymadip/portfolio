@@ -1,6 +1,8 @@
 /* Catppuccin colors */
 @import url('./catppuccin.css');
 
+/* Bootstrap (some prebuilt) */
+@import url(./bootstrap.css);
 
 
 /* === Component overrides === */
@@ -127,6 +129,14 @@ html {
   color: var(--ifm-color-primary);
 }
 
+.markdown img {
+  display: block;
+  margin: 0 auto;
+  padding: 1px;
+  border: 2px solid var(--ifm-background-surface-color);
+  border-radius: 14px;
+}
+
 mark {
   background-color: rgba(var(--ctp-peach-rgb), 0.2);
   color: var(--ifm-font-color-base);
@@ -156,6 +166,12 @@ mark {
   html {
     scroll-behavior: auto;
   }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
