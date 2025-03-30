@@ -25,7 +25,6 @@ const style = {
     fontSize: '0.9rem',
     textAlign: 'center',
     color: 'var(--ifm-font-color-tertiary)',
-    marginTop: '-2rem',
     marginBottom: '2rem',
     animation: 'slideUp 0.5s ease-out 0.2s forwards',
   },

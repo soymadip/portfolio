@@ -12,6 +12,9 @@
 
     --ifm-heading-font-family: 'Alata', system-ui, -apple-system, sans-serif;
     --ifm-font-family-base: 'Alata', system-ui, -apple-system, sans-serif;
+    
+    --ifm-scroll-margin-top: 38px;
+    --ifm-scroll-margin-top-mobile: 32px;
 
 
     /* Catppuccin Latte palate */
