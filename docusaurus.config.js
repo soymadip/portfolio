@@ -1,4 +1,4 @@
-import { catppuccinMocha, catppuccinLatte } from "./static/prism.js";
+import { catppuccinMocha, catppuccinLatte } from "./src/config/prism.js";
 import { appVersion } from "./src/utils/appVersion.js";
 import { metaTags } from "./src/config/metaTags.js";
 

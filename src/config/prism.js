@@ -94,7 +94,7 @@ export const catppuccinMocha = {
 export const catppuccinLatte = {
   plain: {
     color: '#4c4f69',
-    backgroundColor: '#dadade',
+    backgroundColor: '#181825',
   },
   styles: [
     {
