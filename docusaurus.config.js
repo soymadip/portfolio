@@ -106,6 +106,11 @@ const config = {
         github: null,
         website: null,
         // tags: ["node", "static", "docusaurus", "portfolio"],
+      }, 
+      {
+        title: "AutoTitle",
+        state: 'planned',
+        desc: "A python package + app to auto rename your downloaded series/anime episodes with filler marking."
       }
     ],
 
