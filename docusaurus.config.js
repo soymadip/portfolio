@@ -221,6 +221,12 @@ const config = {
 
     // Social card
     image: '/img/social-card.jpeg',
+
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     
     imageZoom: {
       options: {
