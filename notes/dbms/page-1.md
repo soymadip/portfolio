@@ -6,26 +6,18 @@ sidebar_position: 1
 
 ## What is Database?
 
-A **Database** is a well-organized collection of data that must contain a meaningful way and which can be accessed in different logical orders. In all databases, the data are stored in an integrated structure, which can be shared.
+A **database** is a well-organized
+collection of data that is structured meaningfully and can be accessed in different logical ways.  
+In all databases, the data are stored in an integrated structure, allowing them to be shared.
 
-### Main Features of Data in a Database:
+### Main Features of Data in a Database
 
-- It is well organized.
-- The data are related to each other.
-- It is accessible in different orders without any difficulty.
-- It is stored only once.
+- It is well-organized.
+- Data is related to each other.
+- It is easily accessible in different ways.
+- Data is stored efficiently, avoiding unnecessary duplication.
 
---- 
-## What is Database Management System?
-
-A **Database Management System (DBMS)** is a large software package that controls the specification, organization, storage, retrieval, and update of data in a database.
-
-It must provide facilities to users to specify and build the database as well as to access and modify the data according to their requirements.
-
-A **DBMS** normally provides one or more specialized programming languages, which is called **database language**.
-
----
-## Characteristics of Database
+### Characteristics of Database
 
 The data in a database should have the following features:
 
@@ -35,3 +27,13 @@ The data in a database should have the following features:
 4. **Security** - Data should be protected from unauthorized access.
 5. **Non-redundancy** - The same data item cannot exist in the same database, i.e., no two data items in a database should represent the same real-world entity.
 6. **Independence** - Data at different levels should be independent of each other so that changes in one level should not affect the other level.
+
+---
+
+## What is a Database Management System (DBMS)?
+
+A **Database Management System (DBMS)** is a software package that manages the specification, organization, storage, retrieval, and modification of data in a database.
+
+It provides users tools to define, create, access, and update the database as per their requirements.
+
+A **DBMS** typically includes one or more specialized programming languages, known as **database languages**, for interacting with the database.

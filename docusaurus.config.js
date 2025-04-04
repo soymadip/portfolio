@@ -185,7 +185,7 @@ const config = {
           sidebarPath: './src/config/sidebar.js',
 
           admonitions: {
-            keywords: ['note', 'tip', 'info', 'warning', 'danger','question'],
+            keywords: ['note', 'tip', 'info', 'warning', 'danger', 'question'],
             extendDefaults: true,
           },
         },
@@ -324,8 +324,9 @@ const config = {
 
   plugins: [
     require.resolve('./src/utils/generateFavicon'),
-    [ require.resolve("@easyops-cn/docusaurus-search-local"),
-      ({
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
         hashed: true,
         indexDocs: true,
         docsDir: "notes",
@@ -333,9 +334,9 @@ const config = {
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         hideSearchBarWithNoSearchContext: true,
-        searchContextByPaths: ['notes','blog'],
-        language: ["en"]
-      }),
+        searchContextByPaths: ['notes', 'blog'],
+        language: ["en"],
+      }
     ],
     'plugin-image-zoom'
   ],
