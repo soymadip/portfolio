@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "clear && docusaurus clear && npm i && docusaurus start",
+    "start": "clear &&  npm i && docusaurus start && docusaurus clear",
     "build": "npm i && docusaurus build",
     "serve": "npm i && docusaurus serve",
     "deploy": "docusaurus deploy",
