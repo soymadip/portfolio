@@ -1,18 +1,18 @@
 import { catppuccinMocha, catppuccinLatte } from "./src/config/prism.js";
 import { appVersion } from "./src/utils/appVersion.js";
 import { metaTags } from "./src/config/metaTags.js";
+import { config as portfolio } from "./config.js";
 
 const ownerName = 'soymadip';
-const SiteUrl = 'https://soymadip.me';
-const SrtUrl = `${SiteUrl}/l`;
 
 const config = {
 
-  projectName: 'portfolio',
+  projectName: portfolio.projectName,
+  title: portfolio.aboutMe.title,
 
-  title: ownerName,
-  tagline: 'FOSS Developer',
-  favicon: 'favicon/favicon.ico',
+  tagline: portfolio.tagline,
+
+  favicon: portfolio.favicon,
 
   url: 'https://new.soymadip.me',
   baseUrl: '/',
@@ -36,143 +36,11 @@ const config = {
 
     profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
-    aboutMe: {
-
-      title: "About Me",
-      image: 'https://avatars.githubusercontent.com/u/84225810?v=4',
-      description: [
-        "I'm a passionate FOSS developer with expertise in designing and building solutions for real-world problems.",
-        "My journey in software development started with a simple desire to automate repetitive tasks, specially in my PC.",
-        "I believe in the power of open-source software and the community around it. My goal is to contribute to FOSS and to continuously learn and improve my skills."
-      ],
-      skills: [
-        "Python","Bash", "Linux", "Git", "Docker", 
-        "C", "lua", "JavaScript", "CI/CD"
-      ],
-      resumeLink: `${SrtUrl}/resume`
-    },
+    aboutMe: portfolio.aboutMe,
     
-    projects: [
-      {
-        title:   "KireiSakura Kit",
-        state:   'active',
-        desc:    "A framework written in Bash for making powerful shell scripts.",
-        image:   "https://raw.githubusercontent.com/soymadip/KireiSakura-Kit/refs/heads/main/Assets/social-card.png",
-        website: "https://kireisakura.soymadip.me",
-        github:  null,
-        Demo: null,
-        featured: true,
-        tags: ["Bash", "Shell", "CLI"],
-      },
-      {
-        title:   "StaticShort",
-        state:   'active',
-        featured: true,
-        desc:    "A simple static URL shortener - no backend required, just static hosting.",
-        image:   "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
-        website: "https://github.com/soymadip/StaticShort",
-        github:  null,
-        Demo:    "https://short.soymadip.me/demo",
-        tags: ["shortener", "static"],
-      },
-      {
-        title:   "Regis",
-        state:   'archived',
-        featured: true,
-        desc:    "The Ultimate Group Admin - Smart Moderation, Auto Filters, File Storage & More.",
-        image:   "https://raw.githubusercontent.com/soymadip/Regis/refs/heads/main/Assets/social%20card.png",
-        website: "https://regis.soymadip.me",
-        github:  null,
-        Demo:    null,
-        tags: ["python", "pyrogram", "bot"],
-      },
-      {
-        title:   "SDMP",
-        state:   'paused',
-        featured: false,
-        desc:    "Student record management system built with PHP and MySQL",
-        image:   "https://raw.githubusercontent.com/soymadip/SDMP/refs/heads/main/app/src/images/social%20card.png",
-        website: null,
-        github:  "https://github.com/soymadip/SDMP",
-        Demo:    null,
-        tags: ["php", "crud", "sql"],
-      },
-      {
-        title:  "Portosaurus",
-        state:  'planned',
-        featured: false,
-        desc:   "Portfolio Website generator built upon Docusaurus",
-        Demo:   null,
-        github: null,
-        website: null,
-        // tags: ["node", "static", "docusaurus", "portfolio"],
-      }, 
-      {
-        title: "AutoTitle",
-        state: 'planned',
-        desc: "A python package + app to auto rename your downloaded series/anime episodes with filler marking."
-      }
-    ],
+    projects: portfolio.projects,
 
-    socialLinks: [
-      {
-        name: 'Email',
-        icon: 'mail',
-        desc: 'Send me an email',
-        url: `${SrtUrl}/mail`,
-      },     
-      {
-        name: 'LinkedIn',
-        icon: 'linkedin',
-        desc: 'Connect on LinkedIn',
-        url: `${SrtUrl}/linkedin`,
-        pin: true
-      },
-      {
-        name: 'Telegram',
-        icon: 'telegram',
-        desc: 'Reach me on Telegram',
-        url: `${SrtUrl}/telegram`,
-        pin: true
-      },
-      {
-        name: 'Discord',
-        icon: 'discord',
-        desc: 'Become my friend',
-        url: `${SrtUrl}/discord`,
-      },
-      {
-        name: 'Twitter',
-        icon: 'x',
-        desc: 'Find me on Twitter',
-        url:  `${SrtUrl}/twitter`
-      },
-      {
-        name: 'GitHub',
-        icon: 'githubalt',
-        desc: 'Check out my git repos',
-        url: `${SrtUrl}/github`,
-        pin: true
-      },
-      {
-        name: 'GitLab',
-        icon: 'gitlab',
-        desc: 'View my GitLab profile',
-        url: `${SrtUrl}/github`,
-      },
-      {
-        name: 'Anilist',
-        icon: 'anilist',
-        desc: 'If you are otaku, check out!',
-        url: `${SrtUrl}/anilist`,
-      },
-      {
-        name: 'Simkl',
-        icon: 'simkl',
-        desc: 'I watch Movies & Series too!',
-        url: `${SrtUrl}/simkl`,
-      }
-    ],
+    socialLinks: portfolio.socialLinks,
   },
 
   presets: [
