@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "npm i && docusaurus start",
+    "start": "clear &&  npm i && docusaurus start && docusaurus clear",
     "build": "npm i && docusaurus build",
     "serve": "npm i && docusaurus serve",
     "deploy": "docusaurus deploy",
@@ -20,6 +20,7 @@
     "@mdx-js/react": "^3.1.0",
     "clsx": "^2.1.1",
     "favicons": "^7.2.0",
+    "plugin-image-zoom": "github:flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
