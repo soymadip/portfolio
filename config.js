@@ -10,6 +10,8 @@ exports.config = {
   projectName: 'portfolio',
   tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
+  
+  profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
   aboutMe: {
     enable: true,

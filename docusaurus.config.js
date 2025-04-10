@@ -3,7 +3,6 @@ import { appVersion } from "./src/utils/appVersion.js";
 import { metaTags } from "./src/config/metaTags.js";
 import { config as portfolio } from "./config.js";
 
-const ownerName = 'soymadip';
 
 const config = {
 
@@ -18,7 +17,7 @@ const config = {
   baseUrl: '/',
 
   // GH Pages config
-  organizationName: ownerName,
+  organizationName: portfolio.aboutMe.title,
   deploymentBranch: 'site',
 
   onBrokenLinks: 'warn',
@@ -34,7 +33,7 @@ const config = {
   customFields: {
     version: appVersion(),
 
-    profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+    profilePic: portfolio.profilePic,
 
     aboutMe: portfolio.aboutMe,
     
@@ -110,7 +109,7 @@ const config = {
     },
 
     navbar: {
-      title: ownerName,
+      title: portfolio.aboutMe.title,
       hideOnScroll: true,
 
       logo: {
@@ -149,15 +148,20 @@ const config = {
           activeBaseRegex: '^/$contact',
         },
         {
-          label: 'Notes', 
-          to: '/notes',
-          className: '_navbar-separator',
-          position: 'right'
-        },
-        {
-          label: 'Blog',
-          to: '/blog',
-          position: 'right'
+          type: 'dropdown',
+          label: 'More',
+          position: 'right',
+          className: '_navbar-more-items',
+          items: [
+            {
+              label: 'Notes', 
+              to: '/notes',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
+            }
+          ]
         }
       ],
     },
