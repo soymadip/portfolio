@@ -2,7 +2,7 @@ const baseURL = 'https://soymadip.me';
 const SrtUrl = `${baseURL}/l`;
 
 
-export const config = {
+exports.config = {
 
   baseURL,
   SrtUrl,
@@ -136,7 +136,7 @@ export const config = {
       name: 'GitLab',
       icon: 'gitlab',
       desc: 'View my GitLab profile',
-      url: `${SrtUrl}/github`,
+      url: `${SrtUrl}/gitlab`,
     },
     {
       name: 'Anilist',
@@ -151,10 +151,35 @@ export const config = {
       url: `${SrtUrl}/simkl`,
     }
   ],
+  
+  shortener: {
+    
+    deployPath: "/l",
+
+    shortLinks: {
+      "mail"         :  "mailto://soumadip377@gmail.com",
+      "github"       :  "https://github.com/soymadip",
+      "gitlab"       :  "https://gitlab.com/soymadip",
+      "linkedin"     :  "https://linkedin.com/in/soymadip",
+      "telegram"     :  "https://telegram.me/soymadip",
+      "reddit"       :  "https://www.reddit.com/user/soymadip",
+      "anilist"      :  "https://anilist.co/user/soymadip/",
+      "mal"          :  "https://myanimelist.net/profile/soymadip",
+      "twitter"      :  "https://x.com/soymadip",
+      "mastodon"     :  "https://mastodon.online/@soymadip",
+      "discord"      :  "https://discord.com/users/778278661811863592",
+      "roadmap"      :  "https://roadmap.sh/u/soymadip",
+      "replit"       :  "https://replit.com/@soymadip",
+      "signal"       :  "https://signal.me/#eu/JxnJ32zIRQxm_lG4PWfkcasdR1zwGd2ln9lY8EXkzm-gy-gwj91PgZz4Qo1CiWpQ",
+      "yt"           :  "https://youtube.com/@soymadip",
+      "instagram"    :  "https://www.instagram.com/soymadip_",
+      "simkl"        :  "https://simkl.com/5929351/"
+    }
+  }
 };
 
 
-export const tasks = [
+exports.tasks = [
   {
     title: "Add more Callouts",
     description: "like question..",
@@ -202,6 +227,12 @@ export const tasks = [
     description: "Separate portfolio specific settings to config.js.",
     priority: "high",
     status: "completed"
+  },
+  {
+    title: "make shortlinks icon field optional", 
+    description: "lower the title, then match in mapping. if icon key is defined, use it.",
+    priority: "low",
+    status: "pending"
   }
 ];
 
