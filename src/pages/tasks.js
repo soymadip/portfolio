@@ -39,17 +39,16 @@ function TaskList({ filterStatus }) {
     );
   }
   
-  // Sort tasks by priority first, then by status
+  // Sort tasks by status first (with completed tasks at bottom), then by priority
   const sortedTasks = [...filteredTasks].sort((a, b) => {
+    const statusOrder = { active: 1, pending: 2, completed: 3 };
+    const statusDiff = statusOrder[a.status] - statusOrder[b.status];
+    
+    if (statusDiff !== 0) return statusDiff;
+    
     // Priority order: high, medium, low
     const priorityOrder = { high: 1, medium: 2, low: 3 };
-    const priorityDiff = priorityOrder[a.priority] - priorityOrder[b.priority];
-    
-    if (priorityDiff !== 0) return priorityDiff;
-    
-    // Status order: active (in progress), pending (planned), completed
-    const statusOrder = { active: 1, pending: 2, completed: 3 };
-    return statusOrder[a.status] - statusOrder[b.status];
+    return priorityOrder[a.priority] - priorityOrder[b.priority];
   });
   
   return (

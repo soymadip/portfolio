@@ -1,19 +1,19 @@
-const baseURL = 'https://soymadip.me';
-const SrtUrl = `${baseURL}/l`;
+const base_url = 'https://soymadip.me';
+const srt_url = `${base_url}/l`;
 
 
-exports.config = {
+exports.configs = {
 
-  baseURL,
-  SrtUrl,
+  base_url,
+  srt_url,
 
-  projectName: 'portfolio',
+  project_name: 'portfolio',
   tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
   
-  profilePic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+  profile_pic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
 
-  aboutMe: {
+  about_me: {
     enable: true,
     title: "Soymadip",
     subtitle: null,
@@ -28,7 +28,7 @@ exports.config = {
       "Python", "Bash", "Linux", "Git", "Docker",
       "C", "lua", "JavaScript", "CI/CD"
     ],
-    resumeLink: `${SrtUrl}/resume`
+    resumeLink: `${srt_url}/resume`
   },
 
   projects: [
@@ -94,71 +94,71 @@ exports.config = {
     }
   ],
 
-  socialLinks: [
+  social_links: [
     {
       name: 'Email',
       icon: 'mail',
       desc: 'Send me an email',
-      url: `${SrtUrl}/mail`,
+      url: `${srt_url}/mail`,
     },
     {
       name: 'LinkedIn',
       icon: 'linkedin',
       desc: 'Connect on LinkedIn',
-      url: `${SrtUrl}/linkedin`,
+      url: `${srt_url}/linkedin`,
       pin: true
     },
     {
       name: 'Telegram',
       icon: 'telegram',
       desc: 'Reach me on Telegram',
-      url: `${SrtUrl}/telegram`,
+      url: `${srt_url}/telegram`,
       pin: true
     },
     {
       name: 'Discord',
       icon: 'discord',
       desc: 'Become my friend',
-      url: `${SrtUrl}/discord`,
+      url: `${srt_url}/discord`,
     },
     {
       name: 'Twitter',
       icon: 'x',
       desc: 'Find me on Twitter',
-      url:  `${SrtUrl}/twitter`
+      url:  `${srt_url}/twitter`
     },
     {
       name: 'GitHub',
       icon: 'githubalt',
       desc: 'Check out my git repos',
-      url: `${SrtUrl}/github`,
+      url: `${srt_url}/github`,
       pin: true
     },
     {
       name: 'GitLab',
       icon: 'gitlab',
       desc: 'View my GitLab profile',
-      url: `${SrtUrl}/gitlab`,
+      url: `${srt_url}/gitlab`,
     },
     {
       name: 'Anilist',
       icon: 'anilist',
       desc: 'If you are otaku, check out!',
-      url: `${SrtUrl}/anilist`,
+      url: `${srt_url}/anilist`,
     },
     {
       name: 'Simkl',
       icon: 'simkl',
       desc: 'I watch Movies & Series too!',
-      url: `${SrtUrl}/simkl`,
+      url: `${srt_url}/simkl`,
     }
   ],
   
   shortener: {
     
-    deployPath: "/l",
+    deploy_path: "/l",
 
-    shortLinks: {
+    short_links: {
       "mail"         :  "mailto://soumadip377@gmail.com",
       "github"       :  "https://github.com/soymadip",
       "gitlab"       :  "https://gitlab.com/soymadip",
@@ -197,7 +197,7 @@ exports.tasks = [
   {
     title: "Improve the Note card Icon extractor",
     description: "make it strip number before dir name, currently It shows blank icon(default book).",
-    status: "active",
+    status: "completed",
     priority: "high"
   },
   {

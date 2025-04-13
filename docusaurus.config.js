@@ -1,13 +1,13 @@
 import { catppuccinMocha, catppuccinLatte } from "./src/config/prism.js";
 import { appVersion } from "./src/utils/appVersion.js";
 import { metaTags } from "./src/config/metaTags.js";
-import { config as portfolio } from "./config.js";
+import { configs as portfolio } from "./config.js";
 
 
 const config = {
 
-  projectName: portfolio.projectName,
-  title: portfolio.aboutMe.title,
+  projectName: portfolio.project_name,
+  title: portfolio.about_me.title,
 
   tagline: portfolio.tagline,
 
@@ -17,7 +17,7 @@ const config = {
   baseUrl: '/',
 
   // GH Pages config
-  organizationName: portfolio.aboutMe.title,
+  organizationName: portfolio.about_me.title,
   deploymentBranch: 'site',
 
   onBrokenLinks: 'warn',
@@ -33,13 +33,13 @@ const config = {
   customFields: {
     version: appVersion(),
 
-    profilePic: portfolio.profilePic,
+    profilePic: portfolio.profile_pic,
 
-    aboutMe: portfolio.aboutMe,
+    aboutMe: portfolio.about_me,
     
     projects: portfolio.projects,
 
-    socialLinks: portfolio.socialLinks,
+    socialLinks: portfolio.social_links,
   },
 
   presets: [
@@ -109,7 +109,7 @@ const config = {
     },
 
     navbar: {
-      title: portfolio.aboutMe.title,
+      title: portfolio.about_me.title,
       hideOnScroll: true,
 
       logo: {
@@ -160,6 +160,10 @@ const config = {
             {
               label: 'Blog',
               to: '/blog',
+            },
+            {
+              label: 'Tasks',
+              to: '/tasks',
             }
           ]
         }
