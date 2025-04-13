@@ -6,6 +6,8 @@ exports.configs = {
 
   base_url,
   srt_url,
+  
+  robots_txt: true,
 
   project_name: 'portfolio',
   tagline: 'FOSS Developer',

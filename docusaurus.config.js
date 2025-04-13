@@ -40,6 +40,19 @@ const config = {
     projects: portfolio.projects,
 
     socialLinks: portfolio.social_links,
+    
+    robotsTxt: {
+      enable: portfolio.robots_txt,
+      rules: [
+        {
+          disallow: [
+            '/notes/',
+            '/tasks/',
+          ]
+        }
+      ],
+      customLines: []
+    },
   },
 
   presets: [
@@ -200,6 +213,7 @@ const config = {
 
   plugins: [
     require.resolve('./src/utils/generateFavicon'),
+    require.resolve('./src/utils/generateRobotsTxt'),
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
