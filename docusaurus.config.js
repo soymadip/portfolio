@@ -6,10 +6,10 @@ import { configs as portfolio } from "./config.js";
 
 const config = {
 
-  projectName: portfolio.project_name,
+  projectName: "Portosaurus",
   title: portfolio.about_me.title,
 
-  tagline: portfolio.tagline,
+  tagline: portfolio.hero_section.tagline,
 
   favicon: portfolio.favicon,
 

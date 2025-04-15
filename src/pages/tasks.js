@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import { tasks } from '@site/config.js';
-import '../css/todo.css';
+import '../css/tasks.css';
 import { 
   FaClipboardList, 
   FaSyncAlt, 
@@ -22,11 +22,14 @@ import {
   FaFire,
   FaThermometerHalf,
   FaSnowflake,
-  FaTasks
+  FaTasks,
+  FaExclamationTriangle
 } from 'react-icons/fa';
 
+const taskList = tasks.enable ? tasks.list : [];
+
 function TaskList({ filterStatus }) {
-  const filteredTasks = tasks.filter(task => 
+  const filteredTasks = taskList.filter(task => 
     filterStatus ? task.status === filterStatus : true
   );
   
@@ -98,11 +101,11 @@ function TaskList({ filterStatus }) {
 
 
 function TaskStats() {
-  const total = tasks.length;
-  const completed = tasks.filter(task => task.status === 'completed').length;
-  const active = tasks.filter(task => task.status === 'active').length;
-  const pending = tasks.filter(task => task.status === 'pending').length;
-  const percentComplete = Math.round((completed / total) * 100);
+  const total = taskList.length;
+  const completed = taskList.filter(task => task.status === 'completed').length;
+  const active = taskList.filter(task => task.status === 'active').length;
+  const pending = taskList.filter(task => task.status === 'pending').length;
+  const percentComplete = total > 0 ? Math.round((completed / total) * 100) : 0;
   
   return (
     <div className="stats-container">
@@ -133,10 +136,10 @@ function TaskTabs() {
   const [activeTab, setActiveTab] = useState('all');
   
   const tabData = [
-    { id: 'all', label: 'All Tasks', icon: <FaClipboardList />, count: tasks.length },
-    { id: 'active', label: 'In Progress', icon: <FaSyncAlt className="spin" />, count: tasks.filter(t => t.status === 'active').length },
-    { id: 'pending', label: 'Planned', icon: <FaClock />, count: tasks.filter(t => t.status === 'pending').length },
-    { id: 'completed', label: 'Completed', icon: <FaCheckCircle />, count: tasks.filter(t => t.status === 'completed').length },
+    { id: 'all', label: 'All Tasks', icon: <FaClipboardList />, count: taskList.length },
+    { id: 'active', label: 'In Progress', icon: <FaSyncAlt className="spin" />, count: taskList.filter(t => t.status === 'active').length },
+    { id: 'pending', label: 'Planned', icon: <FaClock />, count: taskList.filter(t => t.status === 'pending').length },
+    { id: 'completed', label: 'Completed', icon: <FaCheckCircle />, count: taskList.filter(t => t.status === 'completed').length },
   ];
   
   return (
@@ -176,6 +179,28 @@ function TaskTabs() {
 
 
 export default function TodoPage() {
+
+  // If tasks are disabled, show a notice box instead
+  if (!tasks.enable) {
+    return (
+      <Layout title="Tasks are Disabled" description="Tasks are currently disabled">
+        <div className="tasks-container">
+          <div className="tasks-content">
+            <div className="tasks-disabled-notice">
+              <div className="disabled-icon">
+                <FaExclamationTriangle aria-hidden="true" />
+              </div>
+              <h2 className="disabled-title">Tasks are currently disabled</h2>
+              <p className="disabled-help">
+                To enable tasks, set <code>tasks.enable</code> to <code>true</code>
+              </p>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
   const title = "Development Roadmap";
   const description = "Track ongoing and future development tasks for this portfolio website";
   
@@ -188,12 +213,12 @@ export default function TodoPage() {
         <meta name="twitter:description" content={description} />
       </Head>
       
-      <div className="todo-container">
-        <div className="todo-header">
-          <h1 className="todo-heading">{title}</h1>
+      <div className="tasks-container">
+        <div className="tasks-header">
+          <h1 className="tasks-heading">{title}</h1>
         </div>
         
-        <div className="todo-content">
+        <div className="tasks-content">
           <TaskStats />
           <TaskTabs />
         </div>
