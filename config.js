@@ -19,7 +19,7 @@ exports.configs = {
     enable: true,
     title: "Soymadip",
     subtitle: null,
-    image: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+    image: "${hero_section.profile_pic}",
 
     description: [
       "I'm a passionate FOSS developer with expertise in designing and building solutions for real-world problems.",
