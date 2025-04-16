@@ -1,13 +1,10 @@
-const base_url = 'https://soymadip.me';
-const srt_url = `${base_url}/l`;
 
-
-exports.configs = {
+exports.usrConf = {
 
   favicon: 'favicon/favicon.ico',
 
-  base_url,
-  srt_url,
+  base_url:  'https://soymadip.me',
+  srt_url:   "${base_url}/l",
   robots_txt: true,
 
   hero_section: {
@@ -30,7 +27,7 @@ exports.configs = {
       "Python", "Bash", "Linux", "Git", "Docker",
       "C", "lua", "JavaScript", "CI/CD"
     ],
-    resumeLink: `${srt_url}/resume`
+    resumeLink: "${srt_url}/resume"
   },
 
   projects: [
@@ -101,63 +98,65 @@ exports.configs = {
       name: 'Email',
       icon: 'mail',
       desc: 'Send me an email',
-      url: `${srt_url}/mail`,
+      url: "${srt_url}/mail",
     },
     {
       name: 'LinkedIn',
       icon: 'linkedin',
       desc: 'Connect on LinkedIn',
-      url: `${srt_url}/linkedin`,
+      url: "${srt_url}/linkedin",
       pin: true
     },
     {
       name: 'Telegram',
       icon: 'telegram',
       desc: 'Reach me on Telegram',
-      url: `${srt_url}/telegram`,
+      url: "${srt_url}/telegram",
       pin: true
     },
     {
       name: 'Discord',
       icon: 'discord',
       desc: 'Become my friend',
-      url: `${srt_url}/discord`,
+      url: "${srt_url}/discord",
     },
     {
       name: 'Twitter',
       icon: 'x',
       desc: 'Find me on Twitter',
-      url:  `${srt_url}/twitter`
+      url:  "${srt_url}/twitter"
     },
     {
       name: 'GitHub',
       icon: 'githubalt',
       desc: 'Check out my git repos',
-      url: `${srt_url}/github`,
+      url: "${srt_url}/github",
       pin: true
     },
     {
       name: 'GitLab',
       icon: 'gitlab',
       desc: 'View my GitLab profile',
-      url: `${srt_url}/gitlab`,
+      url: "${srt_url}/gitlab",
     },
     {
       name: 'Anilist',
       icon: 'anilist',
       desc: 'If you are otaku, check out!',
-      url: `${srt_url}/anilist`,
+      url: "${srt_url}/anilist",
     },
     {
       name: 'Simkl',
       icon: 'simkl',
       desc: 'I watch Movies & Series too!',
-      url: `${srt_url}/simkl`,
+      url: "${srt_url}/simkl",
     }
   ],
 
-  shortener: {
 
+  link_shortener: {   // Uses StaticShort
+
+    enable: true,
     deploy_path: "/l",
 
     short_links: {

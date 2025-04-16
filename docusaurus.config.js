@@ -1,23 +1,22 @@
 import { catppuccinMocha, catppuccinLatte } from "./src/config/prism.js";
 import { appVersion } from "./src/utils/appVersion.js";
 import { metaTags } from "./src/config/metaTags.js";
-import { configs as portfolio } from "./config.js";
-
+import { usrConf } from "./src/utils/userConfig.js";
 
 const config = {
 
   projectName: "Portosaurus",
-  title: portfolio.about_me.title,
+  title: usrConf.about_me.title,
 
-  tagline: portfolio.hero_section.tagline,
+  tagline: usrConf.hero_section.tagline,
 
-  favicon: portfolio.favicon,
+  favicon: usrConf.favicon,
 
   url: 'https://new.soymadip.me',
   baseUrl: '/',
 
   // GH Pages config
-  organizationName: portfolio.about_me.title,
+  organizationName: usrConf.about_me.title,
   deploymentBranch: 'site',
 
   onBrokenLinks: 'warn',
@@ -33,16 +32,16 @@ const config = {
   customFields: {
     version: appVersion(),
 
-    profilePic: portfolio.profile_pic,
+    profilePic: usrConf.hero_section.profile_pic,
 
-    aboutMe: portfolio.about_me,
+    aboutMe: usrConf.about_me,
     
-    projects: portfolio.projects,
+    projects: usrConf.projects,
 
-    socialLinks: portfolio.social_links,
+    socialLinks: usrConf.social_links,
     
     robotsTxt: {
-      enable: portfolio.robots_txt,
+      enable: usrConf.robots_txt,
       rules: [
         {
           disallow: [
@@ -122,7 +121,7 @@ const config = {
     },
 
     navbar: {
-      title: portfolio.about_me.title,
+      title: usrConf.about_me.title,
       hideOnScroll: true,
 
       logo: {
