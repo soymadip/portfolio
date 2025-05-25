@@ -1,15 +1,24 @@
-
 exports.usrConf = {
 
   favicon: 'favicon/favicon.ico',
 
-  base_url:  'https://soymadip.me',
-  srt_url:   "${base_url}/l",
-  robots_txt: true,
+  dark_mode: true,
+
+  site_url:  'https://soymadip.me',
+  srt_url:   "${site_url}/l",
+
+  opt_features: {
+    rebots_txt: true,
+    social_card: "/img/social-card.jpeg",
+    colapsable_sidebar: true,
+    hide_navbar_on_scroll: true,
+    disable_theme_switch: false,
+    rss: true,
+  },
 
   hero_section: {
-  tagline: 'FOSS Developer',
-  profile_pic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+    tagline: 'FOSS Developer',
+    profile_pic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
   },
 
   about_me: {
@@ -30,7 +39,9 @@ exports.usrConf = {
     resumeLink: "${srt_url}/resume"
   },
 
-  projects: [
+  project_shelf: {
+    enable: true,
+    projects: [
     {
       title:   "KireiSakura Kit",
       state:   'active',
@@ -44,7 +55,7 @@ exports.usrConf = {
     },
     {
       title:   "StaticShort",
-      state:   'active',
+      state:   'actived',
       featured: true,
       desc:    "A simple static URL shortener - no backend required, just static hosting.",
       image:   "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
@@ -92,8 +103,13 @@ exports.usrConf = {
       github:  "https://github.com/soymadip/autotitle.py",
     }
   ],
+  },
 
-  social_links: [
+
+  social_links: {
+
+    enable:true,
+    links: [
     {
       name: 'Email',
       icon: 'mail',
@@ -151,8 +167,8 @@ exports.usrConf = {
       desc: 'I watch Movies & Series too!',
       url: "${srt_url}/simkl",
     }
-  ],
-
+  ]
+  },
 
   link_shortener: {   // Uses StaticShort
 
@@ -178,6 +194,32 @@ exports.usrConf = {
       "instagram"    :  "https://www.instagram.com/soymadip_",
       "simkl"        :  "https://simkl.com/5929351/"
     }
+  },
+
+  experience: {
+    enable: false,
+    list: [
+      {
+        company: "Company A",
+        position: "Software Engineer",
+        duration: "Jan 2020 - Present",
+        description: [
+          "Developed and maintained web applications using JavaScript, HTML, and CSS.",
+          "Collaborated with cross-functional teams to define, design, and ship new features.",
+          "Identified and fixed bugs to improve application performance."
+        ]
+      },
+      {
+        company: "Company B",
+        position: "Intern",
+        duration: "Jun 2019 - Dec 2019",
+        description: [
+          "Assisted in the development of internal tools using Python and Bash.",
+          "Participated in code reviews and provided feedback to improve code quality.",
+          "Conducted research and provided recommendations for new technologies."
+        ]
+      }
+    ]
   }
 };
 

@@ -12,19 +12,19 @@ const config = {
 
   favicon: usrConf.favicon,
 
-  url: 'https://new.soymadip.me',
-  baseUrl: '/',
+  url: usrConf.site_url,
+  baseUrl: "/",
 
   // GH Pages config
   organizationName: usrConf.about_me.title,
-  deploymentBranch: 'site',
+  deploymentBranch: "site",
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "ignore",
+  onBrokenMarkdownLinks: "warn",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   headTags: metaTags,
@@ -35,150 +35,150 @@ const config = {
     profilePic: usrConf.hero_section.profile_pic,
 
     aboutMe: usrConf.about_me,
+
+    projects: usrConf.project_shelf,
     
-    projects: usrConf.projects,
+    experience: usrConf.experience,
 
     socialLinks: usrConf.social_links,
-    
+
     robotsTxt: {
       enable: usrConf.robots_txt,
       rules: [
         {
-          disallow: [
-            '/notes/',
-            '/tasks/',
-          ]
-        }
+          disallow: ["/notes/", "/tasks/"],
+        },
       ],
-      customLines: []
+      customLines: [],
     },
   },
 
   presets: [
     [
-      'classic',
-      ({
+      "classic",
+      {
         docs: {
           routeBasePath: "notes",
           path: "notes",
-          sidebarPath: './src/config/sidebar.js',
+          sidebarPath: "./src/config/sidebar.js",
 
           admonitions: {
-            keywords: ['note', 'tip', 'info', 'warning', 'danger', 'question'],
+            keywords: ["note", "tip", "info", "warning", "danger", "question"],
             extendDefaults: true,
           },
         },
 
         blog: {
 
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
+          feedOptions: usrConf.opt_features.rss
+            ? {
+                type: ["rss", "atom"],
+                xslt: true,
+              }
+            : undefined,
 
           showReadingTime: false,
 
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
 
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
         
-      }),
+      },
     ],
   ],
 
-/*   themes: ['@docusaurus/theme-mermaid'],
+  /*   themes: ['@docusaurus/theme-mermaid'],
   markdown: {
     mermaid: true,
   }, */
 
-  themeConfig: ({
-
+  themeConfig: {
     // Social card
-    image: '/img/social-card.jpeg',
+    image: usrConf.opt_features.social_card || "/img/social-card.jpeg",
 
     docs: {
       sidebar: {
-        hideable: true,
+        hideable: usrConf.opt_features.collapsable_sidebar,
       },
     },
-    
+
     imageZoom: {
       options: {
         margin: 2,
-        background: 'rgba(var(--ifm-background-color-rgb), 0.9)',
-      }
+        background: "rgba(var(--ifm-background-color-rgb), 0.9)",
+      },
     },
 
     // Default: Dark mode
     colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: false,
+      defaultMode: usrConf.dark_mode ? "dark" : "light",
+      disableSwitch: usrConf.opt_features.disable_theme_switch || false,
     },
 
     navbar: {
-      title: usrConf.about_me.title,
-      hideOnScroll: true,
+      title: usrConf.about_me.title || "Portosaurus",
+      hideOnScroll: usrConf.opt_features.hide_navbar_on_scroll || false,
 
       logo: {
-        alt: 'Site Logo',
-        src: 'favicon/favicon.ico',
+        alt: "Site Logo",
+        src: usrConf.favicon,
       },
 
       items: [
         {
-          type: 'search',
-          position: 'right',
-          className: 'navbar-search-bar'
+          type: "search",
+          position: "right",
+          className: "navbar-search-bar",
         },
         {
-          label: 'About Me',
-          to: '/#about',
-          position: 'right',
-          activeBaseRegex: '^/#about',
+          label: "About Me",
+          to: "/#about",
+          position: "right",
+          activeBaseRegex: "^/#about",
         },
         {
-          label: 'Projects',
-          to: '/#projects',
-          position: 'right',
-          activeBaseRegex: '^/#projects',
+          label: "Projects",
+          to: "/#projects",
+          position: "right",
+          activeBaseRegex: "^/#projects",
         },
         {
-          label: 'Experience',
-          to: '/#experience',
-          position: 'right', 
-          activeBaseRegex: '^/#experience',
+          label: "Experience",
+          to: "/#experience",
+          position: "right",
+          activeBaseRegex: "^/#experience",
         },
         {
-          label: 'Contact',
-          to: '/#contact',
-          position: 'right',
-          activeBaseRegex: '^/$contact',
+          label: "Contact",
+          to: "/#contact",
+          position: "right",
+          activeBaseRegex: "^/$contact",
         },
         {
-          type: 'dropdown',
-          label: 'More',
-          position: 'right',
-          className: '_navbar-more-items',
+          type: "dropdown",
+          label: "More",
+          position: "right",
+          className: "_navbar-more-items",
           items: [
             {
-              label: 'Notes', 
-              to: '/notes',
+              label: "Notes",
+              to: "/notes",
             },
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'Tasks',
-              to: '/tasks',
-            }
-          ]
-        }
+              label: "Tasks",
+              to: "/tasks",
+            },
+          ],
+        },
       ],
     },
 
@@ -190,11 +190,7 @@ const config = {
     prism: {
       theme: catppuccinLatte,
       darkTheme: catppuccinMocha,
-      additionalLanguages: [
-        'java',
-        'php', 
-        'bash',
-      ],
+      additionalLanguages: ["java", "php", "bash"],
     },
 
     footer: {
@@ -208,11 +204,11 @@ const config = {
       */
     },
     
-  }),
+  },
 
   plugins: [
-    require.resolve('./src/utils/generateFavicon'),
-    require.resolve('./src/utils/generateRobotsTxt'),
+    require.resolve("./src/utils/generateFavicon"),
+    require.resolve("./src/utils/generateRobotsTxt"),
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
@@ -223,11 +219,11 @@ const config = {
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         hideSearchBarWithNoSearchContext: true,
-        searchContextByPaths: ['notes', 'blog'],
+        searchContextByPaths: ["notes", "blog"],
         language: ["en"],
-      }
+      },
     ],
-    'plugin-image-zoom'
+    "plugin-image-zoom",
   ],
 };
 

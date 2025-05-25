@@ -14,6 +14,12 @@ import ScrollToTop from "@site/src/components/ScrollToTop";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const { customFields } = siteConfig;
+
+  const aboutMe = customFields.aboutMe || {};
+  const projects = customFields.projects || {};
+  const socialLinks = customFields.socialLinks || {};
+  const experience = customFields.experience || {};
 
   const sectionTitles = {
     'me':          `Home | ${siteConfig.title}`,
@@ -49,31 +55,39 @@ export default function Home() {
         />
 
         {/* About Section */}
-        <AboutSection 
-          id="about"
-          title="About Me"
-        />
+        {(aboutMe.enable !== false) && (
+          <AboutSection 
+            id="about"
+            title="About Me"
+          />
+        )}
 
         {/* Projects Section */}
-        <ProjectsSection
-          id="projects"
-          title="My Projects"
-          subtitle="A collection of all my works, with featured projects highlighted"
-        />
+        {(projects.enable !== false) && (
+          <ProjectsSection
+            id="projects"
+            title="My Projects"
+            subtitle="A collection of all my works, with featured projects highlighted"
+          />
+        )}
 
         {/* Experience Section */}
-        <ExperienceSection
-          id="experience"
-          title="Experience"
-          subtitle="My professional journey and work experience"
-        />
+        {(experience.enable !== false) && (
+          <ExperienceSection
+            id="experience"
+            title="Experience"
+            subtitle="My professional journey and work experience"
+          />
+        )}
 
         {/* Contact Section */}
-        <ContactSection
-          id="contact"
-          title="Get In Touch"
-          subtitle="Feel free to reach out for collaborations, questions, or just to say hello!"
-        />
+        {(socialLinks.enable !== false) && (
+          <ContactSection
+            id="contact"
+            title="Get In Touch"
+            subtitle="Feel free to reach out for collaborations, questions, or just to say hello!"
+          />
+        )}
 
         {/* Scroll to top button */}
         <ScrollToTop

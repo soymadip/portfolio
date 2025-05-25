@@ -24,7 +24,7 @@ const sortEmail = (links) => {
 export default function ContactSection({ id, className, title, subtitle }) {
   const { siteConfig } = useDocusaurusContext();
   const { customFields } = siteConfig;
-  let socialLinks = customFields.socialLinks || [];
+  let socialLinks = customFields.socialLinks.links || [];
   
   socialLinks = sortEmail(socialLinks);
 
