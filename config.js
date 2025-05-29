@@ -1,25 +1,31 @@
-const base_url = 'https://soymadip.me';
-const srt_url = `${base_url}/l`;
+exports.usrConf = {
 
-
-exports.configs = {
-
-  base_url,
-  srt_url,
-  
-  robots_txt: true,
-
-  project_name: 'portfolio',
-  tagline: 'FOSS Developer',
   favicon: 'favicon/favicon.ico',
-  
-  profile_pic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+
+  dark_mode: true,
+
+  site_url:  'https://soymadip.me',
+  srt_url:   "${site_url}/l",
+
+  opt_features: {
+    rebots_txt: true,
+    social_card: "/img/social-card.jpeg",
+    colapsable_sidebar: true,
+    hide_navbar_on_scroll: true,
+    disable_theme_switch: false,
+    rss: true,
+  },
+
+  hero_section: {
+    tagline: 'FOSS Developer',
+    profile_pic: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+  },
 
   about_me: {
     enable: true,
     title: "Soymadip",
     subtitle: null,
-    image: 'https://avatars.githubusercontent.com/u/84225810?v=4',
+    image: "${hero_section.profile_pic}",
 
     description: [
       "I'm a passionate FOSS developer with expertise in designing and building solutions for real-world problems.",
@@ -30,10 +36,12 @@ exports.configs = {
       "Python", "Bash", "Linux", "Git", "Docker",
       "C", "lua", "JavaScript", "CI/CD"
     ],
-    resumeLink: `${srt_url}/resume`
+    resumeLink: "${srt_url}/resume"
   },
 
-  projects: [
+  project_shelf: {
+    enable: true,
+    projects: [
     {
       title:   "KireiSakura Kit",
       state:   'active',
@@ -47,7 +55,7 @@ exports.configs = {
     },
     {
       title:   "StaticShort",
-      state:   'active',
+      state:   'actived',
       featured: true,
       desc:    "A simple static URL shortener - no backend required, just static hosting.",
       image:   "https://raw.githubusercontent.com/soymadip/StaticShort/refs/heads/main/Assets/social%20card.png",
@@ -95,69 +103,76 @@ exports.configs = {
       github:  "https://github.com/soymadip/autotitle.py",
     }
   ],
+  },
 
-  social_links: [
+
+  social_links: {
+
+    enable:true,
+    links: [
     {
       name: 'Email',
       icon: 'mail',
       desc: 'Send me an email',
-      url: `${srt_url}/mail`,
+      url: "${srt_url}/mail",
     },
     {
       name: 'LinkedIn',
       icon: 'linkedin',
       desc: 'Connect on LinkedIn',
-      url: `${srt_url}/linkedin`,
+      url: "${srt_url}/linkedin",
       pin: true
     },
     {
       name: 'Telegram',
       icon: 'telegram',
       desc: 'Reach me on Telegram',
-      url: `${srt_url}/telegram`,
+      url: "${srt_url}/telegram",
       pin: true
     },
     {
       name: 'Discord',
       icon: 'discord',
       desc: 'Become my friend',
-      url: `${srt_url}/discord`,
+      url: "${srt_url}/discord",
     },
     {
       name: 'Twitter',
       icon: 'x',
       desc: 'Find me on Twitter',
-      url:  `${srt_url}/twitter`
+      url:  "${srt_url}/twitter"
     },
     {
       name: 'GitHub',
       icon: 'githubalt',
       desc: 'Check out my git repos',
-      url: `${srt_url}/github`,
+      url: "${srt_url}/github",
       pin: true
     },
     {
       name: 'GitLab',
       icon: 'gitlab',
       desc: 'View my GitLab profile',
-      url: `${srt_url}/gitlab`,
+      url: "${srt_url}/gitlab",
     },
     {
       name: 'Anilist',
       icon: 'anilist',
       desc: 'If you are otaku, check out!',
-      url: `${srt_url}/anilist`,
+      url: "${srt_url}/anilist",
     },
     {
       name: 'Simkl',
       icon: 'simkl',
       desc: 'I watch Movies & Series too!',
-      url: `${srt_url}/simkl`,
+      url: "${srt_url}/simkl",
     }
-  ],
-  
-  shortener: {
-    
+  ]
+  },
+
+  link_shortener: {   // Uses StaticShort
+
+    enable: true,
     deploy_path: "/l",
 
     short_links: {
@@ -179,64 +194,99 @@ exports.configs = {
       "instagram"    :  "https://www.instagram.com/soymadip_",
       "simkl"        :  "https://simkl.com/5929351/"
     }
+  },
+
+  experience: {
+    enable: false,
+    list: [
+      {
+        company: "Company A",
+        position: "Software Engineer",
+        duration: "Jan 2020 - Present",
+        description: [
+          "Developed and maintained web applications using JavaScript, HTML, and CSS.",
+          "Collaborated with cross-functional teams to define, design, and ship new features.",
+          "Identified and fixed bugs to improve application performance."
+        ]
+      },
+      {
+        company: "Company B",
+        position: "Intern",
+        duration: "Jun 2019 - Dec 2019",
+        description: [
+          "Assisted in the development of internal tools using Python and Bash.",
+          "Participated in code reviews and provided feedback to improve code quality.",
+          "Conducted research and provided recommendations for new technologies."
+        ]
+      }
+    ]
   }
 };
 
 
-exports.tasks = [
-  {
-    title: "Add more Callouts",
-    description: "like question..",
-    status: "pending",
-    priority: "medium"
-  },
-  {
-    title: "Add colors to Markdown Headings",
-    description: "Take from Obsidian",
-    status: "pending",
-    priority: "high"
-  },
-  {
-    title: "Improve the Note card Icon extractor",
-    description: "make it strip number before dir name, currently It shows blank icon(default book).",
-    status: "completed",
-    priority: "high"
-  },
-  {
-    title: "Improve Roadmap page",
-    description: "add sub todos, shift from vibe code to orignal code, make mobile friendly",
-    status: "pending",
-    priority: "low"
-  },
-  {
-    title: "Fix Mermaid Diagram support",
-    description: "showing: Hook is called outside the <ColorModeProvider>. Please see https://docusaurus.io/docs/api/themes/configuration#use-color-mode.",
-    status: "pending",
-    priority: "medium"
-  },
-  {
-    title: "check prism js, dark and light background swap",
-    status: "completed",
-    description: "Looking better now.",
-    priority: "low"
-  },
-  {
-    title: "Make standalone Project.", 
-    description: "Convert to Portosaurus project. remove personal stuff.",
-    priority: "high",
-    status: "active"
-  },
-  {
-    title: "Separate portfolio config", 
-    description: "Separate portfolio specific settings to config.js.",
-    priority: "high",
-    status: "completed"
-  },
-  {
-    title: "make shortlinks icon field optional", 
-    description: "lower the title, then match in mapping. if icon key is defined, use it.",
-    priority: "low",
-    status: "pending"
-  }
-];
+exports.tasks = {
 
+  enable: true,
+  list: [
+    {
+      title: "Add more Callouts",
+      description: "like question..",
+      status: "pending",
+      priority: "medium"
+    },
+    {
+      title: "Add colors to Markdown Headings",
+      description: "Take from Obsidian",
+      status: "pending",
+      priority: "high"
+    },
+    {
+      title: "Improve the Note card Icon extractor",
+      description: "make it strip number before dir name, currently It shows blank icon(default book).",
+      status: "completed",
+      priority: "high"
+    },
+    {
+      title: "Improve Roadmap page",
+      description: "add sub todos, shift from vibe code to orignal code, make mobile friendly",
+      status: "pending",
+      priority: "low"
+    },
+    {
+      title: "Fix Mermaid Diagram support",
+      description: "showing: Hook is called outside the <ColorModeProvider>. Please see https://docusaurus.io/docs/api/themes/configuration#use-color-mode.",
+      status: "pending",
+      priority: "medium"
+    },
+    {
+      title: "check prism js, dark and light background swap",
+      status: "completed",
+      description: "Looking better now.",
+      priority: "low"
+    },
+    {
+      title: "Make standalone Project.", 
+      description: "Convert to Portosaurus project. remove personal stuff.",
+      priority: "high",
+      status: "active"
+    },
+    {
+      title: "Separate portfolio config", 
+      description: "Separate portfolio specific settings to config.js.",
+      priority: "high",
+      status: "completed"
+    },
+    {
+      title: "make shortlinks icon field optional", 
+      description: "lower the title, then match in mapping. if icon key is defined, use it.",
+      priority: "low",
+      status: "pending"
+    },
+    {
+      title: "Rearrange the config.js",
+      description: "Rearrange config, make more abstract. Add hero section configs.",
+      status: "acribe",
+      priority: "high"
+    }
+  ]  
+}

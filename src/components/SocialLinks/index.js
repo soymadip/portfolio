@@ -21,7 +21,7 @@ export default function SocialIcons({ showAll = false }) {
 
   const [animationDelays, setAnimationDelays] = useState({});
 
-  const allSocialLinks = customFields.socialLinks || [];
+  const allSocialLinks = customFields.socialLinks.links || [];
   
   // FIX: `to prevent unnecessary recalculations`
   const socialLinks = useMemo(() => {

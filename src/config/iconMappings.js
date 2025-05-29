@@ -1,8 +1,10 @@
-import { TbBrandCSharp, TbBrandCassandra } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandCassandra, TbBrandVscode, TbBrandOnedrive, TbBrandAzure, TbBrandBing, TbBrandGithubCopilot } from "react-icons/tb";
 import { GrVirtualMachine } from "react-icons/gr";
 import { DiRasberryPi } from "react-icons/di";
-import { PiGithubLogoFill } from "react-icons/pi";
-import { BiLogoPostgresql } from "react-icons/bi";
+import { PiGithubLogoFill, PiMicrosoftExcelLogoDuotone, PiMicrosoftOutlookLogo, PiMicrosoftPowerpointLogo, PiMicrosoftWordLogo } from "react-icons/pi";
+import { BiLogoPostgresql, BiLogoWindows } from "react-icons/bi";
+import { BsFiletypeXlsx, BsFiletypeDocx, BsFiletypePpt, BsMicrosoftTeams } from "react-icons/bs";
+import { TiVendorMicrosoft } from "react-icons/ti";
 
 import { 
   SiPython, SiJavascript, SiCplusplus, SiRust, SiGo, SiTypescript, SiReact, SiMysql, SiGnubash, 
@@ -15,7 +17,7 @@ import {
   SiGooglechrome, SiFirefox, SiSafari, SiBrave, SiOpera, SiTorbrowser, SiVivaldi, SiZendesk,
   SiImdb, SiMyanimelist, SiAnilist, SiLetterboxd, SiCrunchyroll, SiKitsu, SiSimkl,
   SiOracle, SiMongodb, SiSqlite, SiMariadb, SiInfluxdb, SiRedis, SiCouchbase, SiApachecassandra,
-  SiAmazondynamodb, SiFirebase, SiNeo4J, SiElasticsearch, SiGraphql
+  SiAmazondynamodb, SiFirebase, SiNeo4J, SiElasticsearch, SiGraphql, SiGoogledrive
 } from 'react-icons/si';
 
 import { 
@@ -28,7 +30,8 @@ import {
   FaSearch, FaCog, FaEdit, FaHome, FaInfoCircle, FaLink, FaDownload, 
   FaUpload, FaSave, FaTrash, FaExclamationTriangle, FaExclamationCircle, FaCheckCircle, 
   FaQuestionCircle, FaClock, FaComments, FaBell, FaDatabase,
-  FaCalendar, FaCheckSquare, FaBookmark, FaStar, FaHeart, FaClipboard, FaEnvelopeOpen
+  FaCalendar, FaCheckSquare, FaBookmark, FaStar, FaHeart, FaClipboard, FaEnvelopeOpen,
+  FaMicrosoft, FaGoogleDrive
 } from "react-icons/fa";
 
 
@@ -295,5 +298,32 @@ export const iconMap = {
   internetexplorer: { icon: FaInternetExplorer, color: '#0076D6' },
   "zen-browser": { icon: SiZendesk, color: '#00363D' },
   zenbrowser: { icon: SiZendesk, color: '#00363D' },
-  zen: { icon: SiZendesk, color: '#00363D' }
+  zen: { icon: SiZendesk, color: '#00363D' },
+  
+  // Microsoft
+  windows: { icon: BiLogoWindows, color: '#0078D6' },
+  windows10: { icon: TiVendorMicrosoft, color: '#F25022' },
+  microsoft: { icon: FaMicrosoft, color: '#F25022' },
+  office: { icon: TiVendorMicrosoft, color: '#D83B01' },
+  excel: { icon: PiMicrosoftExcelLogoDuotone, color: '#217346' },
+  excelduotone: { icon: PiMicrosoftExcelLogoDuotone, color: '#217346' },
+  word: { icon: PiMicrosoftWordLogo, color: '#2B579A' },
+  powerpoint: { icon: PiMicrosoftPowerpointLogo, color: '#D83B01' },
+  powerpointlogo: { icon: PiMicrosoftPowerpointLogo, color: '#D83B01' },
+  teams: { icon: BsMicrosoftTeams, color: '#6264A7' },
+  teamsalt: { icon: BsMicrosoftTeams, color: '#6264A7' },
+  onedrive: { icon: TbBrandOnedrive, color: '#0078D4' },
+  azure: { icon: TbBrandAzure, color: '#0089D6' },
+  bing: { icon: TbBrandBing, color: '#008373' },
+  vscode: { icon: TbBrandVscode, color: '#007ACC' },
+  outlook: { icon: PiMicrosoftOutlookLogo, color: '#0078D4' },
+  fileword: { icon: BsFiletypeDocx, color: '#2B579A' },
+  fileexcel: { icon: BsFiletypeXlsx, color: '#217346' },
+  filepowerpoint: { icon: BsFiletypePpt, color: '#D83B01' },
+  githubcopilot: { icon: TbBrandGithubCopilot, color: '#000000' },
+  
+  // Google products
+  googledrive: { icon: FaGoogleDrive, color: '#0F9D58' },
+  gdrive: { icon: SiGoogledrive, color: '#0F9D58' }
+
 };

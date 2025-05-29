@@ -108,7 +108,8 @@ export default function ProjectsSection({ id, className, title, subtitle }) {
 
   // Load and set up projects on initial load and on resize
   useEffect(() => {
-    const configuredProjects = siteConfig.customFields?.projects || [];
+    const projectShelf = siteConfig.customFields?.projects;
+    const configuredProjects = projectShelf?.enable ? projectShelf?.projects || [] : [];
     
     const handleLayout = () => {
       const newSlidesToShow = getVisibleSlidesPerView();
