@@ -285,7 +285,12 @@ exports.tasks = {
     {
       title: "Rearrange the config.js",
       description: "Rearrange config, make more abstract. Add hero section configs.",
-      status: "acribe",
+      status: "medium",
+      priority: "high"
+    },
+    {
+      title: "Add the content of index.mdx in notes automatically during compilation",
+      status: "medium",
       priority: "high"
     }
   ]  
